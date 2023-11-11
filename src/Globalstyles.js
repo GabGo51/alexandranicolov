@@ -22,6 +22,7 @@ export default createGlobalStyle`
     overflow: hidden;
     overflow-y: scroll;
     box-sizing: content-box; 
+    background-color: white;
   }
   
   html, body, div, span, applet, object, iframe,
