@@ -4,7 +4,7 @@ import Header from '../Header'
 const FilmGallery = () => {
   return (
     <>
-    <Header/>
+    
     <div>FilmGallery</div>
     </>
     

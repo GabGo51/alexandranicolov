@@ -40,5 +40,9 @@ const Container = styled.div`
 p{
   font-size: 38px;
 }
+
+span{
+  color: red;
+}
 `;
 export default Home;

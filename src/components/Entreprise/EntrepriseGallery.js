@@ -4,7 +4,7 @@ import Header from '../Header'
 const EntrepriseGallery = () => {
   return (
     <>
-    <Header/>
+    
     <div>EntrepriseGallery</div>
     </>
     
