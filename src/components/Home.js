@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
+import nuage from './img/nuage.png'
 
 const Home = () => {
 
@@ -36,13 +36,20 @@ const Home = () => {
 };
 
 const Container = styled.div`
+padding: 40px;
+width: 100vw;
+background-image: url(${nuage});
+background-size: cover;
+height: 100vh;
+
 
 p{
-  font-size: 38px;
+  font-size: clamp(20px, 3vw, 38px);
+  color: #7E4343;
 }
 
 span{
-  color: red;
+  color: black;
 }
 `;
 export default Home;

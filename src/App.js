@@ -58,7 +58,7 @@ function App() {
 }
 
 const Container = styled.div`
-  padding: 40px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
