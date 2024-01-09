@@ -1,55 +1,57 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
-import nuage from './img/nuage.png'
+import nuage from "./img/nuage.png";
 
 const Home = () => {
+  const containerRef = useRef(null);
 
-  const navigate = useNavigate();
-  const handleNavigate = (page) => {
-    navigate(page);
-    window.scrollTo({
-      top: 0,
-      
-    });
-  };
+  useEffect(() => {
+    const container = containerRef.current;
 
+    if (container) {
+      const handleScroll = (e) => {
+        container.scrollLeft += e.deltaY;
+      };
+
+      container.addEventListener("wheel", handleScroll);
+
+      return () => {
+        container.removeEventListener("wheel", handleScroll);
+      };
+    }
+  }, []);
 
   return (
-    <Container>
-      <p>
-        Bienvenue sur mon site. Je vous avoue être une artiste assez
-        multidisciplinaire un peu perdue dans se monde en désordre. Comme un
-        journal je vous invite à parcourir (brièvement si cela vous dit) mes
-        images que j’accumule depuis très longtemps; je fais majoritairement de
-        la <span onClick={() => handleNavigate("/photo")}>[1] photo</span> sur pellicule. Ayant terminé mon bacc en cinéma j’ai
-        évidemment plusieurs <span onClick={() => handleNavigate("/film")}>[2] films</span> à mon compte si vous voulez les écouter
-        j’ai travailler très fort sur chacun d’eux. Je conçois être quelqu’un
-        qui sait s’amuser, mais je suis aussi capable de faire des projets plus
-        sérieux comme des photos <span onClick={() => handleNavigate("/entreprise")}>[3] d’entreprise</span> ou des photos de produits
-        variés. En espérant que ce site vous donne une meilleure idée de qui je
-        suis, contactez-moi où vous voulez je suis, ces jours-ci, assez
-        disponible.
-      </p>
+    <Container ref={containerRef}>
+      <div>
+        <img src={nuage} alt="Cloud" />
+        <img src={nuage} alt="Cloud" />
+        <img src={nuage} alt="Cloud" />
+        <img src={nuage} alt="Cloud" />
+        <img src={nuage} alt="Cloud" />
+        <img src={nuage} alt="Cloud" />
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
-padding: 40px;
-width: 100vw;
-background-image: url(${nuage});
-background-size: cover;
-height: 100vh;
+  
+  width: 100vw;
+  
+  overflow-y: hidden;
+  overflow-x: auto;
 
-
-p{
-  font-size: clamp(20px, 3vw, 38px);
-  color: #7E4343;
-}
-
-span{
-  color: black;
-}
+  div {
+    padding: 20px 0;
+    
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+    img {
+      height: 400px;
+    }
+  }
 `;
+
 export default Home;
