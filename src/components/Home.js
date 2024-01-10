@@ -20,7 +20,7 @@ const Home = () => {
     if(scrollAmount<0) {
       scrollAmount = 0
     }
-    if(scrollAmount>ref.current.offsetWidth *2.3){
+    if(scrollAmount>ref.current.offsetWidth *2.5){
       scrollAmount= 0
     }
     
@@ -30,12 +30,14 @@ const Home = () => {
   };
 
   useEffect(() => {
+    
     controls.start({ x: -scrollAmount, transition: { type: "spring", damping: 10, stiffness: 50 } });
   }, [controls, scrollAmount]);
 
   return (
     <Container onWheel={handleWheel}>
-      <ScrollableDiv ref={ref}  animate={controls}>
+      <div className="frame">
+        <ScrollableDiv ref={ref}  animate={controls}>
         <img onClick={() => openOverlay(nuage)} src={nuage} alt="Cloud" />
         <img onClick={() => openOverlay(test)} src={test} alt="Cloud" />
         <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />
@@ -45,6 +47,8 @@ const Home = () => {
         <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />
         <img onClick={() => openOverlay(test)} src={test} alt="Cloud" />
       </ScrollableDiv>
+      </div>
+      
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
     </Container>
   );
@@ -53,17 +57,24 @@ const Home = () => {
 const Container = styled.div`
   width: 100vw;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .frame{
+    width: 90%;
+    overflow: hidden;
+  }
 `;
 
 const ScrollableDiv = styled(motion.div)`
-  padding: 20px 0;
+  
   display: flex;
-  gap: 10px;
   white-space: nowrap;
-  img {
-    height: 50vh;
-    margin: 0 40px;
 
+
+  img {
+    height: 70vh;
+    margin-right: 80px;
     @media (max-width: 700px) {
       height: 200px;
     }

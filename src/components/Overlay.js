@@ -38,7 +38,7 @@ justify-content: center;
   
 }
 .image-over{
-  height: 700px;
+  height: 90vh;
   object-fit: cover;
 
   @media (max-width:1000px){

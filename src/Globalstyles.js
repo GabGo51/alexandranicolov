@@ -42,6 +42,7 @@ export default createGlobalStyle`
     padding: 0;
     border: 0;
     vertical-align: baseline;
+    font-family: Inter;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,

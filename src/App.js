@@ -59,7 +59,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   overflow-x: auto; 
-  padding: 60px 60px;
+  
 `;
 
 export default App;
