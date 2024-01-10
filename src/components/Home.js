@@ -73,7 +73,7 @@ const ScrollableDiv = styled(motion.div)`
 
 
   img {
-    height: 70vh;
+    height: 60vh;
     margin-right: 80px;
     @media (max-width: 700px) {
       height: 200px;

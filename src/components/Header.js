@@ -15,7 +15,10 @@ const Header = () => {
   };
   return (
     <Container>
-      <h1 onClick={() => handleNavigate("/")}>Alexandra Nicolov</h1>
+      <h1 onClick={() => {
+                  setOpen(false);
+                  handleNavigate("/");
+                }}>Alexandra Nicolov</h1>
       <div>
         {open ? <p className="icon">-</p>: <p className="icon">+</p>}
         <button onClick={() => setOpen(!open)}>Photo</button>
@@ -23,8 +26,8 @@ const Header = () => {
           {open && (
             <motion.div
               className="extra"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{  y: -20 }}
+              animate={{  y: 0 }}
               transition={{ duration: 0.2 }}
             >
               <motion.button
