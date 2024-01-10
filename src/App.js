@@ -7,6 +7,8 @@ import EntrepriseGallery from "./components/Entreprise/EntrepriseGallery";
 import FilmGallery from "./components/Film/FilmGallery";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import HomePhone from "./components/HomePhone";
+import { useState, useEffect } from "react";
 import p1 from "./components/Photo/1/Serie1";
 import p2 from "./components/Photo/2/Serie2";
 import p3 from "./components/Photo/3/Serie3";
@@ -18,13 +20,29 @@ import p8 from "./components/Photo/8/Serie8";
 import p9 from "./components/Photo/9/Serie9";
 import p10 from "./components/Photo/10/Serie10";
 function App() {
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
+
+  useEffect(() => {
+    // Update isSmallScreen state when window is resized
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1000);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const HomeElement = isSmallScreen ? HomePhone : Home;
   return (
     <Router>
       <Container className="App">
         <Cursor />
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomeElement />} />
           <Route path="/photo" element={<PhotoGallery />} />
           <Route path="/entreprise" element={<EntrepriseGallery />} />
           <Route path="/film" element={<FilmGallery />} />
