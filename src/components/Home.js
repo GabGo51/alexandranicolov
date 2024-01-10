@@ -8,8 +8,8 @@ import test from "./img/test.jpg";
 import test2 from "./img/test2.jpg";
 
 const Home = () => {
-  const ref = useRef()
-  
+  const ref = useRef();
+
   const { selectedImage, openOverlay, closeOverlay } = useImageContext();
 
   let [scrollAmount, setScrollAmount] = useState(0);
@@ -17,38 +17,46 @@ const Home = () => {
   const controls = useAnimation();
 
   const handleWheel = (event) => {
-    if(scrollAmount<0) {
-      scrollAmount = 0
+    if (scrollAmount < 0) {
+      scrollAmount = 0;
     }
-    if(scrollAmount>ref.current.offsetWidth *4){
-      scrollAmount= 0
+    if (scrollAmount > ref.current.offsetWidth * 4) {
+      scrollAmount = 0;
     }
-    
+
     const newScrollAmount = scrollAmount + event.deltaY;
     setScrollAmount(newScrollAmount);
-    controls.start({ x: -newScrollAmount, transition: { type: "spring", damping: 10, stiffness: 50 } });
+    controls.start({
+      x: -newScrollAmount,
+      transition: { type: "spring", damping: 10, stiffness: 50 },
+    });
   };
 
   useEffect(() => {
-    
-    controls.start({ x: -scrollAmount, transition: { type: "spring", damping: 10, stiffness: 50 } });
+    controls.start({
+      x: -scrollAmount,
+      transition: { type: "spring", damping: 10, stiffness: 50 }
+    });
   }, [controls, scrollAmount]);
 
   return (
     <Container onWheel={handleWheel}>
-      <div className="frame">
-        <ScrollableDiv ref={ref}  animate={controls}>
-        <img onClick={() => openOverlay(nuage)} src={nuage} alt="Cloud" />
-        <img onClick={() => openOverlay(test)} src={test} alt="Cloud" />
-        <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />
-        <img src={nuage} alt="Cloud" />
-        <img src={nuage} alt="Cloud" />
-        <img src={nuage} alt="Cloud" />
-        <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />
-        <img onClick={() => openOverlay(test)} src={test} alt="Cloud" />
-      </ScrollableDiv>
-      </div>
-      
+      <motion.div initial={{ y:40}} animate ={{ y:0 }} transition={{duration:1}} className="frame">
+        <ScrollableDiv
+          ref={ref}
+          animate={controls}
+        >
+          <img onClick={() => openOverlay(nuage)} src={nuage} alt="Cloud" />
+          <img onClick={() => openOverlay(test)} src={test} alt="Cloud" />
+          <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />
+          <img src={nuage} alt="Cloud" />
+          <img src={nuage} alt="Cloud" />
+          <img src={nuage} alt="Cloud" />
+          <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />
+          <img onClick={() => openOverlay(test)} src={test} alt="Cloud" />
+        </ScrollableDiv>
+      </motion.div>
+
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
     </Container>
   );
@@ -60,9 +68,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  .frame{
+  .frame {
     width: 90%;
     overflow: hidden;
+    transform-origin: bottom;
   }
 `;
 
@@ -70,7 +79,6 @@ const ScrollableDiv = styled(motion.div)`
   
   display: flex;
   white-space: nowrap;
-
 
   img {
     height: 60vh;

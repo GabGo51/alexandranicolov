@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Header";
 import s1 from "./img/s1.jpg";
 import s2 from "./img/s2.jpg";
 import s3 from "./img/s3.jpg";
@@ -24,36 +23,81 @@ const Gallery = () => {
   return (
     <Container>
       <div className="row">
-        <img className="p1" onClick={() => handleNavigate("/photo/1")} alt="intro" src={s1} />
-        <img className="p2" onClick={() => handleNavigate("/photo/2")} alt="intro" src={s2} />
+        <div className="p1" onClick={() => handleNavigate("/photo/1")}>
+          <img alt="intro" src={s1} />
+          <p>la vallée brulée</p>
+        </div>
+
+        <div className="p2" onClick={() => handleNavigate("/photo/2")}>
+          <img alt="intro" src={s2} />
+          <p>seul au monde</p>
+        </div>
       </div>
       <div className="row">
-        <img className="p3" onClick={() => handleNavigate("/photo/3")} alt="intro" src={s3} />
-        <img className="p4" onClick={() => handleNavigate("/photo/4")} alt="intro" src={s4} />
+        <div className="p3" onClick={() => handleNavigate("/photo/3")}>
+          <img alt="intro" src={s3} />
+          <p>la musique au goût de la mer</p>
+        </div>
+        <div className="p4" onClick={() => handleNavigate("/photo/4")}>
+          <img alt="intro" src={s4} />
+          <p>Margaux</p>
+        </div>
       </div>
 
       <div className="row">
-        <img className="p5" onClick={() => handleNavigate("/photo/5")} alt="intro" src={s5} />
-        <img className="p6" onClick={() => handleNavigate("/photo/6")} alt="intro" src={s6} />
+        <div className="p5" onClick={() => handleNavigate("/photo/5")}>
+          <img alt="intro" src={s5} />
+          <p>48 heures plus tard</p>
+        </div>
+        <div className="p6" onClick={() => handleNavigate("/photo/6")}>
+          <img alt="intro" src={s6} />
+          <p>bercé par le bruit des vagues</p>
+        </div>
       </div>
       <div className="row">
-        <img className="p7" onClick={() => handleNavigate("/photo/7")} alt="intro" src={s7} />
-        <img className="p8" onClick={() => handleNavigate("/photo/8")} alt="intro" src={s8} />
+        <div className="p7" onClick={() => handleNavigate("/photo/7")}>
+          <img alt="intro" src={s7} />
+          <p>jusqu’à temps qu’on reparte</p>
+        </div>
+        <div className="p8" onClick={() => handleNavigate("/photo/8")}>
+          <img alt="intro" src={s8} />
+          <p>Joe’s Valley</p>
+        </div>
       </div>
-      <div className='row'>
-        <img className="p9" onClick={() => handleNavigate("/photo/9")} alt="intro" src={s9} />
-        <img className="p10" onClick={() => handleNavigate("/photo/10")} alt="intro" src={s10} />
+      <div className="row">
+        <div className="p9" onClick={() => handleNavigate("/photo/9")}>
+          <img alt="intro" src={s9} />
+          <p>les feuilles qui dansent</p>
+        </div>
+        <div className="p10" onClick={() => handleNavigate("/photo/10")}>
+          <img alt="intro" src={s10} />
+          <p>atmosphère fuyante</p>
+        </div>
       </div>
-
-      
+      <button
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
+      >
+        retour en haut
+      </button>
     </Container>
   );
 };
 
 const Container = styled.div`
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   img {
     height: 700px;
+    width: 100%;
+    margin-bottom: 10px;
     object-fit: cover;
     @media (max-width: 1200px) {
       height: 500px;
@@ -62,47 +106,60 @@ const Container = styled.div`
       height: 250px;
     }
   }
+  p {
+    font-size: clamp(14px, 3vw, 20px);
+    font-weight: 500;
+  }
 
-  .row{
+  .row {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
   }
-  .p1{
+  .p1 {
     width: 30%;
   }
 
-  .p2{
+  .p2 {
     width: 65%;
   }
 
-  .p3{
+  .p3 {
     width: 55%;
   }
 
-  .p4{
+  .p4 {
     width: 40%;
   }
-  .p5{
+  .p5 {
     width: 30%;
   }
 
-  .p6{
+  .p6 {
     width: 65%;
   }
-  .p7{
+  .p7 {
     width: 30%;
   }
 
-  .p8{
+  .p8 {
     width: 65%;
   }
-  .p9{
+  .p9 {
     width: 30%;
   }
 
-  .p10{
+  .p10 {
     width: 65%;
+  }
+
+  button{
+    all: unset;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 50px;
+
   }
 `;
 
