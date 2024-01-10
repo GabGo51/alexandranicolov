@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../Header'
 // import vid1 from './img/vid1.gif'
 // import vid2 from './img/vid2.gif'
 import styled from 'styled-components'
@@ -15,7 +14,6 @@ const FilmGallery = () => {
     
   )
 }
-
 const Container = styled.div`
 width: 90%;
 img{
