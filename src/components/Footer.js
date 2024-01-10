@@ -28,6 +28,9 @@ width: 90%;
 a{
   margin-right: 50px;
   margin-top: 50px;
+  @media (max-width:1000px){
+      margin-right: 25px;
+    }
 }
 `
 

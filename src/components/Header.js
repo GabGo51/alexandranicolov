@@ -17,21 +17,43 @@ const Header = () => {
     <Container>
       <h1 onClick={() => handleNavigate("/")}>Alexandra Nicolov</h1>
       <div>
+        {open ? <p className="icon">-</p>: <p className="icon">+</p>}
         <button onClick={() => setOpen(!open)}>Photo</button>
-        {open && (
-          <AnimatePresence>
-          <motion.div
-            className="extra"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-          >
-            <button>yo</button>
-            <button>ahahahahah</button>
-          </motion.div>
-          </AnimatePresence>
-        )}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              className="extra"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <motion.button
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3, delay:0.1 }}
+                onClick={() => {
+                  setOpen(false);
+                  handleNavigate("/photo");
+                }}
+              >
+                Photographie sur pellicule
+              </motion.button>
+              <motion.button
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3, delay:0.2 }}
+                onClick={() => {
+                  setOpen(false);
+                  handleNavigate("/entreprise");
+                }}
+              >
+                Contras Corpo
+              </motion.button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <button onClick={() => handleNavigate("/film")}>Film</button>
@@ -55,16 +77,27 @@ const Container = styled.div`
   button {
     all: unset;
     margin: 0 60px;
+    transition: 500ms;
+    white-space: nowrap;
   }
 
   div {
     display: flex;
     flex-direction: column;
     position: relative;
+    p{
+      
+    }
   }
   .extra {
     position: absolute;
     bottom: -50px;
+  }
+
+  .icon{
+    position: absolute;
+    right: 40px;
+    bottom: 1px;
   }
 `;
 
