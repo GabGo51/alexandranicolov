@@ -4,7 +4,7 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
 
 
-  
+  ::-webkit-scrollbar {display:none;} //hide scroll bar 
 
   *,
   *:before,
@@ -19,7 +19,7 @@ export default createGlobalStyle`
   html, body {
     width: 100vw;
     padding: 100px;
-    overflow-x: hidden;
+    overflow: hidden;
     overflow-y: scroll;
     box-sizing: content-box; 
     background-color: white;
