@@ -39,6 +39,17 @@ const EntrepriseGallery = () => {
         </div>
       </div>
 
+      <button
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
+      >
+        retour en haut
+      </button>
+
     </Container>
     
   )
@@ -109,6 +120,14 @@ width: 90%;
     width: 40%;
     transform: translateY(20%);
     
+  }
+
+  button{
+    all: unset;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 50px;
+
   }
 
 `
