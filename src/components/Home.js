@@ -34,7 +34,7 @@ const Home = () => {
 
   return (
     <Container onWheel={handleWheel} ref={containerRef}>
-      <ScrollableDiv animate={controls}>
+      <ScrollableDiv ref={containerRef} animate={controls}>
         <img onClick={() => openOverlay(nuage)} src={nuage} alt="Cloud" />
         <img onClick={() => openOverlay(test)} src={test} alt="Cloud" />
         <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />

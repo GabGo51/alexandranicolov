@@ -34,16 +34,15 @@ div{
 align-items: center;
 justify-content: center;
 
-  width: 80%;
-  height: 80%;
+  
   
 }
 .image-over{
-  scale: 1.7;
+  height: 700px;
   object-fit: cover;
 
-  @media (max-width:700px){
-    scale: 1.3;
+  @media (max-width:1000px){
+    height: 250px;
   }
 }
 
