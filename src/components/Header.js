@@ -56,7 +56,10 @@ const Header = () => {
         </AnimatePresence>
       </div>
 
-      <button onClick={() => handleNavigate("/film")}>Film</button>
+      <button onClick={() => {
+                  setOpen(false);
+                  handleNavigate("/film");
+                }}>Film</button>
     </Container>
   );
 };
@@ -79,6 +82,7 @@ const Container = styled.div`
     margin: 0 60px;
     transition: 500ms;
     white-space: nowrap;
+    margin: 2px 60px;
   }
 
   div {

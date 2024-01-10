@@ -20,7 +20,7 @@ const Home = () => {
     if(scrollAmount<0) {
       scrollAmount = 0
     }
-    if(scrollAmount>ref.current.offsetWidth *2.5){
+    if(scrollAmount>ref.current.offsetWidth *4){
       scrollAmount= 0
     }
     
