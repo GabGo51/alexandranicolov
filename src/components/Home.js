@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import nuage from "./img/nuage.png";
@@ -9,31 +9,39 @@ import test2 from "./img/test2.jpg";
 
 const Home = () => {
   const { selectedImage, openOverlay, closeOverlay } = useImageContext();
-
   const [scrollAmount, setScrollAmount] = useState(0);
-
   const controls = useAnimation();
+  const containerRef = useRef(null);
 
   const handleWheel = (event) => {
     const newScrollAmount = scrollAmount + event.deltaY;
-    // Ensure scrollAmount stays within the range [0, 2000]
-    setScrollAmount(Math.max(0, Math.min(newScrollAmount, 2500)));
-    controls.start({ x: -scrollAmount, transition: { type: "spring", damping: 10, stiffness: 50 } });
+    const maxScrollAmount = containerRef.current.scrollWidth - containerRef.current.clientWidth +100 ;
+
+    setScrollAmount(Math.max(0, Math.min(newScrollAmount, maxScrollAmount)));
+
+    controls.start({
+      x: -scrollAmount,
+      transition: { type: "spring", damping: 10, stiffness: 50 },
+    });
   };
 
   useEffect(() => {
-    controls.start({ x: -scrollAmount, transition: { type: "spring", damping: 10, stiffness: 50 } });
+    controls.start({
+      x: -scrollAmount,
+      transition: { type: "spring", damping: 10, stiffness: 50 },
+    });
   }, [controls, scrollAmount]);
 
   return (
-    <Container onWheel={handleWheel}>
-      <ScrollableDiv  animate={controls}>
+    <Container onWheel={handleWheel} ref={containerRef}>
+      <ScrollableDiv animate={controls}>
         <img onClick={() => openOverlay(nuage)} src={nuage} alt="Cloud" />
         <img onClick={() => openOverlay(test)} src={test} alt="Cloud" />
         <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />
         <img src={nuage} alt="Cloud" />
         <img src={nuage} alt="Cloud" />
         <img src={nuage} alt="Cloud" />
+        <img onClick={() => openOverlay(test2)} src={test2} alt="Cloud" />
       </ScrollableDiv>
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
     </Container>
