@@ -16,7 +16,7 @@ const Header = () => {
     <Container>
     <h1 onClick={() => handleNavigate("/")}>ALEXANDRA NICOLOV</h1>
     <button onClick={() => handleNavigate("/photo")}>Photo</button>
-    <button>Film</button>
+    <button onClick={() => handleNavigate("/film")}>Film</button>
     </Container>
   )
 }

@@ -24,7 +24,7 @@ top: 0;
 bottom: 0;
 width: 100vw;
 height: 100vh;
-background-color: red;
+background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value (last parameter) for opacity */
 display: flex;
 align-items: center;
 justify-content: center;
@@ -39,8 +39,12 @@ justify-content: center;
   
 }
 .image-over{
-  scale: 2;
+  scale: 1.7;
   object-fit: cover;
+
+  @media (max-width:700px){
+    scale: 1.3;
+  }
 }
 
 .close{
