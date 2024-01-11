@@ -11,6 +11,7 @@ import s9 from "./img/s9.jpg";
 import s10 from "./img/s10.jpg";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import BackTop from "../BackTop";
 
 const Gallery = () => {
   const navigate = useNavigate();
@@ -74,16 +75,8 @@ const Gallery = () => {
           <p>atmosphère fuyante</p>
         </div>
       </div>
-      <button
-        onClick={() =>
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          })
-        }
-      >
-        retour en haut
-      </button>
+      <BackTop/>
+
     </Container>
   );
 };
@@ -154,13 +147,7 @@ const Container = styled.div`
     width: 65%;
   }
 
-  button{
-    all: unset;
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 50px;
-
-  }
+  
 `;
 
 export default Gallery;

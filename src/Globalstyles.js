@@ -62,5 +62,17 @@ export default createGlobalStyle`
     content: none;
   }
 
+  img{
+    object-fit: cover;
+  }
+
+  .back-top{
+    all: unset;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 50px;
+
+  }
+
   
 `;

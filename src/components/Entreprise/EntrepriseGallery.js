@@ -5,6 +5,7 @@ import c2 from './img/c2.jpg'
 import c3 from './img/c3.jpg'
 import c4 from './img/c4.jpg'
 import { useNavigate } from "react-router-dom";
+import BackTop from '../BackTop'
 
 
 const EntrepriseGallery = () => {
@@ -39,16 +40,7 @@ const EntrepriseGallery = () => {
         </div>
       </div>
 
-      <button
-        onClick={() =>
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          })
-        }
-      >
-        retour en haut
-      </button>
+      <BackTop/>
 
     </Container>
     
@@ -122,13 +114,7 @@ width: 90%;
     
   }
 
-  button{
-    all: unset;
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 50px;
-
-  }
+  
 
 `
 

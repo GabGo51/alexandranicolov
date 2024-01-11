@@ -1,6 +1,8 @@
 import React from 'react';
 import { useImageContext } from '../context/PhotoContext'; // Update the path if needed
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
 
 const ImageOverlay = () => {
   const { selectedImage, closeOverlay } = useImageContext();
@@ -8,9 +10,9 @@ const ImageOverlay = () => {
   return (
     selectedImage && (
       <Container>
-        <div>
+        <motion.div initial={{y:20}} animate={{y:0}}>
           <img className='image-over' src={selectedImage} alt="Full Screen" />
-        </div>
+        </motion.div>
         <button className='close' onClick={closeOverlay}>X</button>
         
       </Container>
@@ -19,9 +21,11 @@ const ImageOverlay = () => {
 };
 
 const Container = styled.div`
-position: absolute;
+position: fixed;
 top: 0;
 bottom: 0;
+left: 0;
+right: 0;
 width: 100vw;
 height: 100vh;
 background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value (last parameter) for opacity */
