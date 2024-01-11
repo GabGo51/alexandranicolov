@@ -106,5 +106,14 @@ export default createGlobalStyle`
     margin-bottom: 4vw;
   }
 
+  .tall{
+    width: 100%;
+    margin-bottom:4vw ;
+    
+    @media (min-width:750px){
+      width: 50%;
+    }
+  }
+
   
 `;

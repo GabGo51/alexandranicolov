@@ -15,14 +15,39 @@ const Serie7 = () => {
     <Container>
       <img
         onClick={() => openOverlay(s7_1)}
-        className="full"
+        className="middle"
         alt="serie1"
         src={s7_1}
       />
-      <img className="full" alt="serie1" src={s7_2} />
-      <img className="full" alt="serie1" src={s7_3} />
-      <img className="full" alt="serie1" src={s7_4} />
-      <img className="full" alt="serie1" src={s7_5} />
+      <div className="row">
+        <img
+          onClick={() => openOverlay(s7_2)}
+          className="row-img"
+          alt="serie1"
+          src={s7_2}
+        />
+        <img
+          onClick={() => openOverlay(s7_3)}
+          className="row-img"
+          alt="serie1"
+          src={s7_3}
+        />
+      </div>
+      <div className="row"></div>
+      <div className="row">
+        <img
+          onClick={() => openOverlay(s7_4)}
+          className="row-img"
+          alt="serie1"
+          src={s7_4}
+        />
+        <img
+          onClick={() => openOverlay(s7_5)}
+          className="row-img"
+          alt="serie1"
+          src={s7_5}
+        />
+      </div>
 
       <BackTop />
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
@@ -36,6 +61,27 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .middle {
+    width: 80%;
+    margin-bottom: 4vw;
+    @media (max-width: 700px) {
+        width: 100%;
+        
+      }
+  }
+
+  .row {
+    .row-img {
+      @media (max-width: 700px) {
+        width: 100%;
+        margin-bottom: 4vw;
+      }
+    }
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
+  }
 `;
 
 export default Serie7;
