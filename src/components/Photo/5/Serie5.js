@@ -13,11 +13,43 @@ const Serie5 = () => {
   const { selectedImage, openOverlay, closeOverlay } = useImageContext();
   return (
     <Container>
-      <img onClick={() => openOverlay(s5_1)} className="full" alt="serie1" src={s5_1} />
-      <img onClick={() => openOverlay(s5_2)} className="full" alt="serie1" src={s5_2} />
-      <img onClick={() => openOverlay(s5_3)} className="full" alt="serie1" src={s5_3} />
-      <img onClick={() => openOverlay(s5_4)} className="full" alt="serie1" src={s5_4} />
-      <img onClick={() => openOverlay(s5_5)} className="full" alt="serie1" src={s5_5} />
+      <div className="row">
+        <img
+          onClick={() => openOverlay(s5_1)}
+          className="row-img"
+          alt="serie1"
+          src={s5_1}
+        />
+        <img
+          onClick={() => openOverlay(s5_2)}
+          className="row-img"
+          alt="serie1"
+          src={s5_2}
+        />
+      </div>
+      <div className="row">
+        <img
+          onClick={() => openOverlay(s5_3)}
+          className="row-img"
+          alt="serie1"
+          src={s5_3}
+        />
+        <img
+          onClick={() => openOverlay(s5_4)}
+          className="row-img"
+          alt="serie1"
+          src={s5_4}
+        />
+      </div>
+      <div className="row last">
+        <img
+          onClick={() => openOverlay(s5_5)}
+          className="row-img"
+          alt="serie1"
+          src={s5_5}
+        />
+      </div>
+
       <BackTop />
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
     </Container>
@@ -29,6 +61,21 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .row {
+    .row-img {
+      @media (max-width: 700px) {
+        width: 100%;
+        margin-bottom: 4vw;
+      }
+    }
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
+  }
+  .last{
+    justify-content: center;
+  }
 `;
 
 export default Serie5;
