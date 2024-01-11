@@ -21,20 +21,19 @@ const Header = () => {
                 }}>Alexandra Nicolov</h1>
       <div>
         {open ? <p className="icon">-</p>: <p className="icon">+</p>}
-        <button onClick={() => setOpen(!open)}>Photo</button>
+        <button className="main-b" onClick={() => setOpen(!open)}>Photo</button>
         <AnimatePresence>
           {open && (
             <motion.div
               className="extra"
-              initial={{  y: -20 }}
-              animate={{  y: 0 }}
-              transition={{ duration: 0.2 }}
             >
               <motion.button
+              key={'film'}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3, delay:0.1 }}
+              whileHover={{x:10}}
+              transition={{ duration: 0.4, delay:0.1 }}
                 onClick={() => {
                   setOpen(false);
                   handleNavigate("/photo");
@@ -43,10 +42,12 @@ const Header = () => {
                 Photographie sur pellicule
               </motion.button>
               <motion.button
+              key={'corpo'}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
+              whileHover={{x:10}}
               exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.3, delay:0.2 }}
+              transition={{ duration: 0.4, delay:0.2 }}
                 onClick={() => {
                   setOpen(false);
                   handleNavigate("/entreprise");
@@ -59,7 +60,7 @@ const Header = () => {
         </AnimatePresence>
       </div>
 
-      <button onClick={() => {
+      <button className="main-b" onClick={() => {
                   setOpen(false);
                   handleNavigate("/film");
                 }}>Film</button>
@@ -83,7 +84,7 @@ const Container = styled.div`
   button {
     all: unset;
     margin: 0 60px;
-    transition: 500ms;
+    
     white-space: nowrap;
     margin: 2px 60px;
   }
@@ -105,6 +106,13 @@ const Container = styled.div`
     position: absolute;
     right: 40px;
     bottom: 1px;
+  }
+
+  .main-b{
+    transition: 500ms;
+    &:hover{
+      transform: translateX(10%);
+    }
   }
 `;
 

@@ -5,7 +5,7 @@ import s3_3 from "./img/s3-3.jpg";
 import s3_4 from "./img/s3-4.jpg";
 import s3_5 from "./img/s3-5.jpg";
 import s3_6 from "./img/s3-6.jpg";
-import s3_7 from "./img/s3-7.jpg";
+
 import styled from 'styled-components';
 
 const Serie3 = () => {
@@ -17,7 +17,7 @@ const Serie3 = () => {
       <img alt="serie1" src={s3_4} />
       <img alt="serie1" src={s3_5} />
       <img alt="serie1" src={s3_6} />
-      <img alt="serie1" src={s3_7} />
+      
 
     </Container>
   )
