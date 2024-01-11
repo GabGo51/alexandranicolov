@@ -74,5 +74,36 @@ export default createGlobalStyle`
 
   }
 
+  .layer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    img {
+      width: 100%;
+      margin-bottom: 4vw;
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 4vw;
+
+    .row-img {
+      width: 47.5%;
+    }
+  }
+
+  .full {
+    width: 100%;
+    margin-bottom: 4vw;
+  }
+
   
 `;

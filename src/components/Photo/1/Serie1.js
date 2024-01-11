@@ -68,7 +68,7 @@ const Serie1 = () => {
           <img onClick={() => openOverlay(s1_15)} alt="serie1" src={s1_15} />
         </div>
       </div>
-      <BackTop/>
+      <BackTop />
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
     </Container>
   );
@@ -76,26 +76,10 @@ const Serie1 = () => {
 
 const Container = styled.div`
   width: 90%;
-
-  .layer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    img {
-      width: 100%;
-      margin-bottom: 4vw;
-    }
-  }
-
-  .column {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .full {
-    width: 100%;
-    margin-bottom: 4vw;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   .first {
     width: 40%;
