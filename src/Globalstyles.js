@@ -68,7 +68,7 @@ export default createGlobalStyle`
 
   .back-top{
     all: unset;
-    font-size: 24px;
+    font-size: clamp(16px, 3vw, 24px);
     font-weight: 500;
     margin-top: 50px;
 
@@ -102,6 +102,7 @@ export default createGlobalStyle`
 
   .full {
     width: 100%;
+    
     margin-bottom: 4vw;
   }
 
