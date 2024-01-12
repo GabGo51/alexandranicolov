@@ -15,25 +15,38 @@ const Header = () => {
   };
   return (
     <Container>
-      <h1 onClick={() => {
-                  setOpen(false);
-                  handleNavigate("/");
-                }}>Alexandra Nicolov</h1>
-      <div>
-        {open ? <p className="icon">-</p>: <p className="icon">+</p>}
-        <button className="main-b" onClick={() => setOpen(!open)}>Photo</button>
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        onClick={() => {
+          setOpen(false);
+          handleNavigate("/");
+        }}
+      >
+        Alexandra Nicolov
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay:0.2 }}
+        viewport={{ once: true }}
+      >
+        {open ? <p className="icon">-</p> : <p className="icon">+</p>}
+        <button className="main-b" onClick={() => setOpen(!open)}>
+          Photo
+        </button>
         <AnimatePresence>
           {open && (
-            <motion.div
-              className="extra"
-            >
+            <motion.div className="extra">
               <motion.button
-              key={'film'}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              whileHover={{x:10}}
-              transition={{ duration: 0.4, delay:0.1 }}
+                key={"film"}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                whileHover={{ x: 10 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
                 onClick={() => {
                   setOpen(false);
                   handleNavigate("/photo");
@@ -42,12 +55,12 @@ const Header = () => {
                 Photographie sur pellicule
               </motion.button>
               <motion.button
-              key={'corpo'}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              whileHover={{x:10}}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, delay:0.2 }}
+                key={"corpo"}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                whileHover={{ x: 10 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
                 onClick={() => {
                   setOpen(false);
                   handleNavigate("/entreprise");
@@ -58,12 +71,21 @@ const Header = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
 
-      <button className="main-b" onClick={() => {
-                  setOpen(false);
-                  handleNavigate("/film");
-                }}>Film</button>
+      <motion.button
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay:0.3 }}
+        viewport={{ once: true }}
+        className="main-b"
+        onClick={() => {
+          setOpen(false);
+          handleNavigate("/film");
+        }}
+      >
+        Film
+      </motion.button>
     </Container>
   );
 };
@@ -84,7 +106,7 @@ const Container = styled.div`
   button {
     all: unset;
     margin: 0 60px;
-    
+
     white-space: nowrap;
     margin: 2px 60px;
   }
@@ -93,8 +115,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    p{
-      
+    p {
     }
   }
   .extra {
@@ -102,15 +123,15 @@ const Container = styled.div`
     bottom: -50px;
   }
 
-  .icon{
+  .icon {
     position: absolute;
     right: 40px;
     bottom: 1px;
   }
 
-  .main-b{
+  .main-b {
     transition: 500ms;
-    &:hover{
+    &:hover {
       transform: translateX(10%);
     }
   }

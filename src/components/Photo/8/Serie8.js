@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import BackTop from "../../BackTop";
+import ImageOverlay from "../../Overlay";
+import { useImageContext } from "../../../context/PhotoContext";
 import s8_1 from "./img/s8-1.jpg";
 import s8_2 from "./img/s8-2.jpg";
 import s8_3 from "./img/s8-3.jpg";
@@ -7,28 +10,59 @@ import s8_4 from "./img/s8-4.jpg";
 import s8_5 from "./img/s8-5.jpg";
 import s8_6 from "./img/s8-6.jpg";
 
-const serie8 = () => {
+const Serie8 = () => {
+  const { selectedImage, openOverlay, closeOverlay } = useImageContext();
   return (
     <Container>
       <div className="row">
-        <img className="row-img" alt="serie1" src={s8_1} />
-        <img className="row-img" alt="serie1" src={s8_2} />
+        <img
+          onClick={() => openOverlay(s8_1)}
+          className="row-img"
+          alt="serie1"
+          src={s8_1}
+        />
+        <img
+          onClick={() => openOverlay(s8_2)}
+          className="row-img"
+          alt="serie1"
+          src={s8_2}
+        />
       </div>
 
-      <img className="middle" alt="serie1" src={s8_3} />
-      <img className="middle" alt="serie1" src={s8_4} />
-      <img className="middle" alt="serie1" src={s8_5} />
+      <img
+        onClick={() => openOverlay(s8_3)}
+        className="middle"
+        alt="serie1"
+        src={s8_3}
+      />
+      <img
+        onClick={() => openOverlay(s8_4)}
+        className="middle"
+        alt="serie1"
+        src={s8_4}
+      />
+      <img
+        onClick={() => openOverlay(s8_5)}
+        className="middle"
+        alt="serie1"
+        src={s8_5}
+      />
 
       <div className="row last">
-        <img className="row-img" alt="serie1" src={s8_6} />
+        <img
+          onClick={() => openOverlay(s8_6)}
+          className="row-img"
+          alt="serie1"
+          src={s8_6}
+        />
       </div>
+      <BackTop />
+      {selectedImage && <ImageOverlay onClose={closeOverlay} />}
     </Container>
   );
 };
 
 const Container = styled.div`
-  width: 90%;
-
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -57,8 +91,7 @@ const Container = styled.div`
 
   .last {
     justify-content: center;
-    
   }
 `;
 
-export default serie8;
+export default Serie8;
