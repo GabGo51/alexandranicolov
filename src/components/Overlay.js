@@ -46,7 +46,8 @@ justify-content: center;
   object-fit: cover;
 
   @media (max-width:1000px){
-    height: ${(props) => (props.size ? '550px' : '250px')};
+    
+    height: ${(props) => (props.size ? '500px' : '250px')};
   }
 }
 
