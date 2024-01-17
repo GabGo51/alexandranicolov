@@ -92,7 +92,7 @@ const Container = styled.div`
   justify-content: center;
   
   img {
-    height: 700px;
+    height: 600px;
     width: 100%;
     margin-bottom: 10px;
     object-fit: cover;
@@ -100,7 +100,7 @@ const Container = styled.div`
       height: 500px;
     }
     @media (max-width: 600px) {
-      height: 250px;
+      height: 200px;
     }
   }
   p {

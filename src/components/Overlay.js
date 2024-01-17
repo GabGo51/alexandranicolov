@@ -2,18 +2,18 @@ import React from 'react';
 import { useImageContext } from '../context/PhotoContext'; // Update the path if needed
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
+import close from './img/close.png'
 
 const ImageOverlay = () => {
-  const { selectedImage, closeOverlay } = useImageContext();
+  const { selectedImage, closeOverlay, size} = useImageContext();
 
   return (
     selectedImage && (
-      <Container>
+      <Container size={size}>
         <motion.div initial={{y:20}} animate={{y:0}}>
           <img className='image-over' src={selectedImage} alt="Full Screen" />
         </motion.div>
-        <button className='close' onClick={closeOverlay}>X</button>
+        <img src={close} alt='close' className='close' onClick={closeOverlay}/>
         
       </Container>
     )
@@ -46,16 +46,19 @@ justify-content: center;
   object-fit: cover;
 
   @media (max-width:1000px){
-    height: 250px;
+    height: ${(props) => (props.size ? '550px' : '250px')};
   }
 }
 
 .close{
   position: absolute;
-  color: white;
+  width: 40px;
+  height: 40px ;
   font-size: 40px;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
+  
+  
 }
 `
 

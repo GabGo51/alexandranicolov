@@ -10,7 +10,7 @@ import s7_4 from "./img/s7-4.jpg";
 import s7_5 from "./img/s7-5.jpg";
 
 const Serie7 = () => {
-  const { selectedImage, openOverlay, closeOverlay } = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay, setSize} = useImageContext();
   return (
     <Container>
       <img
@@ -21,13 +21,13 @@ const Serie7 = () => {
       />
       <div className="row">
         <img
-          onClick={() => openOverlay(s7_2)}
+          onClick={() => {openOverlay(s7_2);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s7_2}
         />
         <img
-          onClick={() => openOverlay(s7_3)}
+          onClick={() => {openOverlay(s7_3);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s7_3}
@@ -36,13 +36,13 @@ const Serie7 = () => {
       <div className="row"></div>
       <div className="row">
         <img
-          onClick={() => openOverlay(s7_4)}
+          onClick={() => {openOverlay(s7_4);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s7_4}
         />
         <img
-          onClick={() => openOverlay(s7_5)}
+          onClick={() => {openOverlay(s7_5);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s7_5}

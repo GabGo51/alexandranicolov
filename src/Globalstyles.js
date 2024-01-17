@@ -64,6 +64,7 @@ export default createGlobalStyle`
 
   img{
     object-fit: cover;
+    
   }
 
   .back-top{
@@ -80,6 +81,7 @@ export default createGlobalStyle`
     justify-content: space-between;
     img {
       width: 100%;
+      
       margin-bottom: 4vw;
     }
   }

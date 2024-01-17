@@ -12,7 +12,7 @@ import ImageOverlay from "../../Overlay";
 import { useImageContext } from "../../../context/PhotoContext";
 
 const Serie2 = () => {
-  const { selectedImage, openOverlay, closeOverlay } = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay} = useImageContext();
   return (
     <Container>
       <img

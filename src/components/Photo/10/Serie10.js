@@ -11,14 +11,14 @@ import s10_5 from "./img/s10-5.jpg";
 import s10_6 from "./img/s10-6.jpg";
 
 const Serie10 = () => {
-  const { selectedImage, openOverlay, closeOverlay } = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay, setSize } = useImageContext();
   return (
     <Container>
       <img onClick={() => openOverlay(s10_1)} className="full" alt="serie1" src={s10_1} />
       <img onClick={() => openOverlay(s10_2)} className="full" alt="serie1" src={s10_2} />
-      <img onClick={() => openOverlay(s10_3)} className="tall" alt="serie1" src={s10_3} />
+      <img onClick={() => {openOverlay(s10_3);setSize(true)}} className="tall" alt="serie1" src={s10_3} />
       <img onClick={() => openOverlay(s10_4)} className="full" alt="serie1" src={s10_4} />
-      <img onClick={() => openOverlay(s10_5)} className="tall" alt="serie1" src={s10_5} />
+      <img onClick={() => {openOverlay(s10_5);setSize(true)}} className="tall" alt="serie1" src={s10_5} />
       <img onClick={() => openOverlay(s10_6)} className="full" alt="serie1" src={s10_6} />
 
       <BackTop />

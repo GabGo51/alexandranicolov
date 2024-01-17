@@ -8,6 +8,7 @@ export const useImageContext = () => {
 
 export const ImageProvider = ({ children }) => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [size, setSize] = useState(false);
 
   const openOverlay = (imageUrl) => {
     setSelectedImage(imageUrl);
@@ -15,10 +16,11 @@ export const ImageProvider = ({ children }) => {
 
   const closeOverlay = () => {
     setSelectedImage(null);
+    setSize(false)
   };
 
   return (
-    <ImageContext.Provider value={{ selectedImage, openOverlay, closeOverlay }}>
+    <ImageContext.Provider value={{ selectedImage, openOverlay, closeOverlay, size, setSize }}>
       {children}
     </ImageContext.Provider>
   );

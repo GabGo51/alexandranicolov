@@ -12,18 +12,18 @@ import ImageOverlay from "../../Overlay";
 import { useImageContext } from "../../../context/PhotoContext";
 
 const Serie3 = () => {
-  const { selectedImage, openOverlay, closeOverlay } = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay, setSize} = useImageContext();
   return (
     <Container>
       <div className="row">
         <img
-          onClick={() => openOverlay(s3_1)}
+          onClick={() => {openOverlay(s3_1);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s3_1}
         />
         <img
-          onClick={() => openOverlay(s3_2)}
+          onClick={() => {openOverlay(s3_2);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s3_2}
@@ -31,13 +31,13 @@ const Serie3 = () => {
       </div>
       <div className="row">
         <img
-          onClick={() => openOverlay(s3_3)}
+          onClick={() => {openOverlay(s3_3);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s3_3}
         />
         <img
-          onClick={() => openOverlay(s3_4)}
+          onClick={() => {openOverlay(s3_4);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s3_4}

@@ -10,18 +10,18 @@ import s5_4 from "./img/s5-4.jpg";
 import s5_5 from "./img/s5-5.jpg";
 
 const Serie5 = () => {
-  const { selectedImage, openOverlay, closeOverlay } = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay, setSize } = useImageContext();
   return (
     <Container>
       <div className="row">
         <img
-          onClick={() => openOverlay(s5_1)}
+          onClick={() => {openOverlay(s5_1);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s5_1}
         />
         <img
-          onClick={() => openOverlay(s5_2)}
+          onClick={() => {openOverlay(s5_2);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s5_2}
@@ -29,13 +29,13 @@ const Serie5 = () => {
       </div>
       <div className="row">
         <img
-          onClick={() => openOverlay(s5_3)}
+          onClick={() => {openOverlay(s5_3);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s5_3}
         />
         <img
-          onClick={() => openOverlay(s5_4)}
+          onClick={() => {openOverlay(s5_4);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s5_4}
@@ -43,7 +43,7 @@ const Serie5 = () => {
       </div>
       <div className="row last">
         <img
-          onClick={() => openOverlay(s5_5)}
+          onClick={() => {openOverlay(s5_5);setSize(true)}}
           className="row-img"
           alt="serie1"
           src={s5_5}
