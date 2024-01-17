@@ -48,13 +48,16 @@ const EntrepriseGallery = () => {
 }
 
 const Container = styled.div`
-width: 90%;
+width: 70%;
+  @media (max-width: 1200px) {
+      width: 90%;
+    }
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   img {
-    max-height: 800px;
+    
     width: 100%;
     margin-bottom: 10px;
     object-fit: cover;
@@ -97,6 +100,7 @@ width: 90%;
   }
   .p3 {
     width: 45%;
+    
     
 
     .image3{

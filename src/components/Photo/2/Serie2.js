@@ -70,7 +70,10 @@ const Serie2 = () => {
 };
 
 const Container = styled.div`
-  width: 90%;
+   width: 70%;
+  @media (max-width: 1200px) {
+      width: 90%;
+    }
   display: flex;
   flex-direction: column;
   align-items: center;

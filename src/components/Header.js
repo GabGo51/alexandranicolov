@@ -32,6 +32,7 @@ const Header = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay:0.2 }}
         viewport={{ once: true }}
+        className="photo-box"
       >
         {open ? <p className="icon">-</p> : <p className="icon">+</p>}
         <button className="main-b" onClick={() => setOpen(!open)}>
@@ -97,7 +98,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
+  font-size: clamp(14px, 3vw, 22px);
 
   h1 {
     font-size: clamp(18px, 3vw, 24px);
@@ -105,10 +107,10 @@ const Container = styled.div`
 
   button {
     all: unset;
-    margin: 0 60px;
-
+    
+    
     white-space: nowrap;
-    margin: 2px 60px;
+    margin: 2px 40px;
   }
 
   div {
@@ -120,12 +122,17 @@ const Container = styled.div`
   }
   .extra {
     position: absolute;
-    bottom: -50px;
+    bottom: -60px;
+  }
+
+  .photo-box{
+    position: relative;
+
   }
 
   .icon {
     position: absolute;
-    right: 40px;
+    right: 20px;
     bottom: 1px;
   }
 

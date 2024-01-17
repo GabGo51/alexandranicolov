@@ -43,7 +43,10 @@ const Serie4 = () => {
 }
 
 const Container = styled.div`
-width: 90%;
+ width: 70%;
+  @media (max-width: 1200px) {
+      width: 90%;
+    }
 `;
 
 export default Serie4

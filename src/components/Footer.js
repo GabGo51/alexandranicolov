@@ -54,8 +54,9 @@ const Container = styled.div`
   width: 90%;
 
   a {
-    margin-right: 50px;
+    margin-right: 2.5vw;
     margin-top: 50px;
+    font-size: clamp(14px, 3vw, 20px);
     @media (max-width: 1000px) {
       margin-right: 25px;
     }

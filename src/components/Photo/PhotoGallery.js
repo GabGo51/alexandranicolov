@@ -82,11 +82,15 @@ const Gallery = () => {
 };
 
 const Container = styled.div`
-  width: 90%;
+  width: 70%;
+  @media (max-width: 1200px) {
+      width: 90%;
+    }
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
   img {
     height: 700px;
     width: 100%;
