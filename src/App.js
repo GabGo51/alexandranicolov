@@ -25,6 +25,9 @@ import Corpo3 from "./components/Entreprise/3/Corpo3";
 import Corpo4 from "./components/Entreprise/4/Corpo4";
 import PhoneCorpo3 from "./components/Entreprise/3/PhoneCorpo3";
 import PhoneCorpo4 from "./components/Entreprise/4/PhoneCorpo4";
+import Contact from "./components/Contact";
+
+
 function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
 
@@ -68,6 +71,7 @@ function App() {
           <Route path="/corpo/2" element={<Corpo2 />} />
           <Route path="/corpo/3" element={<Corpo3Element />} />
           <Route path="/corpo/4" element={<Corpo4Element />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer/>
       </Container>

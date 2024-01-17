@@ -17,6 +17,7 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
+        onClick={()=> handleNavigate('/contact')}
       >
         Contact
       </motion.a>
