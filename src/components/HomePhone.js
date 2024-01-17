@@ -62,7 +62,7 @@ const Container = styled.div`
       margin: 0 40px;
 
       @media (max-width:700px){
-        height: 200px;
+        height: 300px;
       }
     }
   }

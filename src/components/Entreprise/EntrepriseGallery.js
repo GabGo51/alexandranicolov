@@ -51,6 +51,7 @@ const Container = styled.div`
 width: 70%;
   @media (max-width: 1200px) {
       width: 90%;
+      
     }
   display: flex;
   flex-direction: column;
@@ -77,7 +78,7 @@ width: 70%;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 80px;
+    
   }
 
   .two{
@@ -88,7 +89,7 @@ width: 70%;
     width: 50%;
   }
   .p2 {
-    width: 40%;
+    width: 45%;
    .image2{
     @media (max-width: 1200px) {
       height: 600px;
@@ -99,6 +100,7 @@ width: 70%;
    }
   }
   .p3 {
+    transform: translateY(-30%);
     width: 45%;
     
     
@@ -106,15 +108,20 @@ width: 70%;
     .image3{
     @media (max-width: 1200px) {
       height: 600px;
+      transform: translateY(40%);
     }
     @media (max-width: 600px) {
       height: 350px;
+      transform: translateY(10%);
     }
    }
   }
   .p4 {
-    width: 40%;
+    width: 45%;
     transform: translateY(20%);
+    @media (max-width: 600px) {
+      transform: translateY(-10%);
+    }
     
   }
 

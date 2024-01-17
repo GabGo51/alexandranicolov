@@ -23,6 +23,8 @@ import Corpo1 from "./components/Entreprise/1/Corpo1";
 import Corpo2 from "./components/Entreprise/2/Corpo2";
 import Corpo3 from "./components/Entreprise/3/Corpo3";
 import Corpo4 from "./components/Entreprise/4/Corpo4";
+import PhoneCorpo3 from "./components/Entreprise/3/PhoneCorpo3";
+import PhoneCorpo4 from "./components/Entreprise/4/PhoneCorpo4";
 function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
 
@@ -40,6 +42,8 @@ function App() {
   }, []);
 
   const HomeElement = isSmallScreen ? HomePhone : Home;
+  const Corpo3Element = isSmallScreen ? PhoneCorpo3 : Corpo3; 
+  const Corpo4Element = isSmallScreen ? PhoneCorpo4 : Corpo4;
   return (
     <Router>
       <Container className="App">
@@ -62,8 +66,8 @@ function App() {
           <Route path="/photo/10" element={<Serie10 />} />
           <Route path="/corpo/1" element={<Corpo1 />} />
           <Route path="/corpo/2" element={<Corpo2 />} />
-          <Route path="/corpo/3" element={<Corpo3 />} />
-          <Route path="/corpo/4" element={<Corpo4 />} />
+          <Route path="/corpo/3" element={<Corpo3Element />} />
+          <Route path="/corpo/4" element={<Corpo4Element />} />
         </Routes>
         <Footer/>
       </Container>

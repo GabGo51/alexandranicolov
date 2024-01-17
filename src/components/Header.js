@@ -103,6 +103,9 @@ const Container = styled.div`
 
   h1 {
     font-size: clamp(18px, 3vw, 24px);
+    @media (max-width: 700px) {
+      margin-right: -20px;
+    }
   }
 
   button {
