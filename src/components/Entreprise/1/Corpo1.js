@@ -9,17 +9,21 @@ import c1_3 from "./img/c1-3.jpg";
 import c1_4 from "./img/c1-4.jpg";
 import c1_5 from "./img/c1-5.jpg";
 
-
 const Corpo1 = () => {
   const { selectedImage, openOverlay, closeOverlay } = useImageContext();
   return (
     <Container>
-      <img onClick={() => openOverlay(c1_1)}  alt="corpo1" src={c1_1} />
-      <img onClick={() => openOverlay(c1_2)}  alt="corpo1" src={c1_2} />
-      <img onClick={() => openOverlay(c1_3)}  alt="corpo1" src={c1_3} />
-      <img onClick={() => openOverlay(c1_4)}  alt="corpo1" src={c1_4} />
-      <img onClick={() => openOverlay(c1_5)}  alt="corpo1" src={c1_5} />
-      
+      <div className="row">
+        <img className="img1" onClick={() => openOverlay(c1_1)} alt="corpo1" src={c1_1} />
+        <img className="img2" onClick={() => openOverlay(c1_2)} alt="corpo1" src={c1_2} />
+      </div>
+      <div className="row">
+        <img className="img3" onClick={() => openOverlay(c1_3)} alt="corpo1" src={c1_3} />
+        <img className="img4" onClick={() => openOverlay(c1_4)} alt="corpo1" src={c1_4} />
+      </div>
+      <div className="row">
+        <img className="img5" onClick={() => openOverlay(c1_5)} alt="corpo1" src={c1_5} />
+      </div>
 
       <BackTop />
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
@@ -29,8 +33,8 @@ const Corpo1 = () => {
 const Container = styled.div`
   width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-    }
+    width: 90%;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;

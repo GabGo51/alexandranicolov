@@ -17,38 +17,134 @@ import c2_11 from "./img/c2-11.jpg";
 import c2_12 from "./img/c2-12.jpg";
 
 const Corpo2 = () => {
-  const { selectedImage, openOverlay, closeOverlay } = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay, setSize } =
+    useImageContext();
   return (
     <Container>
-    <img onClick={() => openOverlay(c2_1)}  alt="corpo2" src={c2_1} />
-    <img onClick={() => openOverlay(c2_2)}  alt="corpo2" src={c2_2} />
-    <img onClick={() => openOverlay(c2_3)}  alt="corpo2" src={c2_3} />
-    <img onClick={() => openOverlay(c2_4)}  alt="corpo2" src={c2_4} />
-    <img onClick={() => openOverlay(c2_5)}  alt="corpo2" src={c2_5} />
-    <img onClick={() => openOverlay(c2_6)}  alt="corpo2" src={c2_6} />
-    <img onClick={() => openOverlay(c2_7)}  alt="corpo2" src={c2_7} />
-    <img onClick={() => openOverlay(c2_8)}  alt="corpo2" src={c2_8} />
-    <img onClick={() => openOverlay(c2_9)}  alt="corpo2" src={c2_9} />
-    <img onClick={() => openOverlay(c2_10)}  alt="corpo2" src={c2_10} />
-    <img onClick={() => openOverlay(c2_11)}  alt="corpo2" src={c2_11} />
-    <img onClick={() => openOverlay(c2_12)}  alt="corpo2" src={c2_12} />
-    
+      <div className="row">
+        <img
+          onClick={() => {
+            openOverlay(c2_1);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_1}
+        />
+        <img
+          onClick={() => {
+            openOverlay(c2_2);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_2}
+        />
+        <img
+          onClick={() => {
+            openOverlay(c2_3);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_3}
+        />
+        <img
+          onClick={() => {
+            openOverlay(c2_4);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_4}
+        />
+      </div>
+      <div className="row ">
+        <img
+          className="flower"
+          onClick={() => openOverlay(c2_5)}
+          alt="corpo2"
+          src={c2_5}
+        />
+        <img
+          className="flower"
+          onClick={() => openOverlay(c2_6)}
+          alt="corpo2"
+          src={c2_6}
+        />
+        <img
+          className="flower"
+          onClick={() => {
+            openOverlay(c2_7);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_7}
+        />
+        <img
+          className="flower"
+          onClick={() => openOverlay(c2_8)}
+          alt="corpo2"
+          src={c2_8}
+        />
+      </div>
+      <div className="row">
+        <img
+          onClick={() => {
+            openOverlay(c2_9);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_9}
+        />
+        <img
+          onClick={() => {
+            openOverlay(c2_10);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_10}
+        />
+        <img
+          onClick={() => {
+            openOverlay(c2_11);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_11}
+        />
+        <img
+          onClick={() => {
+            openOverlay(c2_12);
+            setSize(true);
+          }}
+          alt="corpo2"
+          src={c2_12}
+        />
+      </div>
 
-    <BackTop />
-    {selectedImage && <ImageOverlay onClose={closeOverlay} />}
-  </Container>
-  )
-}
+      <BackTop />
+      {selectedImage && <ImageOverlay onClose={closeOverlay} />}
+    </Container>
+  );
+};
 
 const Container = styled.div`
-   width: 70%;
+  width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-    }
+    width: 90%;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  img {
+    width: 23%;
+  }
+  .row {
+    margin-bottom: 1.5vw;
+  }
+
+  .flower {
+    width: 22%;
+  }
 `;
 
-export default Corpo2
+export default Corpo2;
