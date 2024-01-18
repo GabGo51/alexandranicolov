@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { motion, useAnimation } from "framer-motion";
+
 
 import ImageOverlay from "./Overlay";
 import { useImageContext } from "../context/PhotoContext";
@@ -48,6 +48,9 @@ const Home = () => {
 
 const Container = styled.div`
   width: 90%;
+  &:hover {
+    overflow-x: auto;
+  }
   .frame {
     max-width: 100%;
     display: grid;
@@ -57,7 +60,7 @@ const Container = styled.div`
   }
 
   img {
-    height: 60vh;
+    height:50vh;
 
     @media (max-width: 700px) {
       height: 300px;
