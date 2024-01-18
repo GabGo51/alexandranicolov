@@ -44,7 +44,7 @@ function App() {
     };
   }, []);
 
-  const HomeElement = isSmallScreen ? HomePhone : Home;
+  
   const Corpo3Element = isSmallScreen ? PhoneCorpo3 : Corpo3; 
   const Corpo4Element = isSmallScreen ? PhoneCorpo4 : Corpo4;
   return (
@@ -53,7 +53,7 @@ function App() {
         <Cursor />
         <Header />
         <Routes>
-          <Route path="/" element={<HomeElement />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/photo" element={<PhotoGallery />} />
           <Route path="/entreprise" element={<EntrepriseGallery />} />
           <Route path="/film" element={<FilmGallery />} />
@@ -84,7 +84,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-x: auto; 
+   
   
   
 `;

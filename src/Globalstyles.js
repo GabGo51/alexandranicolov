@@ -4,7 +4,7 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
 
 
-  ::-webkit-scrollbar {display:none;} //hide scroll bar 
+  /* ::-webkit-scrollbar {display:none;} //hide scroll bar  */
 
   *,
   *:before,
