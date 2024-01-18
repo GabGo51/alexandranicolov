@@ -1,6 +1,6 @@
 import React from 'react'
-// import vid1 from './img/vid1.gif'
-// import vid2 from './img/vid2.gif'
+import vid1 from './img/vid1.gif'
+import vid2 from './img/vid2.gif'
 import styled from 'styled-components'
 
 
@@ -8,8 +8,8 @@ const FilmGallery = () => {
   return (
     <Container>
     
-    {/* <img src={vid1}/>
-    <img src={vid2}/> */}
+    <img src={vid1}/>
+    <img src={vid2}/>
     </Container>
     
   )

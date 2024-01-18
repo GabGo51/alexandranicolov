@@ -59,6 +59,10 @@ justify-content: center;
   font-size: 40px;
   top: 30px;
   right: 30px;
+  @media (max-width:1000px){
+    
+    right: 0px;
+  }
   
   
 }
