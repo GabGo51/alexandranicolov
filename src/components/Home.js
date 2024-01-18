@@ -48,9 +48,7 @@ const Home = () => {
 
 const Container = styled.div`
   width: 90%;
-  &:hover {
-    overflow-x: auto;
-  }
+  
   .frame {
     max-width: 100%;
     display: grid;
