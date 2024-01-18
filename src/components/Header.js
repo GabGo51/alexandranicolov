@@ -67,7 +67,7 @@ const Header = () => {
                   handleNavigate("/entreprise");
                 }}
               >
-                Contras Corpo
+                Contrats Corpo
               </motion.button>
             </motion.div>
           )}

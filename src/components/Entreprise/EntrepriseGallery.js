@@ -26,7 +26,7 @@ const EntrepriseGallery = () => {
 
         <div className="p2" onClick={() => handleNavigate("/corpo/2")}>
           <img alt="intro" className='image2' src={c2} />
-          <p>Fleurist Binette et filles</p>
+          <p>Fleuristes Binette et filles</p>
         </div>
       </div>
       <div className="row two">
