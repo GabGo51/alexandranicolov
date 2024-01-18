@@ -103,24 +103,24 @@ width: 70%;
     transform: translateY(-30%);
     width: 45%;
     
-    
-
-    .image3{
     @media (max-width: 1200px) {
       height: 600px;
-      transform: translateY(40%);
+      transform: translateY(10%);
     }
     @media (max-width: 600px) {
       height: 350px;
-      transform: translateY(10%);
+      transform: translateY(-20%);
     }
+
+    .image3{
+    
    }
   }
   .p4 {
     width: 45%;
     transform: translateY(20%);
     @media (max-width: 600px) {
-      transform: translateY(-10%);
+      transform: translateY(5%);
     }
     
   }
