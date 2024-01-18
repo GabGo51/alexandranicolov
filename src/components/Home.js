@@ -14,24 +14,14 @@ import home7 from "./img/home7.jpg";
 import home8 from "./img/home8.jpg";
 import home9 from "./img/home9.jpg";
 import home10 from "./img/home10.jpg";
-import LocomotiveScroll from "locomotive-scroll";
+
 import { useEffect } from "react";
 
 const Home = () => {
   const { selectedImage, openOverlay, closeOverlay, setSize } =
     useImageContext();
 
-    useEffect(() => {
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true, 
-        direction:'horizontal',
-      });
     
-      return () => {
-        scroll.destroy();
-      };
-    }, []); 
 
   return (
     <Container>
@@ -62,9 +52,7 @@ const Home = () => {
 
 const Container = styled.div`
   width: 90%;
-  &:hover {
-    overflow-x: auto;
-  }
+  
   .frame {
     max-width: 110%;
     display: grid;
