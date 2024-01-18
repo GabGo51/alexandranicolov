@@ -14,19 +14,33 @@ import home7 from "./img/home7.jpg";
 import home8 from "./img/home8.jpg";
 import home9 from "./img/home9.jpg";
 import home10 from "./img/home10.jpg";
+import LocomotiveScroll from "locomotive-scroll";
+import { useEffect } from "react";
 
 const Home = () => {
   const { selectedImage, openOverlay, closeOverlay, setSize } =
     useImageContext();
 
+    useEffect(() => {
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true, 
+        direction:'horizontal',
+      });
+    
+      return () => {
+        scroll.destroy();
+      };
+    }, []); 
+
   return (
     <Container>
-      <div className="frame">
-        <img onClick={() => openOverlay(home1)} src={home1} alt="Cloud" />
-        <img onClick={() => openOverlay(home2)} src={home2} alt="Cloud" />
-        <img onClick={() => openOverlay(home3)} src={home3} alt="Cloud" />
-        <img onClick={() => openOverlay(home4)} src={home4} alt="Cloud" />
-        <img
+      <div data-scroll-container className="frame">
+        <img data-scroll-section onClick={() => openOverlay(home1)} src={home1} alt="Cloud" />
+        <img data-scroll-section onClick={() => openOverlay(home2)} src={home2} alt="Cloud" />
+        <img data-scroll-section onClick={() => openOverlay(home3)} src={home3} alt="Cloud" />
+        <img data-scroll-section onClick={() => openOverlay(home4)} src={home4} alt="Cloud" />
+        <img data-scroll-section
           onClick={() => {
             openOverlay(home5);
             setSize(true);
@@ -34,11 +48,11 @@ const Home = () => {
           src={home5}
           alt="Cloud"
         />
-        <img onClick={() => openOverlay(home6)} src={home6} alt="Cloud" />
-        <img onClick={() => openOverlay(home7)} src={home7} alt="Cloud" />
-        <img onClick={() => openOverlay(home8)} src={home8} alt="Cloud" />
-        <img onClick={() => openOverlay(home9)} src={home9} alt="Cloud" />
-        <img onClick={() => openOverlay(home10)} src={home10} alt="Cloud" />
+        <img data-scroll-section onClick={() => openOverlay(home6)} src={home6} alt="Cloud" />
+        <img data-scroll-section onClick={() => openOverlay(home7)} src={home7} alt="Cloud" />
+        <img data-scroll-section onClick={() => openOverlay(home8)} src={home8} alt="Cloud" />
+        <img data-scroll-section onClick={() => openOverlay(home9)} src={home9} alt="Cloud" />
+        <img data-scroll-section onClick={() => openOverlay(home10)} src={home10} alt="Cloud" />
       </div>
 
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
@@ -48,18 +62,21 @@ const Home = () => {
 
 const Container = styled.div`
   width: 90%;
-  
+  &:hover {
+    overflow-x: auto;
+  }
   .frame {
-    max-width: 100%;
+    max-width: 110%;
     display: grid;
     grid-auto-flow: column;
-    gap: 1rem;
+    
     overflow-x: scroll;
+    scroll-behavior: smooth;
   }
 
   img {
     height:50vh;
-
+    margin-right: 30px;
     @media (max-width: 700px) {
       height: 300px;
     }
