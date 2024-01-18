@@ -76,6 +76,7 @@ const Home = () => {
 
 const Container = styled.div`
   width: 100vw;
+  height: 50vh;
   overflow: hidden;
   display: flex;
   align-items: center;

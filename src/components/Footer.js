@@ -17,7 +17,7 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        onClick={()=> handleNavigate('/contact')}
+        onClick={() => handleNavigate("/contact")}
       >
         Contact
       </motion.a>
@@ -26,6 +26,8 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.1 }}
         viewport={{ once: true }}
+        target="#"
+        href="https://vimeo.com/user63054265"
       >
         Vimeo
       </motion.a>
@@ -34,6 +36,8 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
         viewport={{ once: true }}
+        target="#"
+        href="https://www.instagram.com/alex.nicolov/"
       >
         Instagram
       </motion.a>
@@ -42,6 +46,8 @@ const Footer = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
         viewport={{ once: true }}
+        target="#"
+        href="https://www.facebook.com/alex.nicolov.7/"
       >
         Facebook
       </motion.a>
@@ -55,6 +61,8 @@ const Container = styled.div`
   width: 90%;
 
   a {
+    color: black;
+    text-decoration: none;
     margin-right: 2.5vw;
     margin-top: 50px;
     font-size: clamp(14px, 3vw, 20px);

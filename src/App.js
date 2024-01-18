@@ -86,6 +86,7 @@ const Container = styled.div`
   align-items: center;
   overflow-x: auto; 
   
+  
 `;
 
 export default App;
