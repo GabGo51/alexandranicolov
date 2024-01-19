@@ -2,6 +2,7 @@ import React from "react";
 import vid1 from "./img/vid1.gif";
 import vid2 from "./img/vid2.gif";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const FilmGallery = () => {
   return (
@@ -9,7 +10,13 @@ const FilmGallery = () => {
       <div>
         <a href="https://vimeo.com/845609888" target="#">
           <img src={vid1} alt="Video 1" />
-          <p>Kayla et la Mer</p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Kayla et la Mer
+          </motion.p>
         </a>
       </div>
       <div>
@@ -18,7 +25,13 @@ const FilmGallery = () => {
           target="#"
         >
           <img src={vid2} alt="Video 2" />
-          <p>Wendake</p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Wendake
+          </motion.p>
         </a>
       </div>
     </Container>
