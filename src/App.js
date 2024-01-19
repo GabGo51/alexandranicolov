@@ -7,8 +7,6 @@ import EntrepriseGallery from "./components/Entreprise/EntrepriseGallery";
 import FilmGallery from "./components/Film/FilmGallery";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import HomePhone from "./components/HomePhone";
-import { useState, useEffect } from "react";
 import Serie1 from "./components/Photo/1/Serie1";
 import Serie2 from "./components/Photo/2/Serie2";
 import Serie3 from "./components/Photo/3/Serie3";
@@ -23,30 +21,13 @@ import Corpo1 from "./components/Entreprise/1/Corpo1";
 import Corpo2 from "./components/Entreprise/2/Corpo2";
 import Corpo3 from "./components/Entreprise/3/Corpo3";
 import Corpo4 from "./components/Entreprise/4/Corpo4";
-import PhoneCorpo3 from "./components/Entreprise/3/PhoneCorpo3";
-import PhoneCorpo4 from "./components/Entreprise/4/PhoneCorpo4";
 import Contact from "./components/Contact";
 
 
 function App() {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1000);
-
-  useEffect(() => {
-    // Update isSmallScreen state when window is resized
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 1000);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   
-  const Corpo3Element = isSmallScreen ? PhoneCorpo3 : Corpo3; 
-  const Corpo4Element = isSmallScreen ? PhoneCorpo4 : Corpo4;
+  
+  
   return (
     <Router>
       <Container className="App">
@@ -69,8 +50,8 @@ function App() {
           <Route path="/photo/10" element={<Serie10 />} />
           <Route path="/corpo/1" element={<Corpo1 />} />
           <Route path="/corpo/2" element={<Corpo2 />} />
-          <Route path="/corpo/3" element={<Corpo3Element />} />
-          <Route path="/corpo/4" element={<Corpo4Element />} />
+          <Route path="/corpo/3" element={<Corpo3 />} />
+          <Route path="/corpo/4" element={<Corpo4 />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer/>
