@@ -100,6 +100,7 @@ const Container = styled.div`
   justify-content: flex-start;
   margin-bottom: 70px;
   font-size: clamp(14px, 3vw, 22px);
+  font-family: NeueMedium;
 
   h1 {
     font-size: clamp(18px, 3vw, 24px);

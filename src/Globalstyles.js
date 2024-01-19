@@ -1,7 +1,26 @@
 import { createGlobalStyle } from "styled-components";
-
-
+import NeueBold from './components/font/NeueBold.otf'
+import NeueLight from './components/font/NeueLight.otf'
+import NeueMedium from './components/font/NeueMedium.otf'
+import NeueItalic from './components/font/NeueItalic.otf'
 export default createGlobalStyle`
+
+  @font-face {
+    font-family: "NeueBold";
+    src: url(${NeueBold}) format('opentype')
+  }
+  @font-face {
+    font-family: "NeueLight";
+    src: url(${NeueLight}) format('opentype')
+  }
+  @font-face {
+    font-family: "NeueMedium";
+    src: url(${NeueMedium}) format('opentype')
+  }
+  @font-face {
+    font-family: "NeueItalic";
+    src: url(${NeueItalic}) format('opentype')
+  }
 
 
   /* ::-webkit-scrollbar {display:none;} //hide scroll bar  */
@@ -23,6 +42,7 @@ export default createGlobalStyle`
     overflow-y: scroll;
     box-sizing: content-box; 
     background-color: white;
+    font-family: NeueLight;
   }
   
   html, body, div, span, applet, object, iframe,
@@ -42,7 +62,6 @@ export default createGlobalStyle`
     padding: 0;
     border: 0;
     vertical-align: baseline;
-    font-family: Inter;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
