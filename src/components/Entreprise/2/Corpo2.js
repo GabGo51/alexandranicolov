@@ -142,9 +142,7 @@ const Container = styled.div`
     margin-bottom: 1.5vw;
   }
 
-  .flower {
-    width: 22%;
-  }
+  
 `;
 
 export default Corpo2;

@@ -67,7 +67,7 @@ const Header = () => {
                   handleNavigate("/entreprise");
                 }}
               >
-                Contrats Corpo
+                Photographie corporative
               </motion.button>
             </motion.div>
           )}

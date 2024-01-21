@@ -92,12 +92,12 @@ const Container = styled.div`
   justify-content: center;
   
   img {
-    height: 600px;
+    height: 500px;
     width: 100%;
     margin-bottom: 10px;
     object-fit: cover;
     @media (max-width: 1200px) {
-      height: 500px;
+      height: 350px;
     }
     @media (max-width: 600px) {
       height: 200px;

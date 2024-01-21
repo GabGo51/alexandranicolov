@@ -41,6 +41,7 @@ const FilmGallery = () => {
 const Container = styled.div`
   width: 90%;
   text-align: center;
+  
 
   div {
     position: relative;
@@ -50,6 +51,7 @@ const Container = styled.div`
   img {
     width: 100%;
     display: block;
+    
   }
 
   p {

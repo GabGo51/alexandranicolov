@@ -100,8 +100,8 @@ width: 70%;
    }
   }
   .p3 {
-    transform: translateY(-30%);
-    width: 45%;
+    transform: translateY(-25%);
+    width: 50%;
     
     @media (max-width: 1200px) {
       height: 600px;
@@ -118,7 +118,7 @@ width: 70%;
   }
   .p4 {
     width: 45%;
-    transform: translateY(20%);
+    transform: translateY(10%);
     @media (max-width: 600px) {
       transform: translateY(5%);
     }
