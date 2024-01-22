@@ -54,7 +54,7 @@ const FairyDust = () => {
     };
 
     const addParticle = (x, y, color) => {
-      const probability = 0.3; // 50% probability
+      const probability = 0.35; 
 
   if (Math.random() < probability) {
     const particle = new Particle();
@@ -126,7 +126,7 @@ const FairyDust = () => {
 
         const windowWidth = window.innerWidth;
         const xOffsetPercentage = -48; // Adjust this percentage based on your preference
-        const xOffset = (windowWidth * xOffsetPercentage) / 100;
+        const xOffset = (windowWidth * xOffsetPercentage) / 98.7;
     
         this.element.style.transform = `translate3d(${this.position.x + xOffset}px, ${this.position.y+15}px, 0) scale(${this.lifeSpan / 120})`;
       }
