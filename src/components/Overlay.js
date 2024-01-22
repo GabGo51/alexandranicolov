@@ -57,11 +57,13 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
   .image-over {
     height: 90vh;
     width: auto;
     object-fit: cover;
+    margin: 0;
 
     @media (max-width: 1000px) {
       height: ${(props) => (props.size ? "500px" : "250px")};
@@ -70,13 +72,14 @@ const Container = styled.div`
 
   .close {
     position: absolute;
+    margin: 0;
     width: 40px;
     height: 40px;
     font-size: 40px;
     top: 30px;
-    right: 30px;
+    right: 40px;
     @media (max-width: 1000px) {
-      right: 0px;
+      right: 20px;
     }
   }
 `;
