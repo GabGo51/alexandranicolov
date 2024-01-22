@@ -126,7 +126,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
   font-size: clamp(14px, 3vw, 22px);
   font-family: NeueMedium;
 
