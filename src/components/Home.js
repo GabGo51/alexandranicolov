@@ -33,15 +33,15 @@ const Home = () => {
         <img
           onMouseEnter={hover}
           onMouseLeave={normal}
-          onClick={() => openOverlay(home2)}
-          src={home2}
+          onClick={() => openOverlay(home3)}
+          src={home3}
           alt="Cloud"
         />
         <img
           onMouseEnter={hover}
           onMouseLeave={normal}
-          onClick={() => openOverlay(home3)}
-          src={home3}
+          onClick={() => openOverlay(home2)}
+          src={home2}
           alt="Cloud"
         />
         <img
