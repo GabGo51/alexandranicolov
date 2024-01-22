@@ -132,6 +132,7 @@ const Container = styled.div`
 
   nav {
     display: flex;
+    align-items: center;
   }
 
   img {
