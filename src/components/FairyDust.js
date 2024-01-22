@@ -99,7 +99,7 @@ const FairyDust = () => {
           zIndex: "10000000",
           fontSize: "16px",
           willChange: "transform",
-          transform:'translateX(100%)'
+          
         };
       }
 
@@ -111,10 +111,13 @@ const FairyDust = () => {
 
         this.position = { x: x - 10, y: y - 20 };
         this.initialStyles.color = color;
-
+        this.size = Math.floor(Math.random() * (25 - 10 + 1)) + 10;
         this.element = document.createElement("span");
         this.element.innerHTML = this.character;
-        applyProperties(this.element, this.initialStyles);
+        applyProperties(this.element, {
+          ...this.initialStyles,
+          fontSize: `${this.size}px`, // Set the font size based on the randomized size
+        });
         this.update();
 
         document.querySelector(".container").appendChild(this.element);

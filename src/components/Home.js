@@ -59,7 +59,7 @@ const Container = styled.div`
   }
 
   img {
-    height: 50vh;
+    height: 60vh;
     margin-right: 30px;
     @media (max-width: 700px) {
       height: 300px;

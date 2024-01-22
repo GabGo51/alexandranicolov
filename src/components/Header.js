@@ -113,6 +113,7 @@ const Container = styled.div`
   font-family: NeueMedium;
 
   img {
+    transition: 500ms;
     width: 70px;
     position: absolute;
     filter: invert(${(props) => (props.isFilm ? "1" : "0")});
