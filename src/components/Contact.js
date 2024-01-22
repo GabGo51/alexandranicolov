@@ -13,7 +13,7 @@ const Contact = () => {
 };
 
 const Container = styled.div`
-  height: 50vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;

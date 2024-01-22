@@ -41,7 +41,7 @@ export default createGlobalStyle`
     overflow: hidden;
     overflow-y: scroll;
     box-sizing: content-box; 
-    background-color: white;
+    background-color: #ededed;
     font-family: NeueLight;
     transition: 1s;
     
@@ -49,7 +49,7 @@ export default createGlobalStyle`
 
   body[data-theme="dark"] {
     transition: 1s;
-    background-color: #242424;
+    background-color: #000000;
     color: white;
 
     // Add any other dark theme styles you need

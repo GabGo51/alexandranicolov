@@ -106,7 +106,11 @@ const Container = styled.div`
     }
   }
   .top {
-    margin-bottom: 300px;
+    margin-bottom: 200px;
+
+    @media (max-width: 1000px) {
+    margin-bottom: 100px;
+  }
   }
 `;
 
