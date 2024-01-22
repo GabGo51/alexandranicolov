@@ -140,12 +140,21 @@ const Container = styled.div`
     width: 80px;
 
     filter: invert(${(props) => (props.isFilm ? "1" : "0")});
+    &:hover {
+      filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
+    }
   }
 
   h1 {
+    transition: 500ms;
     font-size: clamp(14px, 3vw, 24px);
+    
     @media (max-width: 700px) {
       margin-right: -20px;
+    }
+
+    &:hover{
+      color:#ff8fab ;
     }
   }
 
