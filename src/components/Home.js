@@ -12,21 +12,48 @@ import home7 from "./img/home7.jpg";
 import home8 from "./img/home8.jpg";
 import home9 from "./img/home9.jpg";
 import home10 from "./img/home10.jpg";
-
-
+import { useContext } from "react";
+import { MouseContext } from "../context/mouseContext";
 
 const Home = () => {
+  const { hover, normal } = useContext(MouseContext);
   const { selectedImage, openOverlay, closeOverlay, setSize } =
     useImageContext();
 
   return (
     <Container>
       <div className="frame">
-        <img onClick={() => openOverlay(home1)} src={home1} alt="Cloud" />
-        <img onClick={() => openOverlay(home2)} src={home2} alt="Cloud" />
-        <img onClick={() => openOverlay(home3)} src={home3} alt="Cloud" />
-        <img onClick={() => openOverlay(home4)} src={home4} alt="Cloud" />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home1)}
+          src={home1}
+          alt="Cloud"
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home2)}
+          src={home2}
+          alt="Cloud"
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home3)}
+          src={home3}
+          alt="Cloud"
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home4)}
+          src={home4}
+          alt="Cloud"
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(home5);
             setSize(true);
@@ -34,11 +61,41 @@ const Home = () => {
           src={home5}
           alt="Cloud"
         />
-        <img onClick={() => openOverlay(home6)} src={home6} alt="Cloud" />
-        <img onClick={() => openOverlay(home7)} src={home7} alt="Cloud" />
-        <img onClick={() => openOverlay(home8)} src={home8} alt="Cloud" />
-        <img onClick={() => openOverlay(home9)} src={home9} alt="Cloud" />
-        <img onClick={() => openOverlay(home10)} src={home10} alt="Cloud" />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home6)}
+          src={home6}
+          alt="Cloud"
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home7)}
+          src={home7}
+          alt="Cloud"
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home8)}
+          src={home8}
+          alt="Cloud"
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home9)}
+          src={home9}
+          alt="Cloud"
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => openOverlay(home10)}
+          src={home10}
+          alt="Cloud"
+        />
       </div>
 
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}

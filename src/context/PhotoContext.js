@@ -9,7 +9,6 @@ export const useImageContext = () => {
 export const ImageProvider = ({ children }) => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [size, setSize] = useState(false);
-  const [film, setFilm] = useState(false)
 
   const openOverlay = (imageUrl) => {
     setSelectedImage(imageUrl);

@@ -10,12 +10,17 @@ import styled from "styled-components";
 import BackTop from "../../BackTop";
 import ImageOverlay from "../../Overlay";
 import { useImageContext } from "../../../context/PhotoContext";
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
 
 const Serie2 = () => {
-  const { selectedImage, openOverlay, closeOverlay} = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay } = useImageContext();
+  const { hover, normal } = useContext(MouseContext);
   return (
     <Container>
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         onClick={() => openOverlay(s2_1)}
         className="middle"
         alt="serie1"
@@ -23,12 +28,16 @@ const Serie2 = () => {
       />
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s2_2)}
           className="row-img"
           alt="serie1"
           src={s2_2}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s2_3)}
           className="row-img"
           alt="serie1"
@@ -37,12 +46,16 @@ const Serie2 = () => {
       </div>
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s2_4)}
           className="row-img"
           alt="serie1"
           src={s2_4}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s2_5)}
           className="row-img"
           alt="serie1"
@@ -51,12 +64,16 @@ const Serie2 = () => {
       </div>
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s2_6)}
           className="row-img"
           alt="serie1"
           src={s2_6}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s2_7)}
           className="row-img"
           alt="serie1"
@@ -70,10 +87,10 @@ const Serie2 = () => {
 };
 
 const Container = styled.div`
-   width: 70%;
+  width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-    }
+    width: 90%;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;

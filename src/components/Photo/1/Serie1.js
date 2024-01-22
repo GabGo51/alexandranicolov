@@ -18,25 +18,79 @@ import s1_15 from "./img/s1-15.jpg";
 import ImageOverlay from "../../Overlay";
 import { useImageContext } from "../../../context/PhotoContext";
 import BackTop from "../../BackTop";
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
 
 const Serie1 = () => {
-  const { selectedImage, openOverlay, closeOverlay, setSize} = useImageContext();
-  
+  const { selectedImage, openOverlay, closeOverlay, setSize } =
+    useImageContext();
+  const { hover, normal } = useContext(MouseContext);
+
   return (
     <Container>
       <div className="layer">
         <div className="first colum">
-          <img onClick={() => {openOverlay(s1_1);setSize(true)}} alt="serie1" src={s1_1} />
-          <img onClick={() => {openOverlay(s1_3) ;setSize(true)}} alt="serie1" src={s1_3} />
-          <img onClick={() => {openOverlay(s1_5);setSize(true)}} alt="serie1" src={s1_5} />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => {
+              openOverlay(s1_1);
+              setSize(true);
+            }}
+            alt="serie1"
+            src={s1_1}
+          />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => {
+              openOverlay(s1_3);
+              setSize(true);
+            }}
+            alt="serie1"
+            src={s1_3}
+          />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => {
+              openOverlay(s1_5);
+              setSize(true);
+            }}
+            alt="serie1"
+            src={s1_5}
+          />
         </div>
         <div className=" second colum">
-          <img onClick={() => openOverlay(s1_2)} alt="serie1" src={s1_2} />
-          <img onClick={() => {openOverlay(s1_4);setSize(true)}} alt="serie1" src={s1_4} />
-          <img onClick={() => openOverlay(s1_6)} alt="serie1" src={s1_6} />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => openOverlay(s1_2)}
+            alt="serie1"
+            src={s1_2}
+          />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => {
+              openOverlay(s1_4);
+              setSize(true);
+            }}
+            alt="serie1"
+            src={s1_4}
+          />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => openOverlay(s1_6)}
+            alt="serie1"
+            src={s1_6}
+          />
         </div>
       </div>
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         className="full"
         onClick={() => openOverlay(s1_7)}
         alt="serie1"
@@ -44,15 +98,38 @@ const Serie1 = () => {
       />
       <div className="layer">
         <div className="third column">
-          <img onClick={() => openOverlay(s1_9)} alt="serie1" src={s1_9} />
-          <img onClick={() => openOverlay(s1_10)} alt="serie1" src={s1_10} />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => openOverlay(s1_9)}
+            alt="serie1"
+            src={s1_9}
+          />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => openOverlay(s1_10)}
+            alt="serie1"
+            src={s1_10}
+          />
         </div>
         <div className="fourth column">
-          <img onClick={() => {openOverlay(s1_8);setSize(true)}} alt="serie1" src={s1_8} />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => {
+              openOverlay(s1_8);
+              setSize(true);
+            }}
+            alt="serie1"
+            src={s1_8}
+          />
         </div>
       </div>
 
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         className="full"
         onClick={() => openOverlay(s1_11)}
         alt="serie1"
@@ -60,13 +137,40 @@ const Serie1 = () => {
       />
       <div className="layer">
         <div className="fifth column">
-          <img onClick={() => {openOverlay(s1_12);setSize(true)}} alt="serie1" src={s1_12} />
-          <img onClick={() => openOverlay(s1_14)} alt="serie1" src={s1_14} />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => {
+              openOverlay(s1_12);
+              setSize(true);
+            }}
+            alt="serie1"
+            src={s1_12}
+          />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => openOverlay(s1_14)}
+            alt="serie1"
+            src={s1_14}
+          />
         </div>
         <div className="sixth column">
-          <img onClick={() => openOverlay(s1_13)} alt="serie1" src={s1_13} />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => openOverlay(s1_13)}
+            alt="serie1"
+            src={s1_13}
+          />
 
-          <img onClick={() => openOverlay(s1_15)} alt="serie1" src={s1_15} />
+          <img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            onClick={() => openOverlay(s1_15)}
+            alt="serie1"
+            src={s1_15}
+          />
         </div>
       </div>
       <BackTop />
@@ -76,10 +180,10 @@ const Serie1 = () => {
 };
 
 const Container = styled.div`
-   width: 70%;
+  width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-    }
+    width: 90%;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;

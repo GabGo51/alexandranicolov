@@ -8,20 +8,34 @@ import s5_2 from "./img/s5-2.jpg";
 import s5_3 from "./img/s5-3.jpg";
 import s5_4 from "./img/s5-4.jpg";
 import s5_5 from "./img/s5-5.jpg";
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
 
 const Serie5 = () => {
-  const { selectedImage, openOverlay, closeOverlay, setSize } = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay, setSize } =
+    useImageContext();
+  const { hover, normal } = useContext(MouseContext);
   return (
     <Container>
       <div className="row">
         <img
-          onClick={() => {openOverlay(s5_1);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s5_1);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s5_1}
         />
         <img
-          onClick={() => {openOverlay(s5_2);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s5_2);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s5_2}
@@ -29,13 +43,23 @@ const Serie5 = () => {
       </div>
       <div className="row">
         <img
-          onClick={() => {openOverlay(s5_3);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s5_3);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s5_3}
         />
         <img
-          onClick={() => {openOverlay(s5_4);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s5_4);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s5_4}
@@ -43,7 +67,12 @@ const Serie5 = () => {
       </div>
       <div className="row last">
         <img
-          onClick={() => {openOverlay(s5_5);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s5_5);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s5_5}
@@ -56,10 +85,10 @@ const Serie5 = () => {
   );
 };
 const Container = styled.div`
-   width: 70%;
+  width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-    }
+    width: 90%;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +105,7 @@ const Container = styled.div`
       flex-direction: column;
     }
   }
-  .last{
+  .last {
     justify-content: center;
   }
 `;

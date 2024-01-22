@@ -20,15 +20,20 @@ import s4_14 from "./img/s4-14.jpg";
 import s4_15 from "./img/s4-15.jpg";
 import s4_16 from "./img/s4-16.jpg";
 import s4_17 from "./img/s4-17.jpg";
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
 
 //maybe wrong number at the spot
 
 const Serie4 = () => {
   const { selectedImage, openOverlay, closeOverlay, setSize } =
     useImageContext();
+  const { hover, normal } = useContext(MouseContext);
   return (
     <Container>
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         onClick={() => openOverlay(s4_1)}
         className="middle"
         alt="serie1"
@@ -36,12 +41,16 @@ const Serie4 = () => {
       />
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s4_15)}
           className="row-img"
           alt="serie1"
           src={s4_15}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s4_16)}
           className="row-img"
           alt="serie1"
@@ -49,12 +58,16 @@ const Serie4 = () => {
         />
       </div>
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         onClick={() => openOverlay(s4_17)}
         className="middle"
         alt="serie1"
         src={s4_17}
       />
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         onClick={() => openOverlay(s4_9)}
         className="middle"
         alt="serie1"
@@ -62,12 +75,16 @@ const Serie4 = () => {
       />
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s4_13)}
           className="row-img"
           alt="serie1"
           src={s4_13}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s4_14)}
           className="row-img"
           alt="serie1"
@@ -76,12 +93,16 @@ const Serie4 = () => {
       </div>
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s4_6)}
           alt="serie1"
           className="row-img big"
           src={s4_6}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s4_12)}
           alt="serie1"
           className="row-img big"
@@ -91,12 +112,16 @@ const Serie4 = () => {
       <div className="row"></div>
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s4_4)}
           className="row-img"
           alt="serie1"
           src={s4_4}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => openOverlay(s4_3)}
           className="row-img"
           alt="serie1"
@@ -104,6 +129,8 @@ const Serie4 = () => {
         />
       </div>
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         onClick={() => openOverlay(s4_7)}
         className="middle"
         alt="serie1"
@@ -112,6 +139,8 @@ const Serie4 = () => {
 
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(s4_11);
             setSize(true);
@@ -121,6 +150,8 @@ const Serie4 = () => {
           src={s4_11}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(s4_10);
             setSize(true);
@@ -132,6 +163,8 @@ const Serie4 = () => {
       </div>
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(s4_5);
             setSize(true);
@@ -141,6 +174,8 @@ const Serie4 = () => {
           src={s4_5}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(s4_8);
             setSize(true);
@@ -151,6 +186,8 @@ const Serie4 = () => {
         />
       </div>
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         onClick={() => openOverlay(s4_1)}
         className="middle"
         alt="serie1"

@@ -185,9 +185,11 @@ const Container = styled.div`
     &:hover {
       transform: translateX(10%);
     }
-    p {
+
+    .icon{
       margin-left: 10px;
     }
+    
   }
 `;
 

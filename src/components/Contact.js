@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import contact from './img/contact.jpg'
-import { motion } from "framer-motion";
+
 const Contact = () => {
   return (
     <Container>

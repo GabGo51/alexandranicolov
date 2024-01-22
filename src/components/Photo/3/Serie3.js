@@ -10,20 +10,34 @@ import styled from "styled-components";
 import BackTop from "../../BackTop";
 import ImageOverlay from "../../Overlay";
 import { useImageContext } from "../../../context/PhotoContext";
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
 
 const Serie3 = () => {
-  const { selectedImage, openOverlay, closeOverlay, setSize} = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay, setSize } =
+    useImageContext();
+  const { hover, normal } = useContext(MouseContext);
   return (
     <Container>
       <div className="row">
         <img
-          onClick={() => {openOverlay(s3_1);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s3_1);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s3_1}
         />
         <img
-          onClick={() => {openOverlay(s3_2);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s3_2);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s3_2}
@@ -31,13 +45,23 @@ const Serie3 = () => {
       </div>
       <div className="row">
         <img
-          onClick={() => {openOverlay(s3_3);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s3_3);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s3_3}
         />
         <img
-          onClick={() => {openOverlay(s3_4);setSize(true)}}
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          onClick={() => {
+            openOverlay(s3_4);
+            setSize(true);
+          }}
           className="row-img"
           alt="serie1"
           src={s3_4}
@@ -45,12 +69,16 @@ const Serie3 = () => {
       </div>
 
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         onClick={() => openOverlay(s3_5)}
         className="full"
         alt="serie1"
         src={s3_5}
       />
       <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
         onClick={() => openOverlay(s3_6)}
         className="full"
         alt="serie1"
@@ -65,8 +93,12 @@ const Serie3 = () => {
 const Container = styled.div`
   width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-    }
+    width: 90%;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default Serie3;

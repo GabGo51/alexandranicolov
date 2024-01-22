@@ -12,8 +12,11 @@ import s10 from "./img/s10.jpg";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import BackTop from "../BackTop";
+import { useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
 
 const Gallery = () => {
+  const { hover, normal } = useContext(MouseContext);
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);
@@ -25,58 +28,117 @@ const Gallery = () => {
     <Container>
       <div className="row">
         <div className="p1" onClick={() => handleNavigate("/photo/1")}>
-          <img alt="intro" src={s1} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s1}
+          />
           <p>la vallée brulée</p>
         </div>
 
         <div className="p2" onClick={() => handleNavigate("/photo/2")}>
-          <img alt="intro" src={s2} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s2}
+          />
           <p>seul au monde</p>
         </div>
       </div>
       <div className="row">
         <div className="p3" onClick={() => handleNavigate("/photo/3")}>
-          <img alt="intro" src={s3} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s3}
+          />
           <p>la musique au goût de la mer</p>
         </div>
         <div className="p4" onClick={() => handleNavigate("/photo/4")}>
-          <img alt="intro" src={s4} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s4}
+          />
           <p>Margaux</p>
         </div>
       </div>
 
       <div className="row">
         <div className="p5" onClick={() => handleNavigate("/photo/5")}>
-          <img alt="intro" src={s5} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s5}
+          />
           <p>48 heures plus tard</p>
         </div>
         <div className="p6" onClick={() => handleNavigate("/photo/6")}>
-          <img alt="intro" src={s6} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s6}
+          />
           <p>bercé par le bruit des vagues</p>
         </div>
       </div>
       <div className="row">
         <div className="p7" onClick={() => handleNavigate("/photo/7")}>
-          <img alt="intro" src={s7} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s7}
+          />
           <p>jusqu’à temps qu’on reparte</p>
         </div>
         <div className="p8" onClick={() => handleNavigate("/photo/8")}>
-          <img alt="intro" src={s8} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s8}
+          />
           <p>Joe’s Valley</p>
         </div>
       </div>
       <div className="row">
         <div className="p9" onClick={() => handleNavigate("/photo/9")}>
-          <img alt="intro" src={s9} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s9}
+          />
           <p>les feuilles qui dansent</p>
         </div>
         <div className="p10" onClick={() => handleNavigate("/photo/10")}>
-          <img alt="intro" src={s10} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={s10}
+          />
           <p>atmosphère fuyante</p>
         </div>
       </div>
-      <BackTop/>
-
+      <BackTop />
     </Container>
   );
 };
@@ -84,13 +146,13 @@ const Gallery = () => {
 const Container = styled.div`
   width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-    }
+    width: 90%;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   img {
     height: 500px;
     width: 100%;
@@ -150,8 +212,6 @@ const Container = styled.div`
   .p10 {
     width: 65%;
   }
-
-  
 `;
 
 export default Gallery;

@@ -9,41 +9,92 @@ import s10_3 from "./img/s10-3.jpg";
 import s10_4 from "./img/s10-4.jpg";
 import s10_5 from "./img/s10-5.jpg";
 import s10_6 from "./img/s10-6.jpg";
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
 
 const Serie10 = () => {
-  const { selectedImage, openOverlay, closeOverlay, setSize } = useImageContext();
+  const { selectedImage, openOverlay, closeOverlay, setSize } =
+    useImageContext();
+  const { hover, normal } = useContext(MouseContext);
   return (
     <Container>
-      <img onClick={() => openOverlay(s10_1)} className="full" alt="serie1" src={s10_1} />
-      <img onClick={() => openOverlay(s10_2)} className="full" alt="serie1" src={s10_2} />
-      <img onClick={() => {openOverlay(s10_3);setSize(true)}} className="tall" alt="serie1" src={s10_3} />
-      <img onClick={() => openOverlay(s10_4)} className="full" alt="serie1" src={s10_4} />
-      <img onClick={() => {openOverlay(s10_5);setSize(true)}} className="tall" alt="serie1" src={s10_5} />
-      <img onClick={() => openOverlay(s10_6)} className="full" alt="serie1" src={s10_6} />
+      <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
+        onClick={() => openOverlay(s10_1)}
+        className="full"
+        alt="serie1"
+        src={s10_1}
+      />
+      <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
+        onClick={() => openOverlay(s10_2)}
+        className="full"
+        alt="serie1"
+        src={s10_2}
+      />
+      <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
+        onClick={() => {
+          openOverlay(s10_3);
+          setSize(true);
+        }}
+        className="tall"
+        alt="serie1"
+        src={s10_3}
+      />
+      <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
+        onClick={() => openOverlay(s10_4)}
+        className="full"
+        alt="serie1"
+        src={s10_4}
+      />
+      <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
+        onClick={() => {
+          openOverlay(s10_5);
+          setSize(true);
+        }}
+        className="tall"
+        alt="serie1"
+        src={s10_5}
+      />
+      <img
+        onMouseEnter={hover}
+        onMouseLeave={normal}
+        onClick={() => openOverlay(s10_6)}
+        className="full"
+        alt="serie1"
+        src={s10_6}
+      />
 
       <BackTop />
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
-      
     </Container>
-  )
-}
+  );
+};
 const Container = styled.div`
- width: 70%;
+  width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-    }
-display: flex;
+    width: 90%;
+  }
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-.full{
-  width: 70vw;
-}
+  .full {
+    width: 70vw;
+  }
 
-.tall{
-  width: 40%;
-}
+  .tall {
+    width: 40%;
+  }
 `;
 
-export default Serie10
+export default Serie10;

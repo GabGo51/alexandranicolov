@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import arrow from "./img/arrow.png";
+import { useContext } from "react";
+import { MouseContext } from "../context/mouseContext";
 
 const BackTop = () => {
+  const { hover, normal } = useContext(MouseContext);
   return (
     <Button
+      onMouseEnter={hover}
+      onMouseLeave={normal}
       className="back-top"
       onClick={() =>
         window.scrollTo({
@@ -13,13 +18,13 @@ const BackTop = () => {
         })
       }
     >
-      <img src={arrow} alt="arrow" />
+      <img className="arrow" src={arrow} alt="arrow" />
     </Button>
   );
 };
 
 const Button = styled.button`
-  img {
+  .arrow {
     transition: 500ms;
     object-fit: contain;
     width: 50px;
