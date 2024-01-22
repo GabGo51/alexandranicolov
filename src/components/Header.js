@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import fairy from './img/fairy.png'
+import fairy from "./img/fairy.png";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState();
-
   const navigate = useNavigate();
+  const location = useLocation();
   const handleNavigate = (page) => {
     navigate(page);
     window.scrollTo({
@@ -15,15 +15,19 @@ const Header = () => {
     });
   };
   return (
-    <Container>
-      <motion.img initial={{ opacity: 0, x: -40, y:50 }}
-        whileInView={{ opacity: 1, x: -15 }}
-        transition={{ duration: 1, delay:0.5 }}
+    <Container isFilm={location.pathname === "/film"}>
+      <motion.img
+        initial={{ opacity: 0, x: -40, y: 55 }}
+        whileInView={{ opacity: 1, x: -20 }}
+        transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
         onClick={() => {
           setOpen(false);
           handleNavigate("/");
-        }} src={fairy}/>
+        }}
+        src={fairy}
+        isFilm={location.pathname === "/film"}
+      />
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -36,16 +40,15 @@ const Header = () => {
       >
         Alexandra Nicolov
       </motion.h1>
+
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay:0.2 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
         viewport={{ once: true }}
-        className="photo-box"
       >
-        {open ? <p className="icon">-</p> : <p className="icon">+</p>}
         <button className="main-b" onClick={() => setOpen(!open)}>
-          Photo
+          Photo {open ? <p className="icon">-</p> : <p className="icon">+</p>}
         </button>
         <AnimatePresence>
           {open && (
@@ -55,20 +58,18 @@ const Header = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                whileHover={{ x: 10 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
                 onClick={() => {
                   setOpen(false);
                   handleNavigate("/photo");
                 }}
               >
-                Photographie sur pellicule
+                <p>Photographie sur pellicule</p>
               </motion.button>
               <motion.button
                 key={"corpo"}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                whileHover={{ x: 10 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
                 onClick={() => {
@@ -76,7 +77,7 @@ const Header = () => {
                   handleNavigate("/entreprise");
                 }}
               >
-                Photographie corporative
+                <p>Photographie corporative</p>
               </motion.button>
             </motion.div>
           )}
@@ -86,7 +87,7 @@ const Header = () => {
       <motion.button
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay:0.3 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
         viewport={{ once: true }}
         className="main-b"
         onClick={() => {
@@ -94,7 +95,7 @@ const Header = () => {
           handleNavigate("/film");
         }}
       >
-        Film
+        <p className="film-button">Film</p>
       </motion.button>
     </Container>
   );
@@ -111,14 +112,14 @@ const Container = styled.div`
   font-size: clamp(14px, 3vw, 22px);
   font-family: NeueMedium;
 
-  img{
-    width: 50px;
+  img {
+    width: 70px;
     position: absolute;
-    
+    filter: invert(${(props) => (props.isFilm ? "1" : "0")});
   }
 
   h1 {
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(14px, 3vw, 24px);
     @media (max-width: 700px) {
       margin-right: -20px;
     }
@@ -126,10 +127,21 @@ const Container = styled.div`
 
   button {
     all: unset;
-    
-    
     white-space: nowrap;
     margin: 2px 40px;
+
+    p {
+      transition: 500ms;
+      &:hover {
+        transform: translateX(5%);
+      }
+    }
+
+    .film-button {
+      &:hover {
+        transform: translateX(20%);
+      }
+    }
   }
 
   div {
@@ -139,26 +151,24 @@ const Container = styled.div`
     p {
     }
   }
+
   .extra {
     position: absolute;
     bottom: -60px;
-  }
 
-  .photo-box{
-    position: relative;
-
-  }
-
-  .icon {
-    position: absolute;
-    right: 20px;
-    bottom: 1px;
+    @media (max-width: 700px) {
+      bottom: -45px;
+    }
   }
 
   .main-b {
     transition: 500ms;
+    display: flex;
     &:hover {
       transform: translateX(10%);
+    }
+    p {
+      margin-left: 10px;
     }
   }
 `;

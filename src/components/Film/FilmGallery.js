@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import vid1 from "./img/vid1.gif";
 import vid2 from "./img/vid2.gif";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const FilmGallery = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/film") {
+      document.body.setAttribute("data-theme", "dark");
+    } else {
+      document.body.removeAttribute("data-theme");
+    }
+
+    // Cleanup when the component unmounts
+    return () => {
+      document.body.removeAttribute("data-theme");
+    };
+  }, [location.pathname]);
   return (
     <Container>
-      <div>
+      <div >
         <a href="https://vimeo.com/845609888" target="#">
           <img src={vid1} alt="Video 1" />
           <motion.p
+            className="title"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -19,6 +35,15 @@ const FilmGallery = () => {
           </motion.p>
         </a>
       </div>
+      <p className="description top">
+        {" "}
+        Kayla est à l'aube de réaliser son plus grand rêve : devenir capitaine
+        d'une embarcation de pêche. Mais avant, elle doit traverser une longue
+        saison morte dans la Baie-des-Chaleurs. Se perdant dans la rêverie et
+        les paysages grandioses de la Gaspésie, nous suivons les préparatifs de
+        cette jeune femme qui a fait le choix de rester. Un film de Thomas
+        Landry
+      </p>
       <div>
         <a
           href="https://app.frame.io/presentations/3d7729d1-e779-43a2-beee-f21977187df4"
@@ -26,6 +51,7 @@ const FilmGallery = () => {
         >
           <img src={vid2} alt="Video 2" />
           <motion.p
+            className="title"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -34,6 +60,13 @@ const FilmGallery = () => {
           </motion.p>
         </a>
       </div>
+
+      <p className="description">
+        Intrusion dans l’univers de l'artiste tatoueuse Wendat Terry Dactel. Le
+        film explore notamment le concept de la réappropriation culturelle du
+        peuple Wendat à travers la quête identitaire du réalisateur, lui aussi
+        Wendat. Un film de Vincent Careau
+      </p>
     </Container>
   );
 };
@@ -41,7 +74,6 @@ const FilmGallery = () => {
 const Container = styled.div`
   width: 90%;
   text-align: center;
-  
 
   div {
     position: relative;
@@ -51,10 +83,9 @@ const Container = styled.div`
   img {
     width: 100%;
     display: block;
-    
   }
 
-  p {
+  .title {
     font-family: NeueItalic;
     color: yellow;
     position: absolute;
@@ -63,6 +94,15 @@ const Container = styled.div`
     transform: translate(-50%, -50%);
     font-size: clamp(30px, 7vw, 120px);
     margin: 0;
+  }
+
+  .description{
+    text-align: start;
+    width: clamp(320px, 50%, 800px);
+    font-size: clamp(14px, 3vw, 20px);
+  }
+  .top{
+    margin-bottom: 300px;
   }
 `;
 

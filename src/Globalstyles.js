@@ -45,6 +45,13 @@ export default createGlobalStyle`
     font-family: NeueLight;
     
   }
+
+  body[data-theme="dark"] {
+    background-color: #242424;
+    color: white;
+
+    // Add any other dark theme styles you need
+  }
   
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,

@@ -1,56 +1,49 @@
 import React from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+
 const Footer = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const handleNavigate = (page) => {
     navigate(page);
     window.scrollTo({
       top: 0,
     });
   };
+
   return (
     <Container>
-      <motion.a
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+      <FooterLink
+        to="/contact"
         onClick={() => handleNavigate("/contact")}
+        isFilm={location.pathname === "/film"}
       >
-        Contact
-      </motion.a>
-      <motion.a
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.1 }}
-        viewport={{ once: true }}
-        target="#"
-        href="https://vimeo.com/user63054265"
+        <p>Contact</p>
+      </FooterLink>
+      <FooterLink
+        to="https://vimeo.com/user63054265"
+        target="_blank"
+        isFilm={location.pathname === "/film"}
       >
-        Vimeo
-      </motion.a>
-      <motion.a
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        viewport={{ once: true }}
-        target="#"
-        href="https://www.instagram.com/alex.nicolov/"
+        <p>Vimeo</p>
+      </FooterLink>
+      <FooterLink
+        to="https://www.instagram.com/alex.nicolov/"
+        target="_blank"
+        isFilm={location.pathname === "/film"}
       >
-        Instagram
-      </motion.a>
-      <motion.a
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-        viewport={{ once: true }}
-        target="#"
-        href="https://www.facebook.com/alex.nicolov.7/"
+        <p>Instagram</p>
+      </FooterLink>
+      <FooterLink
+        to="https://www.facebook.com/alex.nicolov.7/"
+        target="_blank"
+        isFilm={location.pathname === "/film"}
       >
-        Facebook
-      </motion.a>
+        <p>Facebook</p>
+      </FooterLink>
     </Container>
   );
 };
@@ -59,15 +52,24 @@ const Container = styled.div`
   padding: 50px 0;
   display: flex;
   width: 90%;
+`;
 
-  a {
-    color: black;
-    text-decoration: none;
-    margin-right: 2.5vw;
-    margin-top: 50px;
-    font-size: clamp(14px, 3vw, 20px);
-    @media (max-width: 1000px) {
-      margin-right: 25px;
+const FooterLink = styled(motion.a)`
+  color: ${(props) => (props.isFilm ? "white" : "black")};
+  text-decoration: none;
+  margin-right: 2.5vw;
+  margin-top: 50px;
+  font-size: clamp(14px, 3vw, 20px);
+
+  @media (max-width: 1000px) {
+    margin-right: 25px;
+  }
+
+  p {
+    transition: 500ms;
+
+    &:hover {
+      transform: translateX(15%);
     }
   }
 `;
