@@ -49,7 +49,7 @@ export default createGlobalStyle`
 
   body[data-theme="dark"] {
     transition: 1s;
-    background-color: #000000;
+    background-color: #0C0C0C  ;
     color: white;
 
     // Add any other dark theme styles you need
