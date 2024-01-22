@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import fairy from './img/fairy.png'
 
 const Header = () => {
   const [open, setOpen] = useState();
@@ -15,6 +16,14 @@ const Header = () => {
   };
   return (
     <Container>
+      <motion.img initial={{ opacity: 0, x: -40, y:50 }}
+        whileInView={{ opacity: 1, x: -15 }}
+        transition={{ duration: 1, delay:0.5 }}
+        viewport={{ once: true }}
+        onClick={() => {
+          setOpen(false);
+          handleNavigate("/");
+        }} src={fairy}/>
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -101,6 +110,12 @@ const Container = styled.div`
   margin-bottom: 70px;
   font-size: clamp(14px, 3vw, 22px);
   font-family: NeueMedium;
+
+  img{
+    width: 50px;
+    position: absolute;
+    
+  }
 
   h1 {
     font-size: clamp(18px, 3vw, 24px);
