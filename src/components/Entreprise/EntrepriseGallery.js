@@ -1,14 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-import c1 from './img/c1.jpg'
-import c2 from './img/c2.jpg'
-import c3 from './img/c3.jpg'
-import c4 from './img/c4.jpg'
+import React from "react";
+import styled from "styled-components";
+import c1 from "./img/c1.jpg";
+import c2 from "./img/c2.jpg";
+import c3 from "./img/c3.jpg";
+import c4 from "./img/c4.jpg";
 import { useNavigate } from "react-router-dom";
-import BackTop from '../BackTop'
-
+import BackTop from "../BackTop";
+import { useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
 
 const EntrepriseGallery = () => {
+  const { hover, normal } = useContext(MouseContext);
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);
@@ -20,45 +22,67 @@ const EntrepriseGallery = () => {
     <Container>
       <div className="row">
         <div className="p1" onClick={() => handleNavigate("/corpo/1")}>
-          <img alt="intro" src={c1} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={c1}
+          />
           <p>Place Publique</p>
         </div>
 
         <div className="p2" onClick={() => handleNavigate("/corpo/2")}>
-          <img alt="intro" className='image2' src={c2} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            className="image2"
+            src={c2}
+          />
           <p>Fleuristes Binette et filles</p>
         </div>
       </div>
       <div className="row two">
-        <div className="p3"  onClick={() => handleNavigate("/corpo/3")}>
-          <img alt="intro" className='image3' src={c3} />
+        <div className="p3" onClick={() => handleNavigate("/corpo/3")}>
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            className="image3"
+            src={c3}
+          />
           <p>Photographie corporative</p>
         </div>
         <div className="p4" onClick={() => handleNavigate("/corpo/4")}>
-          <img alt="intro" src={c4} />
+          <img
+            onClick={normal}
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            alt="intro"
+            src={c4}
+          />
           <p>Évènements</p>
         </div>
       </div>
 
-      <BackTop/>
-
+      <BackTop />
     </Container>
-    
-  )
-}
+  );
+};
 
 const Container = styled.div`
-width: 70%;
+  width: 70%;
   @media (max-width: 1200px) {
-      width: 90%;
-      
-    }
+    width: 90%;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   img {
-    
     width: 100%;
     margin-bottom: 10px;
     object-fit: cover;
@@ -78,10 +102,9 @@ width: 70%;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
   }
 
-  .two{
+  .two {
     align-items: end;
     transform: translateY(-20%);
   }
@@ -90,19 +113,19 @@ width: 70%;
   }
   .p2 {
     width: 45%;
-   .image2{
-    @media (max-width: 1200px) {
-      height: 600px;
+    .image2 {
+      @media (max-width: 1200px) {
+        height: 600px;
+      }
+      @media (max-width: 600px) {
+        height: 400px;
+      }
     }
-    @media (max-width: 600px) {
-      height: 400px;
-    }
-   }
   }
   .p3 {
     transform: translateY(-25%);
     width: 50%;
-    
+
     @media (max-width: 1200px) {
       height: 600px;
       transform: translateY(10%);
@@ -112,9 +135,8 @@ width: 70%;
       transform: translateY(-20%);
     }
 
-    .image3{
-    
-   }
+    .image3 {
+    }
   }
   .p4 {
     width: 45%;
@@ -122,11 +144,7 @@ width: 70%;
     @media (max-width: 600px) {
       transform: translateY(5%);
     }
-    
   }
+`;
 
-  
-
-`
-
-export default EntrepriseGallery
+export default EntrepriseGallery;

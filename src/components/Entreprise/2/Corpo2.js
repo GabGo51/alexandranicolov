@@ -16,13 +16,19 @@ import c2_10 from "./img/c2-10.jpg";
 import c2_11 from "./img/c2-11.jpg";
 import c2_12 from "./img/c2-12.jpg";
 
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
+
 const Corpo2 = () => {
+  const { hover, normal } = useContext(MouseContext);
   const { selectedImage, openOverlay, closeOverlay, setSize } =
     useImageContext();
   return (
     <Container>
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c2_1);
             setSize(true);
@@ -31,6 +37,8 @@ const Corpo2 = () => {
           src={c2_1}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c2_2);
             setSize(true);
@@ -39,6 +47,8 @@ const Corpo2 = () => {
           src={c2_2}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c2_3);
             setSize(true);
@@ -47,6 +57,8 @@ const Corpo2 = () => {
           src={c2_3}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c2_4);
             setSize(true);
@@ -57,18 +69,24 @@ const Corpo2 = () => {
       </div>
       <div className="row ">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           className="flower"
           onClick={() => openOverlay(c2_5)}
           alt="corpo2"
           src={c2_5}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           className="flower"
           onClick={() => openOverlay(c2_6)}
           alt="corpo2"
           src={c2_6}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           className="flower"
           onClick={() => {
             openOverlay(c2_7);
@@ -78,6 +96,8 @@ const Corpo2 = () => {
           src={c2_7}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           className="flower"
           onClick={() => openOverlay(c2_8)}
           alt="corpo2"
@@ -86,6 +106,8 @@ const Corpo2 = () => {
       </div>
       <div className="row">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c2_9);
             setSize(true);
@@ -94,6 +116,8 @@ const Corpo2 = () => {
           src={c2_9}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c2_10);
             setSize(true);
@@ -102,6 +126,8 @@ const Corpo2 = () => {
           src={c2_10}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c2_11);
             setSize(true);
@@ -110,6 +136,8 @@ const Corpo2 = () => {
           src={c2_11}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c2_12);
             setSize(true);
@@ -141,8 +169,6 @@ const Container = styled.div`
   .row {
     margin-bottom: 1.5vw;
   }
-
-  
 `;
 
 export default Corpo2;

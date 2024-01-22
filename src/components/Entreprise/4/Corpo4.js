@@ -9,15 +9,20 @@ import c4_3 from "./img/c4-3.jpg";
 import c4_4 from "./img/c4-4.jpg";
 import c4_5 from "./img/c4-5.jpg";
 import c4_6 from "./img/c4-6.jpg";
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
 
 const Corpo4 = () => {
   const { selectedImage, openOverlay, closeOverlay, setSize } =
     useImageContext();
+  const { hover, normal } = useContext(MouseContext);
 
   return (
     <Container>
       <div className="frame">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c4_1);
             setSize(true);
@@ -26,6 +31,8 @@ const Corpo4 = () => {
           src={c4_1}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c4_2);
             setSize(true);
@@ -34,6 +41,8 @@ const Corpo4 = () => {
           src={c4_2}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c4_3);
             setSize(true);
@@ -42,6 +51,8 @@ const Corpo4 = () => {
           src={c4_3}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c4_4);
             setSize(true);
@@ -50,6 +61,8 @@ const Corpo4 = () => {
           src={c4_4}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c4_5);
             setSize(true);
@@ -58,6 +71,8 @@ const Corpo4 = () => {
           src={c4_5}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c4_6);
             setSize(true);

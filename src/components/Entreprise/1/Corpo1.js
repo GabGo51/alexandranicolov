@@ -10,21 +10,80 @@ import c1_4 from "./img/c1-4.jpg";
 import c1_5 from "./img/c1-5.jpg";
 import c1_6 from "./img/c1-6.jpg";
 
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
+
 const Corpo1 = () => {
-  const { selectedImage, openOverlay, closeOverlay, setSize } = useImageContext();
+  const { hover, normal } = useContext(MouseContext);
+  const { selectedImage, openOverlay, closeOverlay, setSize } =
+    useImageContext();
   return (
     <Container>
       <div className="row">
-        <img className="img1" onClick={() => openOverlay(c1_1)} alt="corpo1" src={c1_1} />
-        <img className="img2" onClick={() => {openOverlay(c1_2);setSize(true)}} alt="corpo1" src={c1_2} />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          className="img1"
+          onClick={() => openOverlay(c1_1)}
+          alt="corpo1"
+          src={c1_1}
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          className="img2"
+          onClick={() => {
+            openOverlay(c1_2);
+            setSize(true);
+          }}
+          alt="corpo1"
+          src={c1_2}
+        />
       </div>
       <div className="row">
-        <img className="img3" onClick={() => {openOverlay(c1_3);setSize(true)}} alt="corpo1" src={c1_3} />
-        <img className="img4" onClick={() => openOverlay(c1_4)} alt="corpo1" src={c1_4} />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          className="img3"
+          onClick={() => {
+            openOverlay(c1_3);
+            setSize(true);
+          }}
+          alt="corpo1"
+          src={c1_3}
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          className="img4"
+          onClick={() => openOverlay(c1_4)}
+          alt="corpo1"
+          src={c1_4}
+        />
       </div>
       <div className="row">
-        <img className="img5" onClick={() => {openOverlay(c1_5);setSize(true)}} alt="corpo1" src={c1_5} />
-        <img className="img5" onClick={() => {openOverlay(c1_6);setSize(true)}} alt="corpo1" src={c1_6} />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          className="img5"
+          onClick={() => {
+            openOverlay(c1_5);
+            setSize(true);
+          }}
+          alt="corpo1"
+          src={c1_5}
+        />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          className="img5"
+          onClick={() => {
+            openOverlay(c1_6);
+            setSize(true);
+          }}
+          alt="corpo1"
+          src={c1_6}
+        />
       </div>
 
       <BackTop />
@@ -42,20 +101,20 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  .img1{
+  .img1 {
     width: 65%;
   }
-  .img2{
+  .img2 {
     width: 30%;
   }
-  .img4{
+  .img4 {
     width: 65%;
   }
-  .img3{
+  .img3 {
     width: 30%;
   }
 
-  .img5{
+  .img5 {
     width: 47.5%;
   }
 `;

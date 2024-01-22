@@ -29,7 +29,7 @@ const Footer = () => {
       <a
         onMouseEnter={hover}
         onMouseLeave={normal}
-        to="https://vimeo.com/user63054265"
+        href="https://vimeo.com/user63054265"
         target="_blank"
         isFilm={location.pathname === "/film"}
       >
@@ -38,7 +38,7 @@ const Footer = () => {
       <a
         onMouseEnter={hover}
         onMouseLeave={normal}
-        to="https://www.instagram.com/alex.nicolov/"
+        href="https://www.instagram.com/alex.nicolov/"
         target="_blank"
         isFilm={location.pathname === "/film"}
       >
@@ -47,7 +47,7 @@ const Footer = () => {
       <a
         onMouseEnter={hover}
         onMouseLeave={normal}
-        to="https://www.facebook.com/alex.nicolov.7/"
+        href="https://www.facebook.com/alex.nicolov.7/"
         target="_blank"
         isFilm={location.pathname === "/film"}
       >

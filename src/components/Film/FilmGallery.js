@@ -4,9 +4,12 @@ import vid2 from "./img/vid2.gif";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
 
 const FilmGallery = () => {
   const location = useLocation();
+  const { hover, normal } = useContext(MouseContext);
 
   useEffect(() => {
     if (location.pathname === "/film") {
@@ -22,7 +25,7 @@ const FilmGallery = () => {
   }, [location.pathname]);
   return (
     <Container>
-      <div>
+      <div onMouseEnter={hover} onMouseLeave={normal}>
         <a href="https://vimeo.com/845609888" target="#">
           <img src={vid1} alt="Video 1" />
           <motion.p
@@ -44,7 +47,7 @@ const FilmGallery = () => {
         cette jeune femme qui a fait le choix de rester. Un film de{" "}
         <span>Thomas Landry</span>
       </p>
-      <div>
+      <div onMouseEnter={hover} onMouseLeave={normal}>
         <a
           href="https://app.frame.io/presentations/3d7729d1-e779-43a2-beee-f21977187df4"
           target="#"
@@ -101,16 +104,16 @@ const Container = styled.div`
     width: clamp(320px, 50%, 800px);
     font-size: clamp(14px, 3vw, 20px);
 
-    span{
-     font-weight: bold;
+    span {
+      font-weight: bold;
     }
   }
   .top {
     margin-bottom: 200px;
 
     @media (max-width: 1000px) {
-    margin-bottom: 100px;
-  }
+      margin-bottom: 100px;
+    }
   }
 `;
 

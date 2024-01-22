@@ -12,15 +12,20 @@ import c3_5 from "./img/c3-5.jpg";
 import c3_6 from "./img/c3-6.jpg";
 import c3_7 from "./img/c3-7.jpg";
 import c3_8 from "./img/c3-8.jpg";
+import { useContext } from "react";
+import { MouseContext } from "../../../context/mouseContext";
 
 const Corpo3 = () => {
   const { selectedImage, openOverlay, closeOverlay, setSize } =
     useImageContext();
+  const { hover, normal } = useContext(MouseContext);
 
   return (
     <Container>
       <div className="frame">
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c3_1);
             setSize(true);
@@ -29,6 +34,8 @@ const Corpo3 = () => {
           src={c3_1}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c3_2);
             setSize(true);
@@ -37,6 +44,8 @@ const Corpo3 = () => {
           src={c3_2}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c3_3);
             setSize(true);
@@ -45,6 +54,8 @@ const Corpo3 = () => {
           src={c3_3}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c3_4);
             setSize(true);
@@ -53,6 +64,8 @@ const Corpo3 = () => {
           src={c3_4}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c3_5);
             setSize(true);
@@ -61,6 +74,8 @@ const Corpo3 = () => {
           src={c3_5}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c3_6);
             setSize(true);
@@ -69,6 +84,8 @@ const Corpo3 = () => {
           src={c3_6}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c3_7);
             setSize(true);
@@ -77,6 +94,8 @@ const Corpo3 = () => {
           src={c3_7}
         />
         <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
           onClick={() => {
             openOverlay(c3_8);
             setSize(true);
