@@ -14,6 +14,7 @@ const FairyDust = () => {
   const particles = [];
 
   useEffect(() => {
+    
     const init = () => {
       bindEvents();
       loop();
@@ -45,7 +46,7 @@ const FairyDust = () => {
 
     const onMouseMove = (e) => {
       cursor.x = e.clientX;
-      cursor.y = e.clientY;
+      cursor.y = e.clientY + window.scrollY;;
       addParticle(
         cursor.x,
         cursor.y,
