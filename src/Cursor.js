@@ -2,22 +2,25 @@ import styled, { keyframes } from "styled-components";
 import useMousePosition from "./hooks/useMousePosition";
 import { MouseContext } from "./context/mouseContext";
 import { useContext } from "react";
-import on from './components/img/on.png'
-import off from './components/img/off.png'
-
-
+import on from "./components/img/on.png";
+import off from "./components/img/off.png";
 
 const Cursor = () => {
-  const {cursorType} = useContext(MouseContext);
-  
-    // 1.
+  const { cursorType } = useContext(MouseContext);
+
+  // 1.
   const { x, y } = useMousePosition();
   return (
-    <Container>     
+    <Container>
       <Dot
-        className={cursorType === 'hover' ? cursorType : ''}
-        style={{ left: `${x}px`, top: `${y}px` }}
-      ><img className={cursorType === 'hover' ? 'move' : ''}  src={cursorType === 'hover'? on : off}/></Dot>
+        className={cursorType === "hover" ? cursorType : ""}
+        style={{ left: `${x}px`, top: `${y - 8}px` }}
+      >
+        <img
+          className={cursorType === "hover" ? "move" : ""}
+          src={cursorType === "hover" ? on : off}
+        />
+      </Dot>
     </Container>
   );
 };
@@ -35,25 +38,12 @@ const tiltAnimation = keyframes`
 `;
 
 const Container = styled.div`
-
-z-index: 999;
-position: absolute;
-
-img{
-  width: 40px;
-  transform: translateY(-5%);
-
-  &.move{
-    animation: ${tiltAnimation} 0.5s infinite;
-    
-  }
-}
-
-`
-
+  z-index: 999;
+  position: absolute;
+`;
 
 const Dot = styled.div`
-  transition:width 200ms, height 200ms;
+  transition: width 200ms, height 200ms;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -62,13 +52,17 @@ const Dot = styled.div`
   z-index: 999;
   pointer-events: none;
 
-  
-  
-  @media (max-width:800px){
+  img {
+    width: 40px;
+    
+    &.move {
+      animation: ${tiltAnimation} 0.5s infinite;
+    }
+  }
+
+  @media (max-width: 800px) {
     display: none;
   }
-` 
-  
-
+`;
 
 export default Cursor;

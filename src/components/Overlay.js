@@ -3,9 +3,12 @@ import { useImageContext } from "../context/PhotoContext"; // Update the path if
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import close from "./img/close.png";
+import { useContext } from "react";
+import { MouseContext } from "../context/mouseContext";
 
 const ImageOverlay = () => {
   const { selectedImage, closeOverlay, size } = useImageContext();
+  const { hover, normal } = useContext(MouseContext);
 
   const handleKeyDown = (e) => {
     if (e.key === "Escape") {
@@ -29,7 +32,8 @@ const ImageOverlay = () => {
         <motion.div initial={{ y: 20 }} animate={{ y: 0 }}>
           <img className="image-over" src={selectedImage} alt="Full Screen" />
         </motion.div>
-        <img src={close} alt="close" className="close" />
+        <img onMouseEnter={hover}
+        onMouseLeave={normal} src={close} alt="close" className="close" />
       </Container>
     )
   );

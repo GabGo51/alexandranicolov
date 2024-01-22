@@ -16,7 +16,7 @@ const Footer = () => {
   };
 
   return (
-    <Container>
+    <Container isFilm={location.pathname === "/film"}>
       <a
         onMouseEnter={hover}
         onMouseLeave={normal}
