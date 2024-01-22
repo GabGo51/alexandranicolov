@@ -137,7 +137,7 @@ const Container = styled.div`
 
   img {
     transition: 500ms;
-    width: 70px;
+    width: 80px;
 
     filter: invert(${(props) => (props.isFilm ? "1" : "0")});
   }
