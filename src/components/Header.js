@@ -18,102 +18,103 @@ const Header = () => {
   };
   return (
     <Container isFilm={location.pathname === "/film"}>
-      <motion.img
-        onMouseEnter={hover}
-        onMouseLeave={normal}
-        initial={{ opacity: 0, x: -40, y: 55 }}
-        whileInView={{ opacity: 1, x: -20 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        viewport={{ once: true }}
-        onClick={() => {
-          setOpen(false);
-          handleNavigate("/");
-        }}
-        src={fairy}
-        isFilm={location.pathname === "/film"}
-      />
-      <motion.h1
-        onMouseEnter={hover}
-        onMouseLeave={normal}
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-        onClick={() => {
-          setOpen(false);
-          handleNavigate("/");
-        }}
-      >
-        Alexandra Nicolov
-      </motion.h1>
-
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <button
+      <nav>
+        <motion.h1
           onMouseEnter={hover}
           onMouseLeave={normal}
-          className="main-b"
-          onClick={() => setOpen(!open)}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          onClick={() => {
+            setOpen(false);
+            handleNavigate("/");
+          }}
         >
-          Photo {open ? <p className="icon">-</p> : <p className="icon">+</p>}
-        </button>
-        <AnimatePresence>
-          {open && (
-            <motion.div className="extra">
-              <motion.button
-                onMouseEnter={hover}
-                onMouseLeave={normal}
-                key={"film"}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                onClick={() => {
-                  setOpen(false);
-                  handleNavigate("/photo");
-                }}
-              >
-                <p>Photographie sur pellicule</p>
-              </motion.button>
-              <motion.button
-                onMouseEnter={hover}
-                onMouseLeave={normal}
-                key={"corpo"}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                onClick={() => {
-                  setOpen(false);
-                  handleNavigate("/entreprise");
-                }}
-              >
-                <p>Photographie corporative</p>
-              </motion.button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
+          Alexandra Nicolov
+        </motion.h1>
 
-      <motion.button
-        onMouseEnter={hover}
-        onMouseLeave={normal}
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-        viewport={{ once: true }}
-        className="main-b"
-        onClick={() => {
-          setOpen(false);
-          handleNavigate("/film");
-        }}
-      >
-        <p className="film-button">Film</p>
-      </motion.button>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <button
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            className="main-b"
+            onClick={() => setOpen(!open)}
+          >
+            Photo {open ? <p className="icon">-</p> : <p className="icon">+</p>}
+          </button>
+          <AnimatePresence>
+            {open && (
+              <motion.div className="extra">
+                <motion.button
+                  onMouseEnter={hover}
+                  onMouseLeave={normal}
+                  key={"film"}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  onClick={() => {
+                    setOpen(false);
+                    handleNavigate("/photo");
+                  }}
+                >
+                  <p>Photographie sur pellicule</p>
+                </motion.button>
+                <motion.button
+                  onMouseEnter={hover}
+                  onMouseLeave={normal}
+                  key={"corpo"}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  onClick={() => {
+                    setOpen(false);
+                    handleNavigate("/entreprise");
+                  }}
+                >
+                  <p>Photographie corporative</p>
+                </motion.button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+        <motion.button
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="main-b"
+          onClick={() => {
+            setOpen(false);
+            handleNavigate("/film");
+          }}
+        >
+          <p className="film-button">Film</p>
+        </motion.button>
+      </nav>
+      <motion.img
+            onMouseEnter={hover}
+            onMouseLeave={normal}
+            initial={{ opacity: 0, x: 40,  }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            viewport={{ once: true }}
+            onClick={() => {
+              setOpen(false);
+              handleNavigate("/");
+            }}
+            src={fairy}
+            isFilm={location.pathname === "/film"}
+          />
     </Container>
   );
 };
@@ -124,15 +125,19 @@ const Container = styled.div`
   padding-top: 50px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-bottom: 70px;
   font-size: clamp(14px, 3vw, 22px);
   font-family: NeueMedium;
 
+  nav {
+    display: flex;
+  }
+
   img {
     transition: 500ms;
     width: 70px;
-    position: absolute;
+
     filter: invert(${(props) => (props.isFilm ? "1" : "0")});
   }
 
@@ -186,10 +191,9 @@ const Container = styled.div`
       transform: translateX(10%);
     }
 
-    .icon{
+    .icon {
       margin-left: 10px;
     }
-    
   }
 `;
 

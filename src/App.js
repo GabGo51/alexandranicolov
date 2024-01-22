@@ -27,8 +27,6 @@ import FairyDust from "./components/FairyDust";
 
 function App() {
   
-  
-  
   return (
     <Router>
       <Container className="App">
