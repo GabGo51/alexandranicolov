@@ -24,6 +24,7 @@ const Container = styled.div`
 mix-blend-mode: difference;
 z-index: 999;
 position: absolute;
+
 `
 
 
@@ -37,7 +38,7 @@ const Dot = styled.div`
   background-color: white;
   mix-blend-mode: difference;
   border-radius: 100%;
-  transform: translate(-50%, -50%);
+  
   z-index: 999;
   pointer-events: none;
 

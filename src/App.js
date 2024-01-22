@@ -22,6 +22,7 @@ import Corpo2 from "./components/Entreprise/2/Corpo2";
 import Corpo3 from "./components/Entreprise/3/Corpo3";
 import Corpo4 from "./components/Entreprise/4/Corpo4";
 import Contact from "./components/Contact";
+import FairyDust from "./components/FairyDust";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
   return (
     <Router>
       <Container className="App">
+        <FairyDust/>
         <Cursor />
         <Header />
         <Routes>

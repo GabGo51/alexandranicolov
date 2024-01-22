@@ -43,6 +43,7 @@ export default createGlobalStyle`
     box-sizing: content-box; 
     background-color: white;
     font-family: NeueLight;
+    
   }
   
   html, body, div, span, applet, object, iframe,
