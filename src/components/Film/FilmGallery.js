@@ -22,7 +22,7 @@ const FilmGallery = () => {
   }, [location.pathname]);
   return (
     <Container>
-      <div >
+      <div>
         <a href="https://vimeo.com/845609888" target="#">
           <img src={vid1} alt="Video 1" />
           <motion.p
@@ -41,8 +41,8 @@ const FilmGallery = () => {
         d'une embarcation de pêche. Mais avant, elle doit traverser une longue
         saison morte dans la Baie-des-Chaleurs. Se perdant dans la rêverie et
         les paysages grandioses de la Gaspésie, nous suivons les préparatifs de
-        cette jeune femme qui a fait le choix de rester. Un film de Thomas
-        Landry
+        cette jeune femme qui a fait le choix de rester. Un film de{" "}
+        <span>Thomas Landry</span>
       </p>
       <div>
         <a
@@ -65,7 +65,7 @@ const FilmGallery = () => {
         Intrusion dans l’univers de l'artiste tatoueuse Wendat Terry Dactel. Le
         film explore notamment le concept de la réappropriation culturelle du
         peuple Wendat à travers la quête identitaire du réalisateur, lui aussi
-        Wendat. Un film de Vincent Careau
+        Wendat. Un film de <span> Vincent Careau</span>
       </p>
     </Container>
   );
@@ -96,12 +96,16 @@ const Container = styled.div`
     margin: 0;
   }
 
-  .description{
+  .description {
     text-align: start;
     width: clamp(320px, 50%, 800px);
     font-size: clamp(14px, 3vw, 20px);
+
+    span{
+     font-weight: bold;
+    }
   }
-  .top{
+  .top {
     margin-bottom: 300px;
   }
 `;

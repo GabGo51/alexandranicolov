@@ -43,10 +43,12 @@ export default createGlobalStyle`
     box-sizing: content-box; 
     background-color: white;
     font-family: NeueLight;
+    transition: 1s;
     
   }
 
   body[data-theme="dark"] {
+    transition: 1s;
     background-color: #242424;
     color: white;
 
