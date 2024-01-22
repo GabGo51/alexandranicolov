@@ -1,7 +1,9 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components";
 import useMousePosition from "./hooks/useMousePosition";
 import { MouseContext } from "./context/mouseContext";
 import { useContext } from "react";
+import on from './components/img/on.png'
+import off from './components/img/off.png'
 
 
 
@@ -13,17 +15,39 @@ const Cursor = () => {
   return (
     <Container>     
       <Dot
-        className={cursorType === 'hover' || 'button' ? cursorType : ''}
+        className={cursorType === 'hover' ? cursorType : ''}
         style={{ left: `${x}px`, top: `${y}px` }}
-      ></Dot>
+      ><img className={cursorType === 'hover' ? 'move' : ''}  src={cursorType === 'hover'? on : off}/></Dot>
     </Container>
   );
 };
 
+const tiltAnimation = keyframes`
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+`;
+
 const Container = styled.div`
-mix-blend-mode: difference;
+
 z-index: 999;
 position: absolute;
+
+img{
+  width: 40px;
+  transform: translateY(-5%);
+
+  &.move{
+    animation: ${tiltAnimation} 0.5s infinite;
+    
+  }
+}
 
 `
 
@@ -35,21 +59,11 @@ const Dot = styled.div`
   left: 50%;
   width: 10px;
   height: 10px;
-  background-color: white;
-  mix-blend-mode: difference;
-  border-radius: 100%;
-  
   z-index: 999;
   pointer-events: none;
 
-  &.hover{
-    width: 30px;
-    height: 30px;
-    
-  }
-  &.button{
-    display: none;
-  }
+  
+  
   @media (max-width:800px){
     display: none;
   }

@@ -12,11 +12,19 @@ const MouseContextProvider = (props) => {
     setCursorType(cursorType);
   };
 
+  const hover = () => {
+    cursorChangeHandler("hover");
+  };
+  const normal = () => {
+    cursorChangeHandler("");
+  };
   return (
     <MouseContext.Provider
       value={{
         cursorType: cursorType,
         cursorChangeHandler: cursorChangeHandler,
+        hover:hover,
+        normal:normal,
       }}
     >
       {props.children}
