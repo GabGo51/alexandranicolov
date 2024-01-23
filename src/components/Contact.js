@@ -6,6 +6,7 @@ import { MouseContext } from "../context/mouseContext";
 
 const Contact = () => {
   const { hover, normal } = useContext(MouseContext);
+  
   return (
     <Container>
       <img src={contact} alt="alexe" />
