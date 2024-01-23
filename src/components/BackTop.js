@@ -37,6 +37,7 @@ const Button = styled.button`
 
     &:hover {
       transform: translateY(-20%);
+      filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
     }
   }
 `;

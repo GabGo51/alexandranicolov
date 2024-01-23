@@ -79,6 +79,7 @@ const Container = styled.div`
 
     &:hover {
       transform: translateX(15%);
+      filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
     }
   }
 `;

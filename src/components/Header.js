@@ -37,7 +37,7 @@ const Header = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
         >
           <button
@@ -167,12 +167,14 @@ const Container = styled.div`
       transition: 500ms;
       &:hover {
         transform: translateX(5%);
+        color:#ff8fab ;
       }
     }
 
     .film-button {
       &:hover {
         transform: translateX(20%);
+        color:#ff8fab ;
       }
     }
   }
@@ -199,10 +201,17 @@ const Container = styled.div`
     display: flex;
     &:hover {
       transform: translateX(10%);
+      color:#ff8fab ;
     }
 
     .icon {
       margin-left: 10px;
+      
+
+      &:hover {
+      
+      color:#ff8fab ;
+    }
     }
   }
 `;
