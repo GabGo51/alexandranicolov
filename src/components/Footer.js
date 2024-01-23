@@ -68,7 +68,7 @@ const Container = styled.div`
     margin-right: 2.5vw;
     margin-top: 50px;
     font-size: clamp(14px, 3vw, 20px);
-
+    font-weight: bold;
     @media (max-width: 1000px) {
       margin-right: 25px;
     }
@@ -79,6 +79,7 @@ const Container = styled.div`
 
     &:hover {
       transform: translateX(15%);
+      
       filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
     }
   }
