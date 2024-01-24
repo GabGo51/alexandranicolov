@@ -34,6 +34,7 @@ function App() {
         <Cursor />
         <Header />
         <Routes>
+
           <Route path="/" element={<Home/>} />
           <Route path="/photo" element={<PhotoGallery />} />
           <Route path="/entreprise" element={<EntrepriseGallery />} />
@@ -53,6 +54,7 @@ function App() {
           <Route path="/corpo/3" element={<Corpo3 />} />
           <Route path="/corpo/4" element={<Corpo4 />} />
           <Route path="/contact" element={<Contact />} />
+          
         </Routes>
         <Footer/>
       </Container>
