@@ -64,7 +64,7 @@ const Header = () => {
                     handleNavigate("/photo");
                   }}
                 >
-                  <p>Photographie sur pellicule</p>
+                  <p>Pellicule</p>
                 </motion.button>
                 <motion.button
                   onMouseEnter={hover}
@@ -79,7 +79,7 @@ const Header = () => {
                     handleNavigate("/entreprise");
                   }}
                 >
-                  <p>Photographie corporative</p>
+                  <p>Corporative</p>
                 </motion.button>
               </motion.div>
             )}
