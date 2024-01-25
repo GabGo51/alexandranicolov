@@ -9,13 +9,15 @@ const Contact = () => {
 
   return (
     <Container>
-      <a target="#" href="https://www.linkedin.com/in/alexandra-nicolov-262067292/">
-        <div>
-        <img src={contact} alt="alexe" />
-      </div>
+      <a
+        target="#"
+        href="https://www.linkedin.com/in/alexandra-nicolov-262067292/"
+      >
+        <div onMouseEnter={hover} onMouseLeave={normal}>
+          <img src={contact} alt="alexe" />
+        </div>
       </a>
-      
-      
+
       <a
         onMouseEnter={hover}
         onMouseLeave={normal}
@@ -37,10 +39,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   line-height: 26px;
-  div{
+  div {
     overflow: hidden;
-margin-bottom: 10px;
-height: 50vh;
+    margin-bottom: 10px;
+    height: 50vh;
   }
 
   img {
