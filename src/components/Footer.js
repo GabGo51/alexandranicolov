@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <Container isFilm={location.pathname === "/film"}>
-      <a
+      <div className="navlink"
         onMouseEnter={hover}
         onMouseLeave={normal}
         to="/contact"
@@ -25,30 +25,30 @@ const Footer = () => {
         isFilm={location.pathname === "/film"}
       >
         <p>Contact</p>
-      </a>
-      <a
+      </div>
+      <a className="navlink"
         onMouseEnter={hover}
         onMouseLeave={normal}
         href="https://vimeo.com/user63054265"
-        target="_blank"
+        target="#"
         isFilm={location.pathname === "/film"}
       >
         <p>Vimeo</p>
       </a>
-      <a
+      <a className="navlink"
         onMouseEnter={hover}
         onMouseLeave={normal}
         href="https://www.instagram.com/alex.nicolov/"
-        target="_blank"
+        target="#"
         isFilm={location.pathname === "/film"}
       >
         <p>Instagram</p>
       </a>
-      <a
+      <a className="navlink"
         onMouseEnter={hover}
         onMouseLeave={normal}
         href="https://www.facebook.com/alex.nicolov.7/"
-        target="_blank"
+        target="#"
         isFilm={location.pathname === "/film"}
       >
         <p>Facebook</p>
@@ -62,7 +62,7 @@ const Container = styled.div`
   display: flex;
   width: 90%;
 
-  a {
+  .navlink {
     color: ${(props) => (props.isFilm ? "white" : "black")};
     text-decoration: none;
     margin-right: 2.5vw;

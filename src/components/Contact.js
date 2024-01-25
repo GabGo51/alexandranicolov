@@ -9,9 +9,12 @@ const Contact = () => {
 
   return (
     <Container>
-      <div>
+      <a target="#" href="https://www.linkedin.com/in/alexandra-nicolov-262067292/">
+        <div>
         <img src={contact} alt="alexe" />
       </div>
+      </a>
+      
       
       <a
         onMouseEnter={hover}
@@ -37,13 +40,13 @@ const Container = styled.div`
   div{
     overflow: hidden;
 margin-bottom: 10px;
-height: 55vh;
+height: 50vh;
   }
 
   img {
     transition: 1s;
     width: auto;
-    height: 55vh;
+    height: 50vh;
     margin-bottom: 10px;
     &:hover {
       scale: 2;
