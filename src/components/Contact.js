@@ -6,16 +6,22 @@ import { MouseContext } from "../context/mouseContext";
 
 const Contact = () => {
   const { hover, normal } = useContext(MouseContext);
-  
+
   return (
     <Container>
-      <img src={contact} alt="alexe" />
-      <a onMouseEnter={hover} onMouseLeave={normal} href="mailto:alexandranicolov@gmail.com">
-        {" "}
-        alexandranicolov@gmail.com
+      <div>
+        <img src={contact} alt="alexe" />
+      </div>
+      
+      <a
+        onMouseEnter={hover}
+        onMouseLeave={normal}
+        href="mailto:alexandranicolov@gmail.com"
+      >
+        <p>alexandranicolov@gmail.com</p>
       </a>
       <a onMouseEnter={hover} onMouseLeave={normal} href="tel:+15144022940">
-        514-402-2940
+        <p>514-402-2940</p>
       </a>
     </Container>
   );
@@ -28,20 +34,35 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   line-height: 26px;
+  div{
+    overflow: hidden;
+margin-bottom: 10px;
+height: 55vh;
+  }
 
   img {
     transition: 1s;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: 55vh;
     margin-bottom: 10px;
     &:hover {
-      transform: rotate(360deg);
+      scale: 2;
+      transform: translateY(-20%);
     }
   }
 
   a {
     color: black;
     text-decoration: none;
+    font-size: clamp(16px, 3vw, 20px);
+
+    p {
+      transition: 500ms;
+      &:hover {
+        filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg)
+          brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
+      }
+    }
   }
 `;
 
