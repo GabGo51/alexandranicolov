@@ -61,6 +61,20 @@ import s4_15 from "./4/img/s4-15.jpg";
 import s4_16 from "./4/img/s4-16.jpg";
 import s4_17 from "./4/img/s4-17.jpg";
 
+import s5_1 from "./5/img/s5-1.jpg";
+import s5_2 from "./5/img/s5-2.jpg";
+import s5_3 from "./5/img/s5-3.jpg";
+import s5_4 from "./5/img/s5-4.jpg";
+import s5_5 from "./5/img/s5-5.jpg";
+
+import s6_1 from "./6/img/s6-1.jpg";
+import s6_2 from "./6/img/s6-2.jpg";
+import s6_3 from "./6/img/s6-3.jpg";
+import s6_4 from "./6/img/s6-4.jpg";
+import s6_5 from "./6/img/s6-5.jpg";
+import s6_6 from "./6/img/s6-6.jpg";
+import s6_7 from "./6/img/s6-7.jpg";
+
 const p1Images = [
   s1_1,
   s1_2,
@@ -96,6 +110,9 @@ const p4Images = [
   s4_16,
   s4_17,
 ];
+
+const p5Images = [s5_1, s5_2, s5_3, s5_4, s5_5];
+const p6Images = [s6_1, s6_2, s6_3, s6_4, s6_5, s6_6, s6_7];
 
 const Gallery = () => {
   const [serieHover, setSerieHover] = useState("");
@@ -252,24 +269,62 @@ const Gallery = () => {
       </div>
 
       <div className="row">
-        <div className="p5" onClick={() => handleNavigate("/photo/5")}>
-          <img
-            onClick={normal}
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            alt="intro"
-            src={s5}
-          />
+        <div
+          className="p5"
+          onClick={() => handleNavigate("/photo/5")}
+          onMouseEnter={() => {
+            setSerieHover(p5Images);
+          }}
+          onMouseLeave={() => {
+            setSerieHover("");
+          }}
+        >
+          {serieHover === p5Images ? (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={p5Images[currentImageIndex]}
+            />
+          ) : (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={s5}
+            />
+          )}
           <p>48 heures plus tard</p>
         </div>
-        <div className="p6" onClick={() => handleNavigate("/photo/6")}>
-          <img
-            onClick={normal}
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            alt="intro"
-            src={s6}
-          />
+        <div
+          className="p6"
+          onClick={() => handleNavigate("/photo/6")}
+          onMouseEnter={() => {
+            setSerieHover(p6Images);
+          }}
+          onMouseLeave={() => {
+            setSerieHover("");
+          }}
+        >
+          {serieHover === p6Images ? (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={p6Images[currentImageIndex]}
+            />
+          ) : (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={s6}
+            />
+          )}
           <p>bercé par le bruit des vagues</p>
         </div>
       </div>
