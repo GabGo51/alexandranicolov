@@ -23,6 +23,8 @@ const FilmGallery = () => {
       document.body.removeAttribute("data-theme");
     };
   }, [location.pathname]);
+
+  
   return (
     <Container>
       <div onMouseEnter={hover} onMouseLeave={normal}>

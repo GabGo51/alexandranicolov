@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import Marquee from "react-fast-marquee";
 import ImageOverlay from "../../Overlay";
 import { useImageContext } from "../../../context/PhotoContext";
 import c4_1 from "./img/c4-1.jpg";
@@ -17,9 +17,19 @@ const Corpo4 = () => {
     useImageContext();
   const { hover, normal } = useContext(MouseContext);
 
+  const screeWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  let speed = 100;
+  if (screeWidth < 500) {
+    speed = 75;
+  }
+
   return (
     <Container>
-      <div className="frame">
+      <Marquee speed={speed} className="frame">
         <img
           onMouseEnter={hover}
           onMouseLeave={normal}
@@ -80,7 +90,7 @@ const Corpo4 = () => {
           alt="corpo4"
           src={c4_6}
         />
-      </div>
+      </Marquee>
 
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
     </Container>
@@ -92,11 +102,7 @@ const Container = styled.div`
 
   .frame {
     max-width: 110%;
-    display: grid;
-    grid-auto-flow: column;
-
-    overflow-x: scroll;
-    scroll-behavior: smooth;
+    z-index: 0;
   }
 
   img {
