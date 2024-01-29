@@ -17,7 +17,8 @@ const Footer = () => {
 
   return (
     <Container isFilm={location.pathname === "/film"}>
-      <div className="navlink"
+      <div
+        className="navlink"
         onMouseEnter={hover}
         onMouseLeave={normal}
         to="/contact"
@@ -26,7 +27,8 @@ const Footer = () => {
       >
         <p>Contact</p>
       </div>
-      <a className="navlink"
+      <a
+        className="navlink"
         onMouseEnter={hover}
         onMouseLeave={normal}
         href="https://vimeo.com/user63054265"
@@ -35,7 +37,8 @@ const Footer = () => {
       >
         <p>Vimeo</p>
       </a>
-      <a className="navlink"
+      <a
+        className="navlink"
         onMouseEnter={hover}
         onMouseLeave={normal}
         href="https://www.instagram.com/alex.nicolov/"
@@ -44,7 +47,8 @@ const Footer = () => {
       >
         <p>Instagram</p>
       </a>
-      <a className="navlink"
+      <a
+        className="navlink"
         onMouseEnter={hover}
         onMouseLeave={normal}
         href="https://www.facebook.com/alex.nicolov.7/"
@@ -79,8 +83,9 @@ const Container = styled.div`
 
     &:hover {
       transform: translateX(15%);
-      
-      filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
+
+      filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg)
+        brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
     }
   }
 `;
