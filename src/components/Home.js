@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ImageOverlay from "./Overlay";
 import { useImageContext } from "../context/PhotoContext";
+import Marquee from "react-fast-marquee";
 import home1 from "./img/home1.jpg";
 import home2 from "./img/home2.jpg";
 import home3 from "./img/home3.jpg";
@@ -19,10 +20,19 @@ const Home = () => {
   const { hover, normal } = useContext(MouseContext);
   const { selectedImage, openOverlay, closeOverlay, setSize } =
     useImageContext();
+  const screeWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  let speed = 100;
+  if (screeWidth < 500) {
+    speed = 75;
+  }
 
   return (
     <Container>
-      <div className="frame">
+      <Marquee speed={speed} className="frame">
         <img
           onMouseEnter={hover}
           onMouseLeave={normal}
@@ -96,7 +106,7 @@ const Home = () => {
           src={home10}
           alt="Cloud"
         />
-      </div>
+      </Marquee>
 
       {selectedImage && <ImageOverlay onClose={closeOverlay} />}
     </Container>
@@ -108,11 +118,9 @@ const Container = styled.div`
 
   .frame {
     max-width: 110%;
-    display: grid;
-    grid-auto-flow: column;
+    z-index: 0;
 
-    overflow-x: scroll;
-    scroll-behavior: smooth;
+    
   }
 
   img {
