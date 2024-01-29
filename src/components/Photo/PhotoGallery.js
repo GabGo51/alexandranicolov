@@ -75,6 +75,33 @@ import s6_5 from "./6/img/s6-5.jpg";
 import s6_6 from "./6/img/s6-6.jpg";
 import s6_7 from "./6/img/s6-7.jpg";
 
+import s7_1 from "./7/img/s7-1.jpg";
+import s7_2 from "./7/img/s7-2.jpg";
+import s7_3 from "./7/img/s7-3.jpg";
+import s7_4 from "./7/img/s7-4.jpg";
+import s7_5 from "./7/img/s7-5.jpg";
+
+import s8_1 from "./8/img/s8-1.jpg";
+import s8_2 from "./8/img/s8-2.jpg";
+import s8_3 from "./8/img/s8-3.jpg";
+import s8_4 from "./8/img/s8-4.jpg";
+import s8_5 from "./8/img/s8-5.jpg";
+import s8_6 from "./8/img/s8-6.jpg";
+
+import s9_1 from "./9/img/s9-1.jpg";
+import s9_2 from "./9/img/s9-2.jpg";
+import s9_3 from "./9/img/s9-3.jpg";
+import s9_4 from "./9/img/s9-4.jpg";
+import s9_5 from "./9/img/s9-5.jpg";
+import s9_6 from "./9/img/s9-6.jpg";
+
+import s10_1 from "./10/img/s10-1.jpg";
+import s10_2 from "./10/img/s10-2.jpg";
+import s10_3 from "./10/img/s10-3.jpg";
+import s10_4 from "./10/img/s10-4.jpg";
+import s10_5 from "./10/img/s10-5.jpg";
+import s10_6 from "./10/img/s10-6.jpg";
+
 const p1Images = [
   s1_1,
   s1_2,
@@ -113,6 +140,10 @@ const p4Images = [
 
 const p5Images = [s5_1, s5_2, s5_3, s5_4, s5_5];
 const p6Images = [s6_1, s6_2, s6_3, s6_4, s6_5, s6_6, s6_7];
+const p7Images = [s7_1, s7_2, s7_3, s7_4, s7_5];
+const p8Images = [s8_1, s8_2, s8_3, s8_4, s8_5, s8_6];
+const p9Images = [s9_2, s9_3, s9_4, s9_5, s9_6, s9_1];
+const p10Images = [ s10_2, s10_3, s10_4, s10_5, s10_6 ,s10_1];
 
 const Gallery = () => {
   const [serieHover, setSerieHover] = useState("");
@@ -269,16 +300,12 @@ const Gallery = () => {
       </div>
 
       <div className="row">
-        <div
-          className="p5"
-          onClick={() => handleNavigate("/photo/5")}
-          onMouseEnter={() => {
+        <div className="p5" onClick={() => handleNavigate("/photo/5")} onMouseEnter={() => {
             setSerieHover(p5Images);
           }}
           onMouseLeave={() => {
             setSerieHover("");
-          }}
-        >
+          }} >
           {serieHover === p5Images ? (
             <img
               onClick={normal}
@@ -329,46 +356,122 @@ const Gallery = () => {
         </div>
       </div>
       <div className="row">
-        <div className="p7" onClick={() => handleNavigate("/photo/7")}>
-          <img
-            onClick={normal}
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            alt="intro"
-            src={s7}
-          />
+        <div
+          className="p7"
+          onClick={() => handleNavigate("/photo/7")}
+          onMouseEnter={() => {
+            setSerieHover(p7Images);
+          }}
+          onMouseLeave={() => {
+            setSerieHover("");
+          }}
+        >
+          {serieHover === p7Images ? (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={p7Images[currentImageIndex]}
+            />
+          ) : (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={s7}
+            />
+          )}
           <p>jusqu’à temps qu’on reparte</p>
         </div>
-        <div className="p8" onClick={() => handleNavigate("/photo/8")}>
-          <img
-            onClick={normal}
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            alt="intro"
-            src={s8}
-          />
+        <div
+          className="p8"
+          onClick={() => handleNavigate("/photo/8")}
+          onMouseEnter={() => {
+            setSerieHover(p8Images);
+          }}
+          onMouseLeave={() => {
+            setSerieHover("");
+          }}
+        >
+          {serieHover === p8Images ? (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={p8Images[currentImageIndex]}
+            />
+          ) : (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={s8}
+            />
+          )}
           <p>Joe’s Valley</p>
         </div>
       </div>
       <div className="row">
-        <div className="p9" onClick={() => handleNavigate("/photo/9")}>
-          <img
-            onClick={normal}
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            alt="intro"
-            src={s9}
-          />
+        <div
+          className="p9"
+          onClick={() => handleNavigate("/photo/9")}
+          onMouseEnter={() => {
+            setSerieHover(p9Images);
+          }}
+          onMouseLeave={() => {
+            setSerieHover("");
+          }}
+        >
+          {serieHover === p9Images ? (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={p9Images[currentImageIndex]}
+            />
+          ) : (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={s9}
+            />
+          )}
           <p>les feuilles qui dansent</p>
         </div>
-        <div className="p10" onClick={() => handleNavigate("/photo/10")}>
-          <img
-            onClick={normal}
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            alt="intro"
-            src={s10}
-          />
+        <div
+          className="p10"
+          onClick={() => handleNavigate("/photo/10")}
+          onMouseEnter={() => {
+            setSerieHover(p10Images);
+          }}
+          onMouseLeave={() => {
+            setSerieHover("");
+          }}
+        >
+          {serieHover === p10Images ? (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={p10Images[currentImageIndex]}
+            />
+          ) : (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={s10}
+            />
+          )}
           <p>atmosphère fuyante</p>
         </div>
       </div>
