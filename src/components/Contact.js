@@ -3,7 +3,7 @@ import styled from "styled-components";
 import contact from "./img/contact.jpg";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
-
+import {motion} from 'framer-motion'
 const Contact = () => {
   const { hover, normal } = useContext(MouseContext);
 
@@ -13,9 +13,9 @@ const Contact = () => {
         target="#"
         href="https://www.linkedin.com/in/alexandra-nicolov-262067292/"
       >
-        <div onMouseEnter={hover} onMouseLeave={normal}>
-          <img src={contact} alt="alexe" />
-        </div>
+        <motion.div initial={{y:-60}} animate={{y:0}} transition={{duration:1}} onMouseEnter={hover} onMouseLeave={normal}>
+          <motion.img initial={{scale:1}} animate={{scale:1.8, y:-180}} transition={{duration:0.5, delay:1}} src={contact} alt="alexe" />
+        </motion.div>
       </a>
 
       <a
@@ -50,10 +50,7 @@ const Container = styled.div`
     width: auto;
     height: 50vh;
     margin-bottom: 10px;
-    &:hover {
-      scale: 2;
-      transform: translateY(-20%);
-    }
+    
   }
 
   a {
