@@ -5,21 +5,26 @@ import { useContext } from "react";
 import on from "./components/img/on.png";
 import off from "./components/img/off.png";
 
-//custom cursor using 2 images changing depending on the state hover normal in mouse context
+// Custom cursor using 2 images changing depending on the state hover normal in mouse context
 const Cursor = () => {
   const { cursorType } = useContext(MouseContext);
-
   const { x, y } = useMousePosition();
+
   return (
     <Container>
       <Dot
         className={cursorType === "hover" ? cursorType : ""}
-        style={{ left: `${x}px`, top: `${y - 8}px` }}
+        style={{ left: `${x}px`, top: `${y}px` }}
       >
         <img
-        alt="cursor"
+          alt="cursor-on"
           className={cursorType === "hover" ? "move" : ""}
-          src={cursorType === "hover" ? on : off}
+          src={on}
+        />
+        <img
+          alt="cursor-off"
+          className={cursorType !== "hover" ? "move" : ""}
+          src={off}
         />
       </Dot>
     </Container>
@@ -44,19 +49,28 @@ const Container = styled.div`
 `;
 
 const Dot = styled.div`
-  transition: width 200ms, height 200ms;
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 10px;
-  height: 10px;
+  width: 40px; /* Adjust width according to your images */
+  height: 40px; /* Adjust height according to your images */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 999;
   pointer-events: none;
 
   img {
-    width: 40px;
-    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+
     &.move {
+      opacity: 1;
       animation: ${tiltAnimation} 0.5s infinite;
     }
   }
