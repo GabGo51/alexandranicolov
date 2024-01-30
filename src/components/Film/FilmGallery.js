@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import vid1 from "./img/vid1.gif";
 import vid2 from "./img/vid2.gif";
+import kelm from './img/kelm.gif'
+import wend from './img/wend.gif'
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
@@ -34,7 +36,7 @@ const FilmGallery = () => {
     <Container>
       <div onMouseEnter={hover} onMouseLeave={normal}>
         <a href="https://vimeo.com/845609888" target="#">
-          <img src={vid1} alt="Video 1" />
+          <img src={kelm} alt="Video 1" />
           <motion.p
             className="title"
             initial={{ opacity: 0 }}
@@ -59,7 +61,7 @@ const FilmGallery = () => {
           href="https://app.frame.io/presentations/3d7729d1-e779-43a2-beee-f21977187df4"
           target="#"
         >
-          <img src={vid2} alt="Video 2" />
+          <img src={wend} alt="Video 2" />
           <motion.p
             className="title"
             initial={{ opacity: 0 }}
@@ -88,10 +90,12 @@ const Container = styled.div`
   div {
     position: relative;
     margin-bottom: 40px;
+    
   }
 
   img {
     width: 100%;
+    height: 70vh;
     display: block;
   }
 
