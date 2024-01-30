@@ -64,7 +64,7 @@ const Dot = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
+    top: -8px;
     left: 0;
     opacity: 0;
     transition: opacity 0.1s ease-in-out;
