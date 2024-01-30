@@ -135,8 +135,14 @@ const Container = styled.div`
 
   img {
     width: 100%;
-    height: 77vh;
+    height: 700px;
     display: block;
+    @media (max-width: 1200px) {
+      height: 500px;
+    }
+    @media (max-width: 600px) {
+      height: 300px;
+    }
   }
 
   .title {
