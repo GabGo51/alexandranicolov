@@ -17,6 +17,7 @@ const Cursor = () => {
         style={{ left: `${x}px`, top: `${y - 8}px` }}
       >
         <img
+        alt="cursor"
           className={cursorType === "hover" ? "move" : ""}
           src={cursorType === "hover" ? on : off}
         />

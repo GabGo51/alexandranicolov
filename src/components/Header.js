@@ -148,10 +148,19 @@ const Container = styled.div`
     transition: 500ms;
     width: 80px;
 
+   
+
     filter: invert(${(props) => (props.isFilm ? "1" : "0")});
 
     &:hover {
       filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
+    }
+
+    @media (max-width: 400px) {
+      width:60px;
+    }
+    @media (max-width: 350px) {
+      width:50px;
     }
   }
 
@@ -200,8 +209,12 @@ const Container = styled.div`
   .extra {
     position: absolute;
     bottom: -60px;
+    transform: translateX(10%);
 
     @media (max-width: 700px) {
+      bottom: -60px;
+    }
+    @media (max-width: 500px) {
       bottom: -45px;
     }
   }
@@ -209,9 +222,10 @@ const Container = styled.div`
   .main-b {
     transition: 500ms;
     display: flex;
+    transform: translateX(30%);
 
     &:hover {
-      transform: translateX(10%);
+      transform: translateX(40%);
       color:#ff8fab ;
     }
 

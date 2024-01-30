@@ -24,13 +24,14 @@ const FairyDust = () => {
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("touchmove", onTouchMove);
       document.addEventListener("touchstart", onTouchMove);
-      window.addEventListener("resize", onWindowResize);
+      // window.addEventListener("resize", onWindowResize);
     };
 
-    const onWindowResize = (e) => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-    };
+    // const onWindowResize = () => {
+    //   width = window.innerWidth;
+    //   height = window.innerHeight;
+    // };
+    // console.log(width);
 
     const onTouchMove = (e) => {
       if (e.touches.length > 0) {
@@ -148,7 +149,7 @@ const FairyDust = () => {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("touchmove", onTouchMove);
       document.removeEventListener("touchstart", onTouchMove);
-      window.removeEventListener("resize", onWindowResize);
+      // window.removeEventListener("resize", onWindowResize);
     };
   }, []);
 
