@@ -1,14 +1,41 @@
-import React, { useEffect } from "react";
-import vid1 from "./img/vid1.gif";
-import vid2 from "./img/vid2.gif";
-import kelm from './img/kelm.gif'
-import wend from './img/wend.gif'
+import React, { useEffect , useState} from "react";
+
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
 
+import wendat1 from './img/01_wendat.jpg'
+import wendat2 from './img/02_wendat.jpg'
+import wendat3 from './img/03_wendat.jpg'
+import wendat5 from './img/05_wendat.jpg'
+import wendat7 from './img/07_wendat.jpg'
+import wendat8 from './img/08_wendat.jpg'
+import wendat9 from './img/09_wendat.jpg'
+import wendat10 from './img/10_wendat.jpg'
+import wendat11 from './img/11_wendat.jpg'
+import wendat12 from './img/12_wendat.jpg'
+import wendat13 from './img/13_wendat.jpg'
+import wendat14 from './img/14_wendat.jpg'
+import wendat15 from './img/15_wendat.jpg'
+import wendat16 from './img/16_wendat.jpg'
+import wendat17 from './img/17_wendat.jpg'
+
+import kelm1 from './img/01.jpg'
+import kelm2 from './img/02.jpg'
+import kelm3 from './img/03.jpg'
+import kelm4 from './img/04.jpg'
+import kelm5 from './img/05.jpg'
+import kelm6 from './img/06.jpg'
+import kelm7 from './img/07.jpg'
+import kelm8 from './img/08.jpg'
+import kelm9 from './img/09.jpg'
+import kelm10 from './img/10.jpg'
+import kelm11 from './img/11.jpg'
+import kelm12 from './img/12.jpg'
+const went = [wendat1,wendat2,wendat3,wendat5,wendat7,wendat8,wendat9,wendat10,wendat11,wendat12,wendat13,wendat14,wendat15,wendat16, wendat17 ]
+const keml = [kelm1,kelm2,kelm3,kelm4,kelm5,kelm6,kelm7,kelm8,kelm9,kelm10,kelm11,kelm12,]
 
 //dark mode component with film gifs / links and description
 
@@ -31,12 +58,25 @@ const FilmGallery = () => {
     };
   }, [location.pathname]);
 
+
+  const [currentIndexKeml, setCurrentIndexKeml] = useState(0);
+  const [currentIndexWent, setCurrentIndexWent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndexKeml((prevIndex) => (prevIndex + 1) % keml.length);
+      setCurrentIndexWent((prevIndex) => (prevIndex + 1) % went.length);
+    }, 1000); // Change image every second
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
+
   
   return (
     <Container>
       <div onMouseEnter={hover} onMouseLeave={normal}>
         <a href="https://vimeo.com/845609888" target="#">
-          <img src={kelm} alt="Video 1" />
+          <img src={keml[currentIndexKeml]} alt="Video 1" />
           <motion.p
             className="title"
             initial={{ opacity: 0 }}
@@ -61,7 +101,7 @@ const FilmGallery = () => {
           href="https://app.frame.io/presentations/3d7729d1-e779-43a2-beee-f21977187df4"
           target="#"
         >
-          <img src={wend} alt="Video 2" />
+          <img src={went[currentIndexWent]} alt="Video 2" />
           <motion.p
             className="title"
             initial={{ opacity: 0 }}
@@ -95,7 +135,7 @@ const Container = styled.div`
 
   img {
     width: 100%;
-    height: 70vh;
+    height: 77vh;
     display: block;
   }
 
