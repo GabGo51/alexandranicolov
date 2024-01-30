@@ -23,7 +23,7 @@ const Cursor = () => {
         />
         <img
           alt="cursor-off"
-          className={cursorType !== "hover" ? "move" : ""}
+          className={cursorType !== "hover" ? "moveoff" : ""}
           src={off}
         />
       </Dot>
@@ -72,6 +72,10 @@ const Dot = styled.div`
     &.move {
       opacity: 1;
       animation: ${tiltAnimation} 0.5s infinite;
+    }
+    &.moveoff {
+      opacity: 1;
+      
     }
   }
 
