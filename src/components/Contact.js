@@ -18,16 +18,16 @@ const Contact = () => {
         </motion.div>
       </a>
 
-      <a
+      <motion.a initial={{y:20, opacity:0}} animate={{y:0, opacity:1}} transition={{duration:1}}
         onMouseEnter={hover}
         onMouseLeave={normal}
         href="mailto:alexandranicolov@gmail.com"
       >
         <p>alexandranicolov@gmail.com</p>
-      </a>
-      <a onMouseEnter={hover} onMouseLeave={normal} href="tel:+15144022940">
+      </motion.a >
+      <motion.a initial={{y:20, opacity:0}} animate={{y:0, opacity:1}} transition={{duration:1, delay:0.2}} onMouseEnter={hover} onMouseLeave={normal} href="tel:+15144022940">
         <p>514-402-2940</p>
-      </a>
+      </motion.a>
     </Container>
   );
 };

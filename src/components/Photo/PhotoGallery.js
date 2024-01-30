@@ -166,7 +166,7 @@ const Gallery = () => {
 
   const { hover, normal } = useContext(MouseContext);
 
-  console.log(currentImageIndex);
+  
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
