@@ -4,10 +4,15 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 
+
+//footer component with social and contact links
 const Footer = () => {
-  const navigate = useNavigate();
+  
   const location = useLocation();
+
   const { hover, normal } = useContext(MouseContext);
+
+  const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);
     window.scrollTo({
@@ -16,6 +21,7 @@ const Footer = () => {
   };
 
   return (
+    //for darkmode
     <Container isFilm={location.pathname === "/film"}>
       <div
         className="navlink"

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+
+//component tracking the mouse position 
 export default function useMousePosition() {
   const [mousePosition, setMousePosition] = useState({ x: null, y: null });
 

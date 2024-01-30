@@ -5,6 +5,7 @@ import { useContext } from "react";
 import on from "./components/img/on.png";
 import off from "./components/img/off.png";
 
+//custom cursor using 2 images changing depending on the state hover normal in mouse context
 const Cursor = () => {
   const { cursorType } = useContext(MouseContext);
 

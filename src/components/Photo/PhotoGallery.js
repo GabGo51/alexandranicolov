@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import BackTop from "../BackTop";
+import { useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
+
+//import main serie img
 import s1 from "./img/s1.jpg";
 import s2 from "./img/s2.jpg";
 import s3 from "./img/s3.jpg";
@@ -9,12 +16,9 @@ import s7 from "./img/s7.jpg";
 import s8 from "./img/s8.jpg";
 import s9 from "./img/s9.jpg";
 import s10 from "./img/s10.jpg";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
-import BackTop from "../BackTop";
-import { useContext } from "react";
-import { MouseContext } from "../../context/mouseContext";
 
+
+//import all other serie img
 import s1_1 from "./1/img/s1-1.jpg";
 import s1_2 from "./1/img/s1-2.jpg";
 import s1_3 from "./1/img/s1-3.jpg";
@@ -137,7 +141,6 @@ const p4Images = [
   s4_16,
   s4_17,
 ];
-
 const p5Images = [s5_1, s5_2, s5_3, s5_4, s5_5];
 const p6Images = [s6_1, s6_2, s6_3, s6_4, s6_5, s6_6, s6_7];
 const p7Images = [s7_1, s7_2, s7_3, s7_4, s7_5];
@@ -145,19 +148,25 @@ const p8Images = [s8_1, s8_2, s8_3, s8_4, s8_5, s8_6];
 const p9Images = [s9_2, s9_3, s9_4, s9_5, s9_6, s9_1];
 const p10Images = [ s10_2, s10_3, s10_4, s10_5, s10_6 ,s10_1];
 
+
+//definitely not the way to do it but took to long to change and works
+//photoGallery for link to all individual photo serie, when hover on serie change picture every .7s
+//showing main pick when not hovered , showing array of all pic when hovered
 const Gallery = () => {
+
+  //hovering a serie and changing picture on it for CTA
   const [serieHover, setSerieHover] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     let intervalId;
-    setCurrentImageIndex(0);
+    setCurrentImageIndex(0); //reset interval when hovering a new series
     if (serieHover) {
       intervalId = setInterval(() => {
         setCurrentImageIndex(
           (prevIndex) => (prevIndex + 1) % serieHover.length
         );
-      }, 700); // Change image every second
+      }, 700); 
     } else {
       clearInterval(intervalId); // Clear interval when not hovering
     }
@@ -165,8 +174,6 @@ const Gallery = () => {
   }, [serieHover]);
 
   const { hover, normal } = useContext(MouseContext);
-
-  
 
   const navigate = useNavigate();
   const handleNavigate = (page) => {
@@ -300,7 +307,7 @@ const Gallery = () => {
       </div>
 
       <div className="row">
-        <div className="p5" onClick={() => handleNavigate("/photo/5")} onMouseEnter={() => {
+        <div className="p1" onClick={() => handleNavigate("/photo/5")} onMouseEnter={() => {
             setSerieHover(p5Images);
           }}
           onMouseLeave={() => {
@@ -326,7 +333,7 @@ const Gallery = () => {
           <p>48 heures plus tard</p>
         </div>
         <div
-          className="p6"
+          className="p2"
           onClick={() => handleNavigate("/photo/6")}
           onMouseEnter={() => {
             setSerieHover(p6Images);
@@ -357,7 +364,7 @@ const Gallery = () => {
       </div>
       <div className="row">
         <div
-          className="p7"
+          className="p1"
           onClick={() => handleNavigate("/photo/7")}
           onMouseEnter={() => {
             setSerieHover(p7Images);
@@ -386,7 +393,7 @@ const Gallery = () => {
           <p>jusqu’à temps qu’on reparte</p>
         </div>
         <div
-          className="p8"
+          className="p2"
           onClick={() => handleNavigate("/photo/8")}
           onMouseEnter={() => {
             setSerieHover(p8Images);
@@ -417,7 +424,7 @@ const Gallery = () => {
       </div>
       <div className="row">
         <div
-          className="p9"
+          className="p1"
           onClick={() => handleNavigate("/photo/9")}
           onMouseEnter={() => {
             setSerieHover(p9Images);
@@ -446,7 +453,7 @@ const Gallery = () => {
           <p>les feuilles qui dansent</p>
         </div>
         <div
-          className="p10"
+          className="p2"
           onClick={() => handleNavigate("/photo/10")}
           onMouseEnter={() => {
             setSerieHover(p10Images);
@@ -528,27 +535,10 @@ const Container = styled.div`
   .p4 {
     width: 40%;
   }
-  .p5 {
-    width: 30%;
-  }
+  
+  
 
-  .p6 {
-    width: 65%;
-  }
-  .p7 {
-    width: 30%;
-  }
-
-  .p8 {
-    width: 65%;
-  }
-  .p9 {
-    width: 30%;
-  }
-
-  .p10 {
-    width: 65%;
-  }
+  
 `;
 
 export default Gallery;

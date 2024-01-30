@@ -65,8 +65,13 @@ const c3Images = [ c3_1,c3_2, c3_3, c3_4, c3_5, c3_6, c3_7, c3_8,];
 
 const c4Images = [ c4_2, c4_3, c4_4,c4_1,c4_5,c4_6,]
 
+//same as photo gallery not the way but it works i guess 
+//showing main pic on normal and array on hover
+//link to all corpo series
+
 const EntrepriseGallery = () => {
   const { hover, normal } = useContext(MouseContext);
+
   const navigate = useNavigate();
   const handleNavigate = (page) => {
     navigate(page);
@@ -92,6 +97,7 @@ const EntrepriseGallery = () => {
     }
     return () => clearInterval(intervalId); // Cleanup on unmount or when not hovering
   }, [serieHover]);
+  
   return (
     <Container>
       <div className="row">

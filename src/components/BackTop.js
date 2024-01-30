@@ -4,6 +4,7 @@ import arrow from "./img/arrow.png";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 
+//back top button at the bottom of each pages 
 const BackTop = () => {
   const { hover, normal } = useContext(MouseContext);
   return (
@@ -37,6 +38,7 @@ const Button = styled.button`
 
     &:hover {
       transform: translateY(-20%);
+      //check https://codepen.io/sosuke/pen/Pjoqqp
       filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
     }
   }

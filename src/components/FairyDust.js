@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 const Container = styled.span`
   display: block;
-  
 `;
-
+//imma be real this is stolen and modified 
+//component that creates the fade away fairy dust following the cursor
 const FairyDust = () => {
   const possibleColors = ["#cdb4db", "#ffc8dd", "#ffafcc", "#bde0fe", "#a2d2ff"];
   let width = window.innerWidth;

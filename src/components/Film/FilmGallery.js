@@ -7,10 +7,15 @@ import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
 
+
+//dark mode component with film gifs / links and description
+
 const FilmGallery = () => {
   const location = useLocation();
   const { hover, normal } = useContext(MouseContext);
 
+
+ //setting uup dark mode
   useEffect(() => {
     if (location.pathname === "/film") {
       document.body.setAttribute("data-theme", "dark");

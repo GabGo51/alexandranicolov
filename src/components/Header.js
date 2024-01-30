@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import fairy from "./img/fairy.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
+import fairy from "./img/fairy.png";
+
+//header component with title\logo bring back home and nav to other pages
 const Header = () => {
+
   const { hover, normal } = useContext(MouseContext);
+
   const [open, setOpen] = useState();
+
   const navigate = useNavigate();
   const location = useLocation();
   const handleNavigate = (page) => {
@@ -16,7 +21,10 @@ const Header = () => {
       top: 0,
     });
   };
+
+
   return (
+    //for dark mode 
     <Container isFilm={location.pathname === "/film"}>
       <nav>
         <motion.h1
@@ -48,6 +56,7 @@ const Header = () => {
           >
             Photo {open ? <p className="icon">-</p> : <p className="icon">+</p>}
           </button>
+          {/* need for exit prop in framer */}
           <AnimatePresence>
             {open && (
               <motion.div className="extra">
@@ -140,6 +149,7 @@ const Container = styled.div`
     width: 80px;
 
     filter: invert(${(props) => (props.isFilm ? "1" : "0")});
+
     &:hover {
       filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
     }
@@ -165,6 +175,7 @@ const Container = styled.div`
 
     p {
       transition: 500ms;
+
       &:hover {
         transform: translateX(5%);
         color:#ff8fab ;
@@ -172,6 +183,7 @@ const Container = styled.div`
     }
 
     .film-button {
+
       &:hover {
         transform: translateX(20%);
         color:#ff8fab ;
@@ -183,8 +195,6 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    p {
-    }
   }
 
   .extra {
@@ -199,6 +209,7 @@ const Container = styled.div`
   .main-b {
     transition: 500ms;
     display: flex;
+
     &:hover {
       transform: translateX(10%);
       color:#ff8fab ;
@@ -206,10 +217,8 @@ const Container = styled.div`
 
     .icon {
       margin-left: 10px;
-      
 
       &:hover {
-      
       color:#ff8fab ;
     }
     }

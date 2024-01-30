@@ -7,6 +7,7 @@ import EntrepriseGallery from "./components/Entreprise/EntrepriseGallery";
 import FilmGallery from "./components/Film/FilmGallery";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+//have to find better way of doing this 
 import Serie1 from "./components/Photo/1/Serie1";
 import Serie2 from "./components/Photo/2/Serie2";
 import Serie3 from "./components/Photo/3/Serie3";
@@ -34,7 +35,6 @@ function App() {
         <Cursor />
         <Header />
         <Routes>
-
           <Route path="/" element={<Home/>} />
           <Route path="/photo" element={<PhotoGallery />} />
           <Route path="/entreprise" element={<EntrepriseGallery />} />
@@ -54,7 +54,6 @@ function App() {
           <Route path="/corpo/3" element={<Corpo3 />} />
           <Route path="/corpo/4" element={<Corpo4 />} />
           <Route path="/contact" element={<Contact />} />
-          
         </Routes>
         <Footer/>
       </Container>
@@ -66,11 +65,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  
-   
-  
-  
+  align-items: center
 `;
 
 export default App;

@@ -4,6 +4,9 @@ import contact from "./img/contact.jpg";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 import {motion} from 'framer-motion'
+
+
+//contact page with phone email and photo(LKd link)
 const Contact = () => {
   const { hover, normal } = useContext(MouseContext);
 
@@ -14,7 +17,7 @@ const Contact = () => {
         href="https://www.linkedin.com/in/alexandra-nicolov-262067292/"
       >
         <motion.div initial={{y:-60}} animate={{y:0}} transition={{duration:1}} onMouseEnter={hover} onMouseLeave={normal}>
-          <motion.img initial={{scale:1}} animate={{scale:1.8, y:-180}} transition={{duration:0.5, delay:1}} src={contact} alt="alexe" />
+          <motion.img initial={{scale:1}} animate={{scale:1.8, y:-140}} transition={{duration:0.5, delay:1}} src={contact} alt="alexe" />
         </motion.div>
       </a>
 

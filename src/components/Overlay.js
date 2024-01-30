@@ -1,30 +1,33 @@
 import React, {useEffect} from "react";
-import { useImageContext } from "../context/PhotoContext"; // Update the path if needed
+import { useImageContext } from "../context/PhotoContext"; 
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import close from "./img/close.png";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 
+
+//makes all images clickable opening an overlay to single the out 
 const ImageOverlay = () => {
+
   const { selectedImage, closeOverlay, size } = useImageContext();
+
   const { hover, normal } = useContext(MouseContext);
 
+
+  //make escape key close overlay
   const handleKeyDown = (e) => {
     if (e.key === "Escape") {
       closeOverlay();
     }
   };
-
   useEffect(() => {
-    // Add event listener when the component mounts
     window.addEventListener("keydown", handleKeyDown);
 
-    // Remove event listener when the component unmounts
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []); // Empty dependency array ensures that the effect runs only once when the component mounts
+  }, []);
 
   return (
     selectedImage && (

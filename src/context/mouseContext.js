@@ -5,6 +5,7 @@ export const MouseContext = createContext({
   cursorChangeHandler: () => {},
 });
 
+//context to define the hover or normal state of the cursor for CTA
 const MouseContextProvider = (props) => {
   const [cursorType, setCursorType] = useState("");
 
