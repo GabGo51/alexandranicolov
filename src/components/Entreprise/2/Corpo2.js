@@ -165,6 +165,7 @@ const Container = styled.div`
 
   img {
     width: 23%;
+    
   }
   .row {
     margin-bottom: 1.5vw;

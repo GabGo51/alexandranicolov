@@ -157,7 +157,7 @@ const Gallery = () => {
         setCurrentImageIndex(
           (prevIndex) => (prevIndex + 1) % serieHover.length
         );
-      }, 1000); // Change image every second
+      }, 700); // Change image every second
     } else {
       clearInterval(intervalId); // Clear interval when not hovering
     }
