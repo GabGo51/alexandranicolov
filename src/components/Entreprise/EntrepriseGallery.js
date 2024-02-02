@@ -159,7 +159,7 @@ const EntrepriseGallery = () => {
               src={c2}
             />
           )}
-          <p>Fleuristes Binette et filles</p>
+          <p>Fleuriste Binette et filles</p>
         </div>
       </div>
       <div className="row two">
