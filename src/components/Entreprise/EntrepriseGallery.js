@@ -62,11 +62,11 @@ const c2Images = [
   c2_1,
 ];
 
-const c3Images = [ c3_1,c3_2, c3_3, c3_4, c3_5, c3_6, c3_7, c3_8,];
+const c3Images = [c3_1, c3_2, c3_3, c3_4, c3_5, c3_6, c3_7, c3_8];
 
-const c4Images = [ c4_2, c4_3, c4_4,c4_1,c4_5,c4_6,]
+const c4Images = [c4_2, c4_3, c4_4, c4_1, c4_5, c4_6];
 
-//same as photo gallery not the way but it works i guess 
+//same as photo gallery not the way but it works i guess
 //showing main pic on normal and array on hover
 //link to all corpo series
 
@@ -98,7 +98,7 @@ const EntrepriseGallery = () => {
     }
     return () => clearInterval(intervalId); // Cleanup on unmount or when not hovering
   }, [serieHover]);
-  
+
   return (
     <Container>
       <Helmet>
@@ -171,12 +171,17 @@ const EntrepriseGallery = () => {
         </div>
       </div>
       <div className="row two">
-        <div className="p3" onClick={() => handleNavigate("/corpo/3")} onMouseEnter={() => {
+        <div
+          className="p3"
+          onClick={() => handleNavigate("/corpo/3")}
+          onMouseEnter={() => {
             setSerieHover(c3Images);
           }}
           onMouseLeave={() => {
             setSerieHover("");
-          }}>{serieHover === c3Images ? (
+          }}
+        >
+          {serieHover === c3Images ? (
             <img
               onClick={normal}
               onMouseEnter={hover}
@@ -184,23 +189,29 @@ const EntrepriseGallery = () => {
               alt="intro"
               src={c3Images[currentImageIndex]}
             />
-          ) :
-          <img
-            onClick={normal}
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            alt="intro"
-            className="image3"
-            src={c3}
-          />}
+          ) : (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              className="image3"
+              src={c3}
+            />
+          )}
           <p>Photographie corporative</p>
         </div>
-        <div className="p4" onClick={() => handleNavigate("/corpo/4")} onMouseEnter={() => {
+        <div
+          className="p4"
+          onClick={() => handleNavigate("/corpo/4")}
+          onMouseEnter={() => {
             setSerieHover(c4Images);
           }}
           onMouseLeave={() => {
             setSerieHover("");
-          }}>{serieHover === c4Images ? (
+          }}
+        >
+          {serieHover === c4Images ? (
             <img
               onClick={normal}
               onMouseEnter={hover}
@@ -208,14 +219,15 @@ const EntrepriseGallery = () => {
               alt="intro"
               src={c4Images[currentImageIndex]}
             />
-          ) :
-          <img
-            onClick={normal}
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            alt="intro"
-            src={c4}
-          />}
+          ) : (
+            <img
+              onClick={normal}
+              onMouseEnter={hover}
+              onMouseLeave={normal}
+              alt="intro"
+              src={c4}
+            />
+          )}
           <p>Évènements</p>
         </div>
       </div>
@@ -225,7 +237,7 @@ const EntrepriseGallery = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   width: 70%;
   @media (max-width: 1200px) {
     width: 90%;

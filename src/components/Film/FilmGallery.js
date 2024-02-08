@@ -101,13 +101,9 @@ const FilmGallery = () => {
 
   return (
     <Container>
-      
       <Helmet>
         <title>Film</title>
-        <meta
-          name="description"
-          content="Projet film / videographie"
-        />
+        <meta name="description" content="Projet film / videographie" />
       </Helmet>
       <div onMouseEnter={hover} onMouseLeave={normal}>
         <a href="https://vimeo.com/845609888" target="#">
@@ -157,7 +153,7 @@ const FilmGallery = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   width: 90%;
   text-align: center;
 

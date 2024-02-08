@@ -4,10 +4,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 
-
 //footer component with social and contact links
 const Footer = () => {
-  
   const location = useLocation();
 
   const { hover, normal } = useContext(MouseContext);
@@ -67,7 +65,7 @@ const Footer = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   padding: 50px 0;
   display: flex;
   width: 90%;

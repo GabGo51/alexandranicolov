@@ -78,7 +78,7 @@ const Serie10 = () => {
     </Container>
   );
 };
-const Container = styled.div`
+const Container = styled.section`
   width: 70%;
   @media (max-width: 1200px) {
     width: 90%;

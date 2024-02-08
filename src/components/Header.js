@@ -8,7 +8,6 @@ import fairy from "./img/fairy.png";
 
 //header component with title\logo bring back home and nav to other pages
 const Header = () => {
-
   const { hover, normal } = useContext(MouseContext);
 
   const [open, setOpen] = useState();
@@ -22,9 +21,8 @@ const Header = () => {
     });
   };
 
-
   return (
-    //for dark mode 
+    //for dark mode
     <Container isFilm={location.pathname === "/film"}>
       <nav>
         <motion.h1
@@ -111,24 +109,24 @@ const Header = () => {
         </motion.button>
       </nav>
       <motion.img
-            onMouseEnter={hover}
-            onMouseLeave={normal}
-            initial={{ opacity: 0, x: 40,  }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            viewport={{ once: true }}
-            onClick={() => {
-              setOpen(false);
-              handleNavigate("/");
-            }}
-            src={fairy}
-            isFilm={location.pathname === "/film"}
-          />
+        onMouseEnter={hover}
+        onMouseLeave={normal}
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: true }}
+        onClick={() => {
+          setOpen(false);
+          handleNavigate("/");
+        }}
+        src={fairy}
+        isFilm={location.pathname === "/film"}
+      />
     </Container>
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   width: 90%;
   padding: 20px 0;
   padding-top: 50px;
@@ -148,32 +146,31 @@ const Container = styled.div`
     transition: 500ms;
     width: 80px;
 
-   
-
     filter: invert(${(props) => (props.isFilm ? "1" : "0")});
 
     &:hover {
-      filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg) brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
+      filter: invert(64%) sepia(8%) saturate(2197%) hue-rotate(297deg)
+        brightness(103%) contrast(104%); /* Adjust hue-rotate for the desired pink shade */
     }
 
     @media (max-width: 400px) {
-      width:60px;
+      width: 60px;
     }
     @media (max-width: 350px) {
-      width:50px;
+      width: 50px;
     }
   }
 
   h1 {
     transition: 500ms;
     font-size: clamp(14px, 3vw, 24px);
-    
+
     @media (max-width: 700px) {
       margin-right: -20px;
     }
 
-    &:hover{
-      color:#ff8fab ;
+    &:hover {
+      color: #ff8fab;
     }
   }
 
@@ -187,15 +184,14 @@ const Container = styled.div`
 
       &:hover {
         transform: translateX(5%);
-        color:#ff8fab ;
+        color: #ff8fab;
       }
     }
 
     .film-button {
-
       &:hover {
         transform: translateX(20%);
-        color:#ff8fab ;
+        color: #ff8fab;
       }
     }
   }
@@ -226,15 +222,15 @@ const Container = styled.div`
 
     &:hover {
       transform: translateX(40%);
-      color:#ff8fab ;
+      color: #ff8fab;
     }
 
     .icon {
       margin-left: 10px;
 
       &:hover {
-      color:#ff8fab ;
-    }
+        color: #ff8fab;
+      }
     }
   }
 `;

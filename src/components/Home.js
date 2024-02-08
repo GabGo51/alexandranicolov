@@ -124,7 +124,7 @@ const Home = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   width: 90%;
 
   .frame {

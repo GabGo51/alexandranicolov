@@ -1,19 +1,16 @@
-import React, {useEffect} from "react";
-import { useImageContext } from "../context/PhotoContext"; 
+import React, { useEffect } from "react";
+import { useImageContext } from "../context/PhotoContext";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import close from "./img/close.png";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 
-
-//makes all images clickable opening an overlay to single the out 
+//makes all images clickable opening an overlay to single the out
 const ImageOverlay = () => {
-
   const { selectedImage, closeOverlay, size } = useImageContext();
 
   const { hover, normal } = useContext(MouseContext);
-
 
   //make escape key close overlay
   const handleKeyDown = (e) => {
@@ -35,14 +32,19 @@ const ImageOverlay = () => {
         <motion.div initial={{ y: 20 }} animate={{ y: 0 }}>
           <img className="image-over" src={selectedImage} alt="Full Screen" />
         </motion.div>
-        <img onMouseEnter={hover}
-        onMouseLeave={normal} src={close} alt="close" className="close" />
+        <img
+          onMouseEnter={hover}
+          onMouseLeave={normal}
+          src={close}
+          alt="close"
+          className="close"
+        />
       </Container>
     )
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -64,7 +66,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
   }
   .image-over {
     height: 90vh;

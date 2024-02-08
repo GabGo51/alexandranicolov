@@ -43,7 +43,7 @@ const tiltAnimation = keyframes`
   }
 `;
 
-const Container = styled.div`
+const Container = styled.section`
   z-index: 999;
   position: absolute;
 `;
@@ -75,7 +75,6 @@ const Dot = styled.div`
     }
     &.moveoff {
       opacity: 1;
-      
     }
   }
 

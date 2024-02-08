@@ -97,7 +97,7 @@ const Corpo4 = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   width: 90%;
 
   .frame {

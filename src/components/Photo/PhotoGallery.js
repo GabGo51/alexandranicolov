@@ -18,7 +18,6 @@ import s8 from "./img/s8.jpg";
 import s9 from "./img/s9.jpg";
 import s10 from "./img/s10.jpg";
 
-
 //import all other serie img
 import s1_1 from "./1/img/s1-1.jpg";
 import s1_2 from "./1/img/s1-2.jpg";
@@ -147,14 +146,12 @@ const p6Images = [s6_1, s6_2, s6_3, s6_4, s6_5, s6_6, s6_7];
 const p7Images = [s7_1, s7_2, s7_3, s7_4, s7_5];
 const p8Images = [s8_1, s8_2, s8_3, s8_4, s8_5, s8_6];
 const p9Images = [s9_2, s9_3, s9_4, s9_5, s9_6, s9_1];
-const p10Images = [ s10_2, s10_3, s10_4, s10_5, s10_6 ,s10_1];
-
+const p10Images = [s10_2, s10_3, s10_4, s10_5, s10_6, s10_1];
 
 //definitely not the way to do it but took to long to change and works
 //photoGallery for link to all individual photo serie, when hover on serie change picture every .7s
 //showing main pick when not hovered , showing array of all pic when hovered
 const Gallery = () => {
-
   //hovering a serie and changing picture on it for CTA
   const [serieHover, setSerieHover] = useState("");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -167,7 +164,7 @@ const Gallery = () => {
         setCurrentImageIndex(
           (prevIndex) => (prevIndex + 1) % serieHover.length
         );
-      }, 700); 
+      }, 700);
     } else {
       clearInterval(intervalId); // Clear interval when not hovering
     }
@@ -187,10 +184,7 @@ const Gallery = () => {
     <Container>
       <Helmet>
         <title>Photo pellicule - Alexandra Nicolov</title>
-        <meta
-          name="description"
-          content="Ensemble de photographie pellicule"
-        />
+        <meta name="description" content="Ensemble de photographie pellicule" />
       </Helmet>
       <div className="row">
         <div
@@ -315,12 +309,16 @@ const Gallery = () => {
       </div>
 
       <div className="row">
-        <div className="p1" onClick={() => handleNavigate("/photo/5")} onMouseEnter={() => {
+        <div
+          className="p1"
+          onClick={() => handleNavigate("/photo/5")}
+          onMouseEnter={() => {
             setSerieHover(p5Images);
           }}
           onMouseLeave={() => {
             setSerieHover("");
-          }} >
+          }}
+        >
           {serieHover === p5Images ? (
             <img
               onClick={normal}
@@ -495,7 +493,7 @@ const Gallery = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   width: 70%;
   @media (max-width: 1200px) {
     width: 90%;
@@ -543,10 +541,6 @@ const Container = styled.div`
   .p4 {
     width: 40%;
   }
-  
-  
-
-  
 `;
 
 export default Gallery;

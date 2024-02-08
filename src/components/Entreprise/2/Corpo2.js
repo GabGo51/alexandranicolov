@@ -153,7 +153,7 @@ const Corpo2 = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   width: 70%;
   @media (max-width: 1200px) {
     width: 90%;
@@ -165,7 +165,6 @@ const Container = styled.div`
 
   img {
     width: 23%;
-    
   }
   .row {
     margin-bottom: 1.5vw;
