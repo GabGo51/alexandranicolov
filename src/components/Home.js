@@ -16,10 +16,8 @@ import home10 from "./img/home10.jpg";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 
-
 //photo automatic slideshow in home using react fast marquee
 const Home = () => {
-
   const { hover, normal } = useContext(MouseContext);
 
   const { selectedImage, openOverlay, closeOverlay, setSize } =
@@ -37,6 +35,7 @@ const Home = () => {
 
   return (
     <Container>
+      
       <Marquee speed={speed} className="frame">
         <img
           onMouseEnter={hover}
@@ -124,8 +123,6 @@ const Container = styled.div`
   .frame {
     max-width: 110%;
     z-index: 0;
-
-    
   }
 
   img {

@@ -7,7 +7,7 @@ import EntrepriseGallery from "./components/Entreprise/EntrepriseGallery";
 import FilmGallery from "./components/Film/FilmGallery";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-//have to find better way of doing this 
+//have to find better way of doing this
 import Serie1 from "./components/Photo/1/Serie1";
 import Serie2 from "./components/Photo/2/Serie2";
 import Serie3 from "./components/Photo/3/Serie3";
@@ -24,18 +24,21 @@ import Corpo3 from "./components/Entreprise/3/Corpo3";
 import Corpo4 from "./components/Entreprise/4/Corpo4";
 import Contact from "./components/Contact";
 import FairyDust from "./components/FairyDust";
-
+import { Helmet } from "react-helmet";
 
 function App() {
-  
   return (
     <Router>
       <Container className="App">
-        <FairyDust/>
+        <Helmet>
+          <title>Alexandra Nicolov</title>
+          <meta name="description" content="Collection de photographie pellicule et corporative / videographie" />
+        </Helmet>
+        <FairyDust />
         <Cursor />
         <Header />
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/photo" element={<PhotoGallery />} />
           <Route path="/entreprise" element={<EntrepriseGallery />} />
           <Route path="/film" element={<FilmGallery />} />
@@ -55,7 +58,7 @@ function App() {
           <Route path="/corpo/4" element={<Corpo4 />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Container>
     </Router>
   );
@@ -65,7 +68,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center;
 `;
 
 export default App;
