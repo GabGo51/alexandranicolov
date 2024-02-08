@@ -30,10 +30,12 @@ function App() {
   return (
     <Router>
       <Container className="App">
-        <Helmet>
-          <title>Alexandra Nicolov</title>
-          <meta name="description" content="Collection de photographie pellicule et corporative / videographie" />
-        </Helmet>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Alexandra Nicolov</title>
+                <link rel="canonical" href="https://www.alexandranicolov.com/" />
+            </Helmet>
+        
         <FairyDust />
         <Cursor />
         <Header />

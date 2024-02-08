@@ -4,6 +4,7 @@ import contact from "./img/contact.jpg";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
 import {motion} from 'framer-motion'
+import { Helmet } from "react-helmet";
 
 
 //contact page with phone email and photo(LKd link)
@@ -12,6 +13,13 @@ const Contact = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>Contact - Alexandra Nicolov</title>
+        <meta
+          name="description"
+          content="Contact email phone number social media"
+        />
+      </Helmet>
       <a
         target="#"
         href="https://www.linkedin.com/in/alexandra-nicolov-262067292/"

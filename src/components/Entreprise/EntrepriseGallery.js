@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import BackTop from "../BackTop";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
+import { Helmet } from "react-helmet";
 
 import c1_1 from "./1/img/c1-1.jpg";
 import c1_2 from "./1/img/c1-2.jpg";
@@ -100,6 +101,13 @@ const EntrepriseGallery = () => {
   
   return (
     <Container>
+      <Helmet>
+        <title>Photo corporative - Alexandra Nicolov</title>
+        <meta
+          name="description"
+          content="Ensemble de photographie corporative"
+        />
+      </Helmet>
       <div className="row">
         <div
           className="p1"

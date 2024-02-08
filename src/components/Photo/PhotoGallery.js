@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import BackTop from "../BackTop";
 import { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
+import { Helmet } from "react-helmet";
 
 //import main serie img
 import s1 from "./img/s1.jpg";
@@ -184,6 +185,13 @@ const Gallery = () => {
   };
   return (
     <Container>
+      <Helmet>
+        <title>Photo pellicule - Alexandra Nicolov</title>
+        <meta
+          name="description"
+          content="Ensemble de photographie pellicule"
+        />
+      </Helmet>
       <div className="row">
         <div
           className="p1"

@@ -15,6 +15,7 @@ import home9 from "./img/home9.jpg";
 import home10 from "./img/home10.jpg";
 import { useContext } from "react";
 import { MouseContext } from "../context/mouseContext";
+import { Helmet } from "react-helmet";
 
 //photo automatic slideshow in home using react fast marquee
 const Home = () => {
@@ -35,7 +36,13 @@ const Home = () => {
 
   return (
     <Container>
-      
+      <Helmet>
+        <title>Home - Alexandra Nicolov</title>
+        <meta
+          name="description"
+          content="Collection de photographie pellicule et corporative / videographie"
+        />
+      </Helmet>
       <Marquee speed={speed} className="frame">
         <img
           onMouseEnter={hover}
