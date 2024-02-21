@@ -105,21 +105,18 @@ const FilmGallery = () => {
         <title>Film</title>
         <meta name="description" content="Projet film / videographie" />
       </Helmet>
-      <div onMouseEnter={hover} onMouseLeave={normal}>
-        <a href="https://vimeo.com/845609888" target="#">
-          <img src={keml[currentIndexKeml]} alt="Video 1" />
-          <motion.p
-            className="title"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            Kayla et la Mer
-          </motion.p>
-        </a>
+      <div>
+        <img src={keml[currentIndexKeml]} alt="Video 1" />
+        <motion.p
+          className="title"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          Kayla et la Mer
+        </motion.p>
       </div>
       <p className="description top">
-        {" "}
         Kayla est à l'aube de réaliser son plus grand rêve : devenir capitaine
         d'une embarcation de pêche. Mais avant, elle doit traverser une longue
         saison morte dans la Baie-des-Chaleurs. Se perdant dans la rêverie et
@@ -127,21 +124,16 @@ const FilmGallery = () => {
         cette jeune femme qui a fait le choix de rester. Un film de{" "}
         <span>Thomas Landry</span>
       </p>
-      <div onMouseEnter={hover} onMouseLeave={normal}>
-        <a
-          href="https://app.frame.io/presentations/3d7729d1-e779-43a2-beee-f21977187df4"
-          target="#"
+      <div>
+        <img src={went[currentIndexWent]} alt="Video 2" />
+        <motion.p
+          className="title"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
         >
-          <img src={went[currentIndexWent]} alt="Video 2" />
-          <motion.p
-            className="title"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            Wendake
-          </motion.p>
-        </a>
+          Wendat endi'
+        </motion.p>
       </div>
       <p className="description">
         Intrusion dans l’univers de l'artiste tatoueuse Wendat Terry Dactel. Le
