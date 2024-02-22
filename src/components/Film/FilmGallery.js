@@ -105,17 +105,20 @@ const FilmGallery = () => {
         <title>Film</title>
         <meta name="description" content="Projet film / videographie" />
       </Helmet>
-      <div>
-        <img src={keml[currentIndexKeml]} alt="Video 1" />
-        <motion.p
-          className="title"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          Kayla et la Mer
-        </motion.p>
-      </div>
+      <a href="https://vimeo.com/845609888" target="#">
+        <div onMouseEnter={hover} onMouseLeave={normal}>
+          <img src={keml[currentIndexKeml]} alt="Video 1" />
+          <motion.p
+            className="title"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Kayla et la Mer
+          </motion.p>
+        </div>
+      </a>
+
       <p className="description top">
         Kayla est à l'aube de réaliser son plus grand rêve : devenir capitaine
         d'une embarcation de pêche. Mais avant, elle doit traverser une longue
